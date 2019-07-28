@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://denniszy.github.io/"/>
-  <updated>2019-07-28T18:20:53.543Z</updated>
+  <updated>2019-07-28T19:01:28.619Z</updated>
   <id>https://denniszy.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>template</title>
+    <link href="https://denniszy.github.io/2019/07/29/acmtemplate/"/>
+    <id>https://denniszy.github.io/2019/07/29/acmtemplate/</id>
+    <published>2019-07-28T18:24:02.000Z</published>
+    <updated>2019-07-28T19:01:28.619Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Introducing"><a href="#Introducing" class="headerlink" title="Introducing"></a>Introducing</h3><p>We are working on a new ACMtemplate for preparing the coming contest. But it is a long job. We need to take some time to collect template and refactor it in order to make it useful. It has two version. One is made from markdown by using typora, another one is made from $\LaTeX$ by using $\TeX{studio}$.</p><p>This is the <a href="https://github.com/DennisZY/ACMtemplate" target="_blank" rel="noopener">github repo</a>. I would be happy to have your template contributed.</p><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><h4 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h4><ul><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-markdown-version.md" target="_blank" rel="noopener">markdown</a></li><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-latex-version.tex" target="_blank" rel="noopener">latex</a></li></ul><h4 id="pdf"><a href="#pdf" class="headerlink" title="pdf"></a>pdf</h4><ul><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-markdown-version.pdf" target="_blank" rel="noopener">markdown</a></li><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-latex-version.pdf" target="_blank" rel="noopener">latex</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="资源" scheme="https://denniszy.github.io/categories/%E8%B5%84%E6%BA%90/"/>
+    
+    
+      <category term="algorithm" scheme="https://denniszy.github.io/tags/algorithm/"/>
+    
+      <category term="template" scheme="https://denniszy.github.io/tags/template/"/>
+    
+  </entry>
   
   <entry>
     <title>2019-Nowcoder-Multi-University-Training-Camp-2</title>
@@ -567,36 +597,6 @@
     
     
       <category term="math" scheme="https://denniszy.github.io/tags/math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>manjaro折腾记</title>
-    <link href="https://denniszy.github.io/2019/03/12/manjaro1/"/>
-    <id>https://denniszy.github.io/2019/03/12/manjaro1/</id>
-    <published>2019-03-12T00:42:55.000Z</published>
-    <updated>2019-05-01T15:31:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="过度过程"><a href="#过度过程" class="headerlink" title="过度过程"></a>过度过程</h2><p>ubuntu-&gt;deepin-&gt;manjaro-deepin-&gt;manjaro kde</p><h2 id="在deepin过度到manjaro-deepin"><a href="#在deepin过度到manjaro-deepin" class="headerlink" title="在deepin过度到manjaro-deepin"></a>在deepin过度到manjaro-deepin</h2><p>deepin的dde有丶好用<del>（其实是不想 去重新熟悉一个新的环境，例如KDE）</del>真香。</p><h2 id="在windows下烧U盘"><a href="#在windows下烧U盘" class="headerlink" title="在windows下烧U盘"></a>在windows下烧U盘</h2><p> 要用<a href="https://rufus.ie/" target="_blank" rel="noopener">refus</a>，要用DD模式烧。用Universal USB Installer烧的话，会无法引导。</p><p>学校的drcom会占用XXshellXXX.dll，忘记具体名称了，会导致refus使用不了，关了就完事</p><h2 id="源"><a href="#源" class="headerlink" title="源"></a>源</h2><h3 id="国内源"><a href="#国内源" class="headerlink" title="国内源"></a>国内源</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -i -c China  //改为国内源,在n弹出的框中选一个就好</span><br><span class="line">sudo pacman -Syy  //更新数据源</span><br></pre></td></tr></table></figure><h3 id="archlinuxcn"><a href="#archlinuxcn" class="headerlink" title="archlinuxcn"></a>archlinuxcn</h3><p>修改/etc/pacman.conf，在最后添加</p><p>下面选一个就行了</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch  //添加清华源</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch //添加中科大源</span><br></pre></td></tr></table></figure><p>之后要添加PGP签名</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure><p>刷新缓存</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br></pre></td></tr></table></figure><p>我校园网用清华源能跑满带宽，中科大的不行，中科大的更新速度略快于清华。</p><h2 id="安装搜狗拼音"><a href="#安装搜狗拼音" class="headerlink" title="安装搜狗拼音"></a>安装搜狗拼音</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx-im</span><br><span class="line">sudo pacman -S fcitx-configtool</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br></pre></td></tr></table></figure><p>修改配置文件~/.xprofile</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=”@im=fcitx”</span><br></pre></td></tr></table></figure><h2 id="其他很多都能在manjaro的添加-删除软件里面找"><a href="#其他很多都能在manjaro的添加-删除软件里面找" class="headerlink" title="其他很多都能在manjaro的添加/删除软件里面找"></a>其他很多都能在manjaro的添加/删除软件里面找</h2><p>gugugu</p><h2 id="KDE"><a href="#KDE" class="headerlink" title="KDE"></a>KDE</h2><h3 id="baloo-file-extractor"><a href="#baloo-file-extractor" class="headerlink" title="baloo_file_extractor"></a>baloo_file_extractor</h3><p>就是这个家伙，总把我的CPU跑12%，用久之后占用3G的共享内存</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line">mv /usr/bin/baloo_file_extractor /usr/bin/baloo_file_extractor.orig</span><br><span class="line">ln -s /bin/<span class="literal">true</span> /usr/bin/baloo_file_extractor</span><br></pre></td></tr></table></figure><p>这就完事</p><h2 id="ibus-rime"><a href="#ibus-rime" class="headerlink" title="ibus-rime"></a>ibus-rime</h2><p>fcitx后台也好像挺费CPU的，所以也换到ibus了，rime根据github上的来配置简体中文即可（要看看文档了）</p><hr><h1 id="updata：2019-04-06"><a href="#updata：2019-04-06" class="headerlink" title="updata：2019-04-06"></a>updata：2019-04-06</h1><p>我又从kde跳回deepin了，kde的设置太多了</p><hr><h1 id="update-2019-05-01"><a href="#update-2019-05-01" class="headerlink" title="update : 2019-05-01"></a>update : 2019-05-01</h1><p>尝试了三个flagship版(kde,xfce,gnome)的manjaro和15.10的deepin，本来想用回deepinos的，第一次装wechat什么的都可以的，第二次装就说依赖出问题了，不愧是基于debian的啊，然后又装回来了，晕死。不愧是基于arch的manjaro，xjb装就可以，很少考虑依赖的问题。</p><h2 id="ibus"><a href="#ibus" class="headerlink" title="ibus"></a>ibus</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ibus ibus-rime</span><br></pre></td></tr></table></figure><p>修改配置文件~/.xprofile</p><p>添加下面几行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=ibus</span><br><span class="line">export QT_IM_MODULE=ibus</span><br><span class="line">export XMODIFIERS=@im=ibus</span><br><span class="line">ibus-daemon -d -x</span><br></pre></td></tr></table></figure><p>修改配置文件~/.bashrc</p><p>添加下面几行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=ibus</span><br><span class="line">export XMODIFIERS=@im=ibus</span><br><span class="line">export QT_IM_MODULE=ibus</span><br></pre></td></tr></table></figure><p>感觉操作冗余了，dalao们教一教啊。</p><h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下面两行选一个就行了，第一行为curl，第二行为wget，没装的自己装一下就行。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"</span><br><span class="line">sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"</span><br></pre></td></tr></table></figure><p>.zshrc</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">"agnoster"</span></span><br><span class="line"><span class="attr">plugins</span>=(git autojump zsh-autosuggestions zsh-syntax-highlighting archlinux)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;过度过程&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="折腾笔记" scheme="https://denniszy.github.io/categories/%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="manjaro" scheme="https://denniszy.github.io/tags/manjaro/"/>
-    
-      <category term="linux" scheme="https://denniszy.github.io/tags/linux/"/>
     
   </entry>
   
