@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[2019-Nowcoder-Multi-University-Training-Camp-1]]></title>
+    <url>%2F2019%2F07%2F28%2F2019nowcoder1%2F</url>
+    <content type="text"><![CDATA[solutionA Equivalent Prefixes题意：给你ab两个数组，让你找出[1,p]区间使得他们任一区间的最小值的位置是一样的，求最大的p。 题解：二分答案，分别建立笛卡尔树，树形一样则正确。]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>2019-Multi-University-Training-Contest</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2019-Multi-University-Training-Contest-1]]></title>
+    <url>%2F2019%2F07%2F28%2F2019hdumutc1%2F</url>
+    <content type="text"><![CDATA[solutionE.Path题意：给你n个点和m条边，让你断开若干条边，使得从1到n的最短路长度变大或者不连通，求最小花费的花费为多少。断开一条边花费为对应边的长度(边权)。 题解：跑最短路算法，求出能够构成最短路的边，根据这些边建一个新图，跑最小鸽。 我写这个的时候人都傻了，找最短路的边的bfs写歪了，然后就超时了QAQ。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210#include &lt;algorithm&gt;#include &lt;algorithm&gt;#include &lt;iostream&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;bitset&gt;#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;queue&gt;#include &lt;map&gt;#include &lt;set&gt;/*#include &lt;unordered_map&gt;#include &lt;unordered_set&gt;*/using namespace std;const int INF = 0x3f3f3f3f;bool vis[10010];int n,m;namespace dijk &#123; typedef long long ll; typedef pair&lt;ll,int&gt; PLI; const int N = 10010; int Head[N],nxt[N],ver[N]; ll c[N],d[N]; int tot; void init() &#123; tot=1; fill(Head,Head+n+1,0); &#125; void add(int u,int v,ll w) &#123; ver[tot]=v; c[tot]=w; nxt[tot]=Head[u]; Head[u]=tot++; &#125; void dijk() &#123; fill(d+1,d+n+1,0x3f3f3f3f3f3f3f3f); fill(vis,vis+n+1,0); d[1]=0; priority_queue&lt;PLI,vector&lt;PLI&gt;,greater&lt;PLI&gt;&gt;q; q.push(make_pair(0,1)); while(q.size()) &#123; PLI tmp = q.top(); q.pop(); int u = tmp.second; if(vis[u])continue; vis[u]=1; for(int i=Head[u]; i; i=nxt[i]) &#123; int v = ver[i]; if(d[v]&gt;d[u]+c[i]) &#123; d[v]=tmp.first+c[i]; q.push(make_pair(d[v],v)); &#125; &#125; &#125; &#125;&#125;;typedef long long ll;class ISAP &#123; private: static const int N = 10010; static const int M = 20010; static const int INF = 0x3f3f3f3f; int tot,n,m,s,t; int carc[N],gap[N]; int pre[N]; int Head[N],nxt[M],ver[M]; ll flow[M]; int d[N]; bool visited[N]; public: void init(int _n,int _m,int _s,int _t) &#123; tot=1; n=_n,m=_m,s=_s,t=_t; fill(Head,Head+n+1,0); &#125; void addedge(int u,int v,ll w) &#123; ver[++tot]=v; flow[tot]=w; nxt[tot]=Head[u]; Head[u]=tot; ver[++tot]=u; flow[tot]=0; nxt[tot]=Head[v]; Head[v]=tot; &#125; bool bfs() &#123; fill(visited,visited+n+1,0); queue&lt;int&gt;q; visited[t]=1; d[t]=0; q.push(t); while(q.size()) &#123; int u = q.front(); q.pop(); for(int i = Head[u]; i; i=nxt[i]) &#123; int v = ver[i]; if(i&amp;1&amp;&amp;!visited[v]) &#123; visited[v]=true; d[v]=d[u]+1; q.push(v); &#125; &#125; &#125; return visited[s]; &#125; ll aug() &#123; int u=t; ll df=INF; while(u!=s) &#123; df=min(df,flow[pre[u]]); u=ver[pre[u]^1]; &#125; u=t; while(u!=s) &#123; flow[pre[u]]-=df; flow[pre[u]^1]+=df; u=ver[pre[u]^1]; &#125; return df; &#125; ll maxflow();&#125; flow;ll ISAP :: maxflow() &#123; ll ans=0; fill(gap,gap+n+1,0); copy(Head+1,Head+n+1,carc+1); bfs(); for(int i=1; i&lt;=n; i++)gap[d[i]]++; int u = s; while(d[s]&lt;=n) &#123; if(u==t) &#123; ans+=aug(); u=s; &#125; bool advanced=false; for(int i=carc[u]; i; i=nxt[i]) &#123; if(flow[i]&amp;&amp;d[u]==d[ver[i]]+1) &#123; advanced=true; pre[ver[i]]=i; carc[u]=i;//carc u=ver[i]; break; &#125; &#125; if(!advanced) &#123; int mindep=n-1; for(int i=Head[u]; i; i=nxt[i]) &#123; if(flow[i]) &#123; mindep=min(mindep,d[ver[i]]); &#125; &#125; if(--gap[d[u]]==0)break; gap[d[u]=mindep+1]++; carc[u]=Head[u]; if(u!=s)u=ver[pre[u]^1]; &#125; &#125; return ans;&#125;int main() &#123; //freopen("in.txt","r",stdin); //freopen("out.txt","w",stdout); int t; scanf("%d",&amp;t); while(t--) &#123; scanf("%d%d",&amp;n,&amp;m); dijk::init(); for(int i=1,x,y; i&lt;=m; i++) &#123; ll z; scanf("%d%d%lld",&amp;x,&amp;y,&amp;z); dijk::add(x,y,z); &#125; dijk::dijk(); if(dijk::d[n]==0x3f3f3f3f3f3f3f3f) &#123; printf("0\n"); continue; &#125; flow.init(n,10000,1,n); &#123; fill(vis,vis+n+1,0); queue&lt;int&gt;q; q.push(1); vis[1]=1; while(q.size()) &#123; int u = q.front(); q.pop(); for(int i=dijk::Head[u]; i; i=dijk::nxt[i]) &#123; int v = dijk::ver[i]; if(dijk::d[u]+dijk::c[i]==dijk::d[v]) &#123; flow.addedge(u,v,dijk::c[i]); if(!vis[v])q.push(v); vis[v]=1; &#125; &#125;## feature test &#125; &#125; ll ans=flow.maxflow(); printf("%lld\n",ans==0?-1:ans); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>2019-Multi-University-Training-Contest</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Beatty's theory]]></title>
+    <url>%2F2019%2F07%2F15%2FBeatty%2F</url>
+    <content type="text"><![CDATA[定理当正无理数$x$、$y$满足下列式子时 \frac{1}{x}+\frac{1}{y}=1会有$P=\{\lfloor{nx}\rfloor|n \in N^+\}$,$Q=\{\lfloor{ny}\rfloor|n \in N^+\}$,使得集合P和集合Q正好是$Z^+$的一个划分,即$P\cup Q=Z^+$、$P\cap Q=\emptyset$. 证明1.一个正整数在集合P或集合Q中至多出现一次因为$x&gt;1$、$y&gt;1$，所以$\lfloor{nx}\rfloor$不会存在相同的正整数，$\lfloor{ny}\rfloor$亦然。 2.$P\cap Q=\emptyset$反证法来一手，假设有正整数n、m、k使得$\lfloor{nx}\rfloor=\lfloor{my}\rfloor=k$，即 k]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[manjaro下使用tenda-U12]]></title>
+    <url>%2F2019%2F07%2F13%2Fmanjaro2%2F</url>
+    <content type="text"><![CDATA[一句话在manjaro上搜索rtl8812au的驱动装一下，我装的名字是rtl8812au-dkms-git(在archlinuxcn的仓库下，可以自己添加一下仓库)，然后把网卡插进去就能识别使用了。 心路历程官网有这个网卡的windows/linux/macos的驱动包，然而这个包根本不能编译成功，我的内核也在他要求的范围之内，要求是2.6.18至4.4，我的是……4……….19打扰了，然后自己上网找找教程，上github找找对应的驱动clone下来编译安装？找了一个编译一下，编译失败，忽然想到去aur上看看有没有，用yay搜了一下，发现archlinuxcn库里面有，就装了，就完事了。]]></content>
+      <categories>
+        <category>折腾笔记</category>
+      </categories>
+      <tags>
+        <tag>manjaro</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Learning C++]]></title>
+    <url>%2F2019%2F05%2F29%2Fcplusplus%2F</url>
+    <content type="text"><![CDATA[C++primer(第5版)读书笔记常量对于指针来说才会有顶层const和底层const之分 顶层const顶层const指的是指针是常量，就是指针里存的地址是不可改变的。 底层const底层const指的是指针所指的变量是常量，不能修改所指的常量。 代码123456789101112int var1 = 1；const int var2 = 2;int *p1 = var1;const int *p2 = var2;//这个指针也可以指向var1的，但是不能通过这个指针区修改所指的变量const int *p3 const = var2;/**p2和p3的区别：* p2能够重新指向别的变量，也就是能够改变指针的值* p3不能都重新指向别的变量，需要在声明的时候就必须初始化，也就是不能改变指针的值*也就是顶层const是对于指针的修饰*底层const是对指针权力的一个限制，就是不允许有底层const的指针修改所指变量的值。*/ constexpr(C++11)常量表达式是用编译的时候就能知道对应表达式的值的表达式，constexpr对变量的一个修饰，要求他是一个常量，而且只能通过常量来初始化它，当然这个也可以用来修饰指针，但对于指针来说，只有是在函数体外的变量(全局变量,在堆空间里的变量)才能用constexpr来修饰，如果是在函数体内的变量(局部变量,在栈空间里的变量)只有申请之后才会知道准确的地址，也就是每次运行的时候的地址都是不确定的，这就违反了cosntexpr一定要通过常量表达式来初始化的这个规定。]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SAM]]></title>
+    <url>%2F2019%2F05%2F07%2FSAM%2F</url>
+    <content type="text"><![CDATA[Suffix automaton后缀自动机，由一个parent树和一个DAG构成。DAG的边连接着状态转移的两点，点就是状态。 每个节点就是一个endpos等价类，每条parent树的边代表的是endpos等价类包含的关系。DAG就是状态转移的过程。 解析一下代码，个人感觉讲得不太好，可以移步看一下史上最通俗的后缀自动机详解和oi-wiki上的SAM，了解一下endpos类等等的定义。 luogu3804 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899#include &lt;algorithm&gt;#include &lt;algorithm&gt;#include &lt;iostream&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;bitset&gt;#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;queue&gt;#include &lt;map&gt;#include &lt;set&gt;/*#include &lt;unordered_map&gt;#include &lt;unordered_set&gt;*/using namespace std;const int N = 1000010;int c[N],dfn[N];struct SAM&#123; static const int N = 1000010; static const int CHAR_SET_SIZE=26; //这里的&lt;&lt;1，是因为后缀自动机的状态的个数是线性的，必定小于2*n，我就不证了(我不会证)。 //ch是每个节点转移的下一个状态，fa是parent树的父节点，len是当前状态的串的长度。siz是每个节点的对应的串出现的次数 int ch[N&lt;&lt;1][CHAR_SET_SIZE],fa[N&lt;&lt;1],len[N&lt;&lt;1],siz[N&lt;&lt;1]; int tot,last; int newnode()&#123; ++tot; memset(ch[tot],0,sizeof ch[tot]); fa[tot]=0; return tot; &#125; //初始化，把最开始的空状态给搞出来 void init()&#123; tot=1; last=1;//记录上次的节点，下次在这后面增量构造SAM len[1]=0; memset(ch[1],0,sizeof ch[1]); memset(siz,0,sizeof siz); &#125; void add(int x)&#123; int pos = last,newpos=newnode(); last = newpos; siz[newpos]=1;//后面需要这个来计算每个节点的串出现的次数 len[newpos]=len[pos]+1; //更新父节点的等价类，让没有转移到当前字符的节点转移到当前字符， while(pos&amp;&amp;!ch[pos][x])&#123;ch[pos][x]=newpos;pos=fa[pos];&#125; //如果！pos就是根本没出现过这个字符，那么这个等价类的就是新的，连到根节点。 if(!pos)fa[newpos]=1; else&#123; //如果有父节点连接到x这个状态，我们对此进行判断 int oldpos=ch[pos][x]; //如果这个父节点的儿子的长度跟父节点的长度相差1，那么我们新的这个等价类的父节点就是这个父节点的儿子了，因为我们必定比父节点的儿子要更长，肯定是再被划分出来的。 if(len[oldpos]==len[pos]+1)fa[newpos]=oldpos; else&#123; //否则，我们就创建一个新的状态的长度是父节点的长度+1的。让祖先们的x转移为原父亲x转移的都改为对新状态的转移，让原父亲x转移的状态改为对新状态的转移。 int anp=newnode(); memcpy(ch[anp],ch[oldpos],sizeof ch[anp]); fa[anp]=fa[oldpos]; len[anp]=len[pos]+1; fa[oldpos]=fa[newpos]=anp; while(pos&amp;&amp;ch[pos][x]==oldpos)&#123; ch[pos][x]=anp; pos=fa[pos]; &#125; &#125; &#125; &#125; long long solve()&#123; //暴力更新每个节点的字符串出现的次数，然后对出现次数&gt;1的更新答案。 long long ans=0; memset(c,0,sizeof c); for(int i=1;i&lt;=tot;i++)c[len[i]]++; for(int i=1;i&lt;=tot;i++)c[i]+=c[i-1]; for(int i=1;i&lt;=tot;i++)dfn[c[len[i]]--]=i; for(int i=tot;i&gt;=1;--i)&#123; int now = dfn[i]; siz[fa[now]]+=siz[now]; if(siz[now]&gt;1)ans=max(ans,1ll*len[now]*siz[now]); &#125; return ans; &#125;&#125;sam;char s[1000010];int main()&#123; if(fopen("in.txt","r"))&#123; freopen("in.txt","r",stdin); freopen("out.txt","w",stdout); &#125; sam.init(); scanf("%s",s); int len = strlen(s); for(int i=0;i&lt;len;i++)sam.add(s[i]-'a'); printf("%lld\n",sam.solve()); return 0;&#125;]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>data structure</tag>
+        <tag>SAM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[splay]]></title>
+    <url>%2F2019%2F04%2F23%2Fds1%2F</url>
+    <content type="text"><![CDATA[来感受Splay的魅力8话说这个树也是Tarjan巨巨和其他巨巨发明的，凸轮已经在Tarjan巨巨的支配中了，然而其他领域也在他的支配中。 性质可以说它也是棵自平衡的二叉查找树，但是不是十分平衡，存在有O(n)的操作情况，但均摊的操作效率被巨巨们证明为O(logn)的。Splay是通过伸展操作调整自身的，使自己变得比较平衡。而Splay规定每访问节点，就把它伸展(Splay)到根节点(方便查找?)。 操作 插入 删除 查找 区间翻转 (未完待续) 需要维护的东西12345678struct Node;struct Node&#123; struct Node* ch[2]，fa;//左孩子、右孩子、父亲 int inv;//翻转操作的lazy标记 int val; int size;//当前树的大小&#125;//当然,这也可以用多个数组维护 旋转操作(小天才用符号画图)1234567/* a 右旋 b / \ -&gt; / \ b c d a / \ &lt;- / \ d e 左旋 e c*/ 看起来，这个旋转操作一点意思都没有嘛，感觉没个卵用，又不能减少树高。 等等党：等等，单旋看起来莫得什么用，双旋来帮锤。 双旋操作(小天才用符号画图)一字型123456789/* a d to a d / \ -&gt; / \ b c f a / \ &lt;- / \ d e a to d b c / \ / \ f g g e*///这样旋是会被卡的,应先旋父亲再旋自己 12345678910/* 优化 旧链 a-b-d-g d-a-b-g d to a a b to a b d / \ -&gt; / \ / \ b c d a d to a f b / \ / \ / \ -&gt; / \ d e f g e c g a / \ / \ f g e c*/ (不还是对高度莫得影响么) 等等党：看下面的操作，很直观的。 之字型12345678910/* a e to a e / \ -&gt; / \ b c b a / \ / \ / \ d e d f g c / \ f g*///左右对称，自行脑补，这个不能双箭头，我也很无奈，但是真的有肉眼能看到的压缩啊 区间操作有Splay操作(伸展操作)的支持，区间操作就很简单的啦。 比如你想翻转一个$[1,a]$的区间，你只要找到比$a$大的一个点，让它旋到根节点，那么根节点的左子树就是[1,a]的区间了。]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>data structure</tag>
+        <tag>splay</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[A_star不详解]]></title>
+    <url>%2F2019%2F04%2F23%2FA-star%2F</url>
+    <content type="text"><![CDATA[前置知识 优先队列bfs 单源最短路算法 场景当我们选择一条最短的路的时候，我们总是走估计路的距离最短的路，我们中途发现道路堵塞的时候，觉得走其他路可能会更快，而不是走直线。这其实跟A_star算法很像啦(不敢说一样啊)。 算法原理A_star需要一个估价函数，估计当前状态到目标的花费，然后每次根据当前花费+估计的花费进行优先队列bfs，保证每次取出的是当前花费+估计的花费最小的，然后去扩展下一个状态，就是每次保证当前花费+估计的花费最小的，而且我们要保证估价出来的花费要小于等于实际花费，不然就会跑错，如果到达终点了，那个花费必然是最小的。 来道题目吧POJ2449-Remmarguts’ Date求k短路。 按照A_star算法，第k次访问终点的时候就是K短路的花费啦。估价函数也很容易设计，一个点到终点的估价跑个单源最短路就OK了。 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990#include &lt;algorithm&gt;#include &lt;iostream&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;bitset&gt;#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;queue&gt;#include &lt;stack&gt;#include &lt;map&gt;#include &lt;set&gt;using namespace std;const int N = 100010;int tot,n,m;int Head[1010],nxt[N&lt;&lt;1],ver[N&lt;&lt;1],w[N&lt;&lt;1];int d[1010];void add(int u,int v,int d) &#123; ver[tot]=v; w[tot]=d; nxt[tot]=Head[u]; Head[u]=tot++;&#125;bool v[1010];void dijk(int s) &#123; priority_queue&lt;pair&lt;int,int&gt;,vector&lt;pair&lt;int,int&gt; &gt;,greater&lt;pair&lt;int,int&gt; &gt; &gt;q; memset(d,0x3f,sizeof d); memset(v,0,sizeof v); q.push(make_pair(0,s)); d[s]=0; while(q.size()) &#123; pair&lt;int,int&gt; tmp = q.top(); q.pop(); int u = tmp.second; if(v[u])continue; v[u]=1; for(int i=Head[u],v; i; i=nxt[i]) &#123; if(i&amp;1)continue; v=ver[i]; if(d[v]&gt;d[u]+w[i])&#123; d[v]=d[u]+w[i]; q.push(make_pair(d[v],v)); &#125; &#125; &#125;&#125;int cnt[1010];void kth() &#123; int s,t,k; scanf("%d%d%d",&amp;s,&amp;t,&amp;k); if(s==t)k++; dijk(t); memset(cnt,0,sizeof cnt); priority_queue&lt;pair&lt;int,int&gt;,vector&lt;pair&lt;int,int&gt; &gt;,greater&lt;pair&lt;int,int&gt; &gt; &gt;q; q.push(make_pair(d[s],s)); while(q.size()) &#123; pair&lt;int,int&gt; tmp = q.top(); q.pop(); int u = tmp.second; ++cnt[u]; if(cnt[t]==k) &#123; printf("%d\n",tmp.first); return ; &#125; for(int i=Head[u],v; i; i=nxt[i]) &#123; if(i&amp;1)&#123; v=ver[i]; if(cnt[v]!=k)q.push(make_pair(tmp.first-d[u]+w[i]+d[v],v)); &#125; &#125; &#125; puts("-1");&#125;int main() &#123; //freopen("in.txt","r",stdin); //freopen("out.txt","w",stdout); scanf("%d%d",&amp;n,&amp;m); memset(Head,0,sizeof Head); tot=1; for(int i=1,x,y,z; i&lt;=m; i++) &#123; scanf("%d%d%d",&amp;x,&amp;y,&amp;z); add(x,y,z); add(y,x,z); &#125; kth(); return 0;&#125;]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>ACM</tag>
+        <tag>A_star</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[POJ3085]Nightmare Ⅱ 题解报告]]></title>
+    <url>%2F2019%2F04%2F23%2FPOJ3085%2F</url>
+    <content type="text"><![CDATA[传送门 题意有一个女孩，一个男孩和两个幽灵，女孩每秒走一步，男孩每秒走三步，幽灵每秒走两步(无视墙体)，问他们多少秒后会相遇。 题解显然双BFS，想一下什么的bfs能控制步数，幽灵没必要bfs，算一下人与幽灵的哈密顿距离与时间乘2即可。 控制步数的bfs不会啊，QAQ，那就跑3次每次走一步的BFS。 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121#include &lt;queue&gt;#include &lt;cmath&gt;#include &lt;cstring&gt;#include &lt;iostream&gt;using namespace std;const int N = 806;char s[N][N];bool v1[N][N], v2[N][N];int n, m, bx, by, gx, gy, px, py, qx, qy, s1, s2;int dx[4] = &#123;0,0,-1,1&#125;;int dy[4] = &#123;-1,1,0,0&#125;;bool pd(int x, int y, int k) &#123; if (x &lt;= 0 || x &gt; n || y &lt;= 0 || y &gt; m) return 0; if (abs(x - px) + abs(y - py) &lt;= 2 * k) return 0; if (abs(x - qx) + abs(y - qy) &lt;= 2 * k) return 0; if (s[x][y] == 'X') return 0; return 1;&#125;int bfs() &#123; queue&lt;pair&lt;int, int&gt; &gt; q1, q2; px = 0; for (int i = 1; i &lt;= n; i++) for (int j = 1; j &lt;= m; j++) if (s[i][j] == 'M') &#123; bx = i; by = j; &#125; else if (s[i][j] == 'G') &#123; gx = i; gy = j; &#125; else if (s[i][j] == 'Z') &#123; if (!px) &#123; px = i; py = j; &#125; else &#123; qx = i; qy = j; &#125; &#125; int ans = 0; memset(v1, 0, sizeof(v1)); memset(v2, 0, sizeof(v2)); v1[bx][by] = 1; v2[gx][gy] = 1; q1.push(make_pair(bx, by)); q2.push(make_pair(gx, gy)); while (q1.size() || q2.size()) &#123; ans++; s1 = q1.size(); for (int i = 1; i &lt;= s1; i++) &#123; pair&lt;int, int&gt; now = q1.front(); q1.pop(); if (!pd(now.first,now.second,ans)) continue; for (int j = 0; j &lt; 4; j++) &#123; int nx = now.first + dx[j]; int ny = now.second + dy[j]; if (pd(nx,ny,ans) &amp;&amp; !v1[nx][ny]) &#123; v1[nx][ny] = 1; q1.push(make_pair(nx, ny)); &#125; &#125; &#125; s1 = q1.size(); for (int i = 1; i &lt;= s1; i++) &#123; pair&lt;int, int&gt; now = q1.front(); q1.pop(); if (!pd(now.first,now.second,ans)) continue; for (int j = 0; j &lt; 4; j++) &#123; int nx = now.first + dx[j]; int ny = now.second + dy[j]; if (pd(nx,ny,ans) &amp;&amp; !v1[nx][ny]) &#123; v1[nx][ny] = 1; q1.push(make_pair(nx, ny)); &#125; &#125; &#125; s1 = q1.size(); for (int i = 1; i &lt;= s1; i++) &#123; pair&lt;int, int&gt; now = q1.front(); q1.pop(); if (!pd(now.first,now.second,ans)) continue; for (int j = 0; j &lt; 4; j++) &#123; int nx = now.first + dx[j]; int ny = now.second + dy[j]; if (pd(nx,ny,ans) &amp;&amp; !v1[nx][ny]) &#123; v1[nx][ny] = 1; q1.push(make_pair(nx, ny)); &#125; &#125; &#125; s2 = q2.size(); for (int i = 1; i &lt;= s2; i++) &#123; pair&lt;int, int&gt; now = q2.front(); q2.pop(); if (!pd(now.first,now.second,ans)) continue; for (int j = 0; j &lt; 4; j++) &#123; int nx = now.first + dx[j]; int ny = now.second + dy[j]; if (pd(nx,ny,ans) &amp;&amp; !v2[nx][ny]) &#123; if (v1[nx][ny]) return ans; v2[nx][ny] = 1; q2.push(make_pair(nx, ny)); &#125; &#125; &#125; &#125; return -1;&#125;int main() &#123; int t; cin &gt;&gt; t; while (t--) &#123; cin &gt;&gt; n &gt;&gt; m; for (int i = 1; i &lt;= n; i++) scanf("%s", s[i] + 1); cout &lt;&lt; bfs() &lt;&lt; endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>BFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[POJ3635]Full Tank题解报告]]></title>
+    <url>%2F2019%2F04%2F22%2FPOJ3635%2F</url>
+    <content type="text"><![CDATA[传送门 题意给你n个点，m条边，每个点的加油站的油的价格不同，每段路要消耗d升油。给你q个询问，你的油箱最大容量为c，从s到t的最少花费。 题解优先队列bfs，每个状态有两种转移的方式。 如果当前状态加一升油比这个状态多一升的状态所花费更少，就转移过去，有点绕啊。看看代码8。 12if(d[u][fuel+1]&gt;d[u][fuel]+p[u]) d[u][fuel+1]=d[u][fuel]+p[u]; 如果在这个点有能够走的路就路上的另外一个点去转移。 12if(d[v][fuel-z]&gt;d[u][fuel]) d[v][fuel-z]&gt;d[u][fuel]; 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788#include &lt;algorithm&gt;#include &lt;iostream&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;bitset&gt;#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;queue&gt;#include &lt;stack&gt;#include &lt;map&gt;#include &lt;set&gt;using namespace std;int n,m;int d[1010][110];int Head[1010],nxt[20020],ver[20020],w[20020];int p[1010];struct node&#123; int cost,u,fuel; node(int _cost=0,int _u=0,int _fuel=0):cost(_cost),u(_u),fuel(_fuel)&#123;&#125;; bool operator &lt; (const node &amp;x)const &#123; return cost&gt;x.cost; &#125;&#125;;int tot;void add(int u,int v,int d)&#123; ver[tot]=v; w[tot]=d; nxt[tot]=Head[u]; Head[u]=tot++;&#125;bool v[1010][110];int bfs(int c,int s,int t)&#123; priority_queue&lt;node&gt;q; memset(d,0x3f,sizeof d); memset(v,0,sizeof v); q.push(node(0,s,0)); d[s][0]=0; while(q.size())&#123; node tmp = q.top();q.pop(); if(tmp.u==t)return tmp.cost; int city = tmp.u; int fuel = tmp.fuel; if(v[city][fuel])continue; v[city][fuel]=1; if(fuel&lt;c&amp;&amp;d[city][fuel+1]&gt;d[city][fuel]+p[city])&#123; d[city][fuel+1]=d[city][fuel]+p[city]; q.push(node(d[city][fuel+1],city,fuel+1)); &#125; for(int i=Head[city],v;i;i=nxt[i])&#123; v=ver[i]; if(w[i]&lt;=fuel&amp;&amp;d[v][tmp.fuel-w[i]]&gt;d[city][tmp.fuel])&#123; d[v][tmp.fuel-w[i]]=d[city][tmp.fuel]; q.push(node(tmp.cost,v,fuel-w[i])); &#125; &#125; &#125; return -1;&#125;int main()&#123; //freopen("in.txt","r",stdin); //freopen("out.txt","w",stdout); while(~scanf("%d%d",&amp;n,&amp;m))&#123; tot=1; for(int i=0;i&lt;n;i++)scanf("%d",p+i); for(int i=1,x,y,z;i&lt;=m;i++)&#123; scanf("%d%d%d",&amp;x,&amp;y,&amp;z); add(x,y,z); add(y,x,z); &#125; int q; scanf("%d",&amp;q); while(q--)&#123; int c,s,t; scanf("%d%d%d",&amp;c,&amp;s,&amp;t); int ans=bfs(c,s,t); if(ans==-1)&#123; puts("impossible"); &#125;else&#123; printf("%d\n",ans); &#125; &#125; &#125; return 0;&#125; Note在用优先队列bfs的时候，虽然维护了像普通bfs那样的有序，但是还是有点不同的。不要因为它是优先队列就猛地迈大步，还是要像普通bfs一样一步一步地走，不能迈大的步伐。]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+        <tag>BFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[20190413华工赛 题解报告]]></title>
+    <url>%2F2019%2F04%2F19%2F2019huagong%2F</url>
+    <content type="text"><![CDATA[比赛链接 A.NB群友 CC是著名的算法竞赛选手，他不仅人长得帅，而且技术了得，自然而然就有了许多粉丝。 为了能帮助粉丝们提高竞技水平，CC建立了一个粉丝群，每天CC都会在粉丝群里和群友深入交流黑科技。然而，有些群友老是不努力训练，成天想着复读，比如当CC在群里面发了个整数0，那紧接着就会有群友发整数1，然后又会有群友发整数2……这引起了CC的不满，于是CC决定踢掉一些群友。 CC的粉丝群人数为无穷大。当CC发出整数0后，其他群友就会跟着轮流发整数1, 2, 3, 4, …，依此类推。需要注意的是，每个群友都会恰好发一次整数，每个群友发的整数两两不同。CC认为，在不考虑前导零的情况下，如果某个群友发的整数在十进制表示下的各位数字不含0及1，那么这个群友就是NB的，否则就是不NB的。例如，群友A发的整数是3482，该数的各位数字分别为3、4、8、2，其中不含0、1，因此群友A是NB的；另一方面，群友B发的整数402，而该数的十位数字是0，因此群友B是不NB的。 现在CC决定，踢掉所有不NB的群友。于是经过一番奥妙重重的踢人操作后，粉丝群里只剩下NB群友。然而，CC觉得剩下的这些NB群友还是too naive，因此他打算邀请一些NB群友参加线下训练营（来现场教做人）。具体来说，CC会给出两个正整数L,R，然后他会邀请发出的整数的各位数字之积在区间[L,R]内的NB群友。 举例来说，假如CC给出的区间为L = 50, R = 300，那么发了567的群友会被邀请线下参赛，因为5×6×7=210；同理，发了255的群友也会被邀请，因为2×5×5=50。但是，发了328的群友则不会收到邀请，因为3×2×8=48∉[50,300]。 题意简化(读题读死人)在[L,R]的这个范围里面找有多少个数是只通过[2,9]这些因子组成的。 题解爆搜就好，枚举每个因子的数量就行 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;cstdio&gt;using namespace std;const long long mod = 1e9+7;const long long lim = 1ll&lt;&lt;32;long long l,r;long long fac[50];long long fac_1[50];long long num[50];long long dfs(long long res,int pre,int len)&#123; if(res&gt;r)return 0; long long ans=0; if(pre==10)&#123; if(res&gt;=l&amp;&amp;res!=1)&#123; long long ttt=fac[len]; for(int i=2;i&lt;=9;i++)&#123; ttt=ttt*fac_1[num[i]]%mod; &#125; return ttt; &#125;else return 0; &#125; long long kk=1; num[pre]=0; ans+=dfs(res,pre+1,len); if(ans&gt;=mod)ans-=mod; for(int i=1;i&lt;=32;i++)&#123; kk*=pre; if(res*kk&lt;=r)&#123; num[pre]=i; ans+=dfs(res*kk,pre+1,len+i); if(ans&gt;=mod)ans-=mod; &#125;else break; &#125; return ans;&#125;int main()&#123; int t; fac[1]=fac[0]=1; fac_1[0]=fac_1[1]=1; for(int i=2;i&lt;=40;i++)&#123; fac[i]=fac[i-1]*i%mod; fac_1[i]=(mod-(mod/i))*fac_1[mod%i]%mod; &#125; for(int i=2;i&lt;=40;i++)&#123; fac_1[i]=fac_1[i-1]*fac_1[i]%mod; &#125; scanf("%d",&amp;t); while(t--)&#123; scanf("%lld%lld",&amp;l,&amp;r); printf("%lld\n",dfs(1,2,0)%mod); &#125; return 0;&#125; F.翻牌游戏 题目链接 题意简化题解概率dp 代码123456789101112#include &lt;cstdio&gt;using namespace std;int main()&#123; int t; scanf("%d",&amp;t); while(t--)&#123; int n; scanf("%d",&amp;n); printf("%d",(n&lt;&lt;1)-1);puts(".00"); &#125; return 0;&#125; H.Parco_Love_GCD 题目链接 题意简化给你一段数字，把所有的区间的GCD的和求出来。 题解数据出水了？$O(n^2)$的代码过了。 正解是$O(nlogn)$，做个GCD的ST表，枚举左端点，二分找gcd连续的一段来贡献答案。(嘴炮打码) 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344#include &lt;algorithm&gt;#include &lt;iostream&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;bitset&gt;#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;queue&gt;#include &lt;stack&gt;#include &lt;map&gt;#include &lt;set&gt;using namespace std;const long long mod = 1000000007;const int N = 500010;long long a[N];long long D;int main()&#123; //freopen("in.txt","r",stdin); //freopen("out.txt","w",stdout); int n; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)scanf("%lld",a+i); D=a[1]; for(int i=2;i&lt;=n;i++)D=__gcd(D,a[i]); long long ans=0; for(int i=1;i&lt;=n;i++)&#123; long long tmp=a[i]; for(int j=i;j&lt;=n;j++)&#123; tmp=__gcd(tmp,a[j]); ans+=tmp; if(ans&gt;=mod)ans-=mod; if(tmp==D)&#123; (ans+=(n-j)*D)%=mod; break; &#125; &#125; &#125; printf("%lld\n",ans); return 0;&#125; 技能前摇过长警告]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CRT/exCRT]]></title>
+    <url>%2F2019%2F04%2F15%2Fmath3%2F</url>
+    <content type="text"><![CDATA[CRT(中国剩余定理)给你一个方程组 x=a_1 \mod {m_1} x=a_2 \mod{m_2} x=a_3 \mod{m_3}保证每个$m_i​$两两互质，求$x​$。 我们先臆想一个神奇的解出来， 设$m=\prod_{1}^{n}{m_i}$，$M_i=m / m_i$，$t_i\times M_i=1(\mod m_i)$。 得 $x=\sum_{i=1}^{n}a_i\times M_i\times t_i$ 得出的$x​$是在M范围内的唯一解。 假装证明当求$x\mod m_i$的时候，其他的$a_j\times M_j\times t_j(j\neq i)$都会有$m_i$的这个因子，所以只需考虑$a_i\times M_i\times t_i$这个式子。因为$M_i\times t_i= 1(\mod m_i)$，所以 $ x=a_i(\mod m_i) $ 。证毕。 当然这只是其中一个解啦。 exCRT(留坑)不保证每个$m_i​$两两互质，求$x​$。]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MIOJ_142_数学等式题解报告]]></title>
+    <url>%2F2019%2F04%2F08%2FMIOJ142%2F</url>
+    <content type="text"><![CDATA[题意 a*{x_1}^3+b*{x_2}^3+c*{x_3}^3=d*{x_4}^3+e*{x_5}^3给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$O(n^3)$，先把左边的全部数值给暴力出来，再做右边的数，看看有没有数在左边的数值中出现过。我写了二分查找，好像也可以直接计数。 代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051#include &lt;algorithm&gt;#include &lt;iostream&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;bitset&gt;#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;queue&gt;#include &lt;stack&gt;#include &lt;map&gt;#include &lt;set&gt;using namespace std;long long num[1040000];long long n3[120];int main()&#123; //freopen("in.txt","r",stdin); //freopen("out.txt","w",stdout); for(int i=-50;i&lt;=50;i++)&#123; n3[i+50]=i*i*i; &#125; long long a,b,c,d,e; int top=0; scanf("%lld%lld%lld%lld%lld",&amp;a,&amp;b,&amp;c,&amp;d,&amp;e); for(int i=-50;i&lt;=50;i++)&#123; if(i==0)continue; for(int j=-50;j&lt;=50;j++)&#123; if(j==0)continue; for(int k=-50;k&lt;=50;k++)&#123; if(k==0)continue; num[top]=(a*n3[i+50]+b*n3[j+50]+c*n3[k+50]); top++; &#125; &#125; &#125; long long ans=0,tmp; sort(num,num+top); for(int i=-50;i&lt;=50;i++)&#123; if(i==0)continue; for(int j=-50;j&lt;=50;j++)&#123; if(j==0)continue; tmp=d*n3[i+50]+e*n3[j+50]; ans+=upper_bound(num,num+top,tmp)-lower_bound(num,num+top,tmp); &#125; &#125; printf("%lld\n",ans); return 0;&#125; 开num数组的时候想着是$100100100$，编译器已经给warning了，然后跑了一下RE，后面才发现是$101101101$，我佛了。 附这里有一个比较重要的思想：MITM(meet in the middle) 阮行止聚聚的知乎 阮行止聚聚的课件]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>MITM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MIOJ_140_贪吃的细胞题解报告]]></title>
+    <url>%2F2019%2F04%2F08%2FMIOJ140%2F</url>
+    <content type="text"><![CDATA[传送门 题意有一个细胞在‘S’处，一个细胞每吃到$k$ml培养液，就会分裂成k+1个细胞，求吃完所有培养液的时间，每一秒只有一个细胞可以动。如果不能吃完就输出-1。 题解有限制的最小生成树。 首先S只能有一个度，有$k​$ml培养液的点最多有k+2个度，一个是细胞进入培养液的，吃完培养液之后就可以有k+1个细胞从这个点出去。按照这个限制跑个最小生成树即可，保证只生成一个最小生成树就是能够全部吃完。 代码目前还不保证正确，mioj出锅了，还没官宣std，这是从神奇的std改过来的。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cmath&gt;#include &lt;cstring&gt;#include &lt;map&gt;#include &lt;cstdlib&gt;#include &lt;algorithm&gt;#include &lt;queue&gt;#define max(a,b) (a&gt;b?a:b)using namespace std;const int maxn=250005;struct node &#123; int x,y,l;&#125;k[maxn];int t,m,n,lm,d[4][2]=&#123;1,0,-1,0,0,1,0,-1&#125;;char mm[105][105];void add(int u,int v,int w)&#123; k[lm].x=u; k[lm].y=v; k[lm].l=w; lm++;&#125;void bfs(int s,int x,int y)&#123; node a,b; a.x=x,a.y=y,a.l=0; int vis[105][105]=&#123;0&#125;; vis[a.x][a.y]=1; queue&lt;node&gt;qu; qu.push(a); while(!qu.empty())&#123; a=qu.front(); qu.pop(); if((mm[a.x][a.y]&gt;='1'&amp;&amp;mm[a.x][a.y]&lt;='9')||mm[a.x][a.y]=='S')&#123; if(a.l)add(s,a.x*100+a.y,a.l); &#125; b.l=a.l+1; for(int i=0;i&lt;4;i++)&#123; b.x=a.x+d[i][0]; b.y=a.y+d[i][1]; if(b.x&gt;=0&amp;&amp;b.x&lt;n&amp;&amp;b.y&gt;=0&amp;&amp;b.y&lt;m&amp;&amp;!vis[b.x][b.y]&amp;&amp;mm[b.x][b.y]!='#')&#123; vis[b.x][b.y]=1; qu.push(b); &#125; &#125; &#125;&#125;void make_adge()&#123; for(int i=0;i&lt;n;i++) for(int j=0;j&lt;m;j++) if(mm[i][j]!='#'&amp;&amp;mm[i][j]!='.') bfs(i*100+j,i,j);&#125;int r[10005];int fi(int n)&#123; return r[n]=r[n]==n?n:fi(r[n]);&#125;int cmp(node x,node y)&#123; return x.l&lt;y.l;&#125;void solve()&#123; int vis[10005]; for(int i=0;i&lt;10000;i++)&#123; r[i]=i; vis[i]=0; &#125; sort(k,k+lm,cmp); int out=0; for(int i=0;i&lt;lm;i++)&#123; int fx=fi(k[i].x); int fy=fi(k[i].y); if((mm[k[i].x/100][k[i].x%100]-'0')+2==vis[k[i].x])continue ; if((mm[k[i].y/100][k[i].y%100]-'0')+2==vis[k[i].y])continue ; if(mm[k[i].x/100][k[i].x%100]=='S'&amp;&amp;vis[k[i].x])continue ; if(mm[k[i].y/100][k[i].y%100]=='S'&amp;&amp;vis[k[i].y])continue ; if(fx!=fy)&#123; r[fx]=fy; vis[k[i].x]++; vis[k[i].y]++; out+=k[i].l; &#125; &#125; int ans=0; for(int i=0;i&lt;10000;i++)&#123; if((mm[i/100][i%100]&gt;='1'&amp;&amp;mm[i/100][i%100]&lt;='9')||mm[i/100][i%100]=='S')&#123; if(fi(i)==i)&#123; ans++; &#125; &#125; &#125; if(ans!=1)out=-1; cout&lt;&lt;out&lt;&lt;endl;&#125;int main()&#123; scanf("%d",&amp;t); while(t--)&#123; scanf("%d%d",&amp;n,&amp;m); memset(mm,0,sizeof(mm)); for(int i=0;i&lt;n;i++)&#123; scanf("%s",mm[i]); &#125; lm=0; make_adge(); solve(); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>MST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[POJ1475] Pushing Boxes 题解报告]]></title>
+    <url>%2F2019%2F04%2F06%2FPOJ1475%2F</url>
+    <content type="text"><![CDATA[传送门 题意推箱子，输出路径，先要求整个的路径最短，如果有多个最短路径，选推箱子的次数最少的。没有路径的输出Impossible。 题解很明显，箱子要跑bfs，但跑bfs的时候要判断移动是否合法，箱子移动后，人必在箱子移动前的位置，而人要能到达箱子移动的反方向的那个格子上。 例子112345#############.......TB###..........##......S...############# 像这种的人要能到达B的右边才能推动箱子。 所以在跑箱子bfs的时候，要判断人能不能到达推动箱子的那个格子上。 明显是双bfs。 例子2123456#############T###########..B.......##.#######..##.....S....############# 转移到 123456#############T###########BS........##.#######..##..........############# 人就要去到箱子的另外一边推。可能一开始想到这个感觉会有点棘手，打起来就也就那样打。 所以箱子的bfs的状态上就存箱子的座标、人的座标和答案，每次按题意更新答案。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136#include &lt;algorithm&gt;#include &lt;iostream&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;bitset&gt;#include &lt;vector&gt;#include &lt;cmath&gt;#include &lt;ctime&gt;#include &lt;queue&gt;#include &lt;stack&gt;#include &lt;map&gt;#include &lt;set&gt;using namespace std;const char box[]=&#123;'N','S','W','E'&#125;;const char peo[]=&#123;'n','s','w','e'&#125;;const int dx[]=&#123;-1,1,0,0&#125;;const int dy[]=&#123;0,0,-1,1&#125;;int n,m,num;char mmp[25][25];string tmp;struct P&#123; int x,y,px,py; string ans;&#125;;bool valid(int x,int y)&#123; return x&gt;0&amp;&amp;x&lt;=n&amp;&amp;y&gt;0&amp;&amp;y&lt;=m&amp;&amp;mmp[x][y]!='#';&#125;bool bfs2(P p1,P p2)&#123; tmp=""; P st; st.x=p1.px; st.y=p1.py; st.ans=""; queue&lt;P&gt;q; q.push(st); bool v[26][26]; memset(v,0,sizeof v); while(q.size())&#123; P now=q.front(),nxt; q.pop(); if(now.x==p1.x&amp;&amp;now.y==p1.y)&#123; tmp=now.ans; return 1; &#125; for(int i = 0; i&lt;4;i++)&#123; nxt = now; nxt.x = now.x + dx[i]; nxt.y = now.y + dy[i]; if (!valid(nxt.x, nxt.y)) continue; if (nxt.x == p2.x &amp;&amp; nxt.y == p2.y) continue; if (v[nxt.x][nxt.y]) continue; v[nxt.x][nxt.y] = 1; nxt.ans = now.ans + peo[i]; q.push(nxt); &#125; &#125; return 0;&#125;string bfs1()&#123; P st; st.x=st.y=st.px=st.py=-1; st.ans=""; for(int i=1;i&lt;=n&amp;&amp;(st.x==-1||st.px==-1);i++)&#123; for(int j=1;j&lt;=m&amp;&amp;(st.x==-1||st.px==-1);j++)&#123; if(mmp[i][j]=='B')&#123; st.x=i; st.y=j; mmp[i][j]='.'; &#125;else if(mmp[i][j]=='S')&#123; st.px=i; st.py=j; mmp[i][j]='.'; &#125; &#125; &#125; queue&lt;P&gt;q; q.push(st); bool v[25][25][4]; memset(v,0,sizeof v); string ans = "Impossible."; unsigned int cntans=0x3f3f3f3f,cnt=0x3f3f3f3f; while(q.size())&#123; P prv,now=q.front(),nxt; q.pop(); if(mmp[now.x][now.y]=='T')&#123; unsigned int cntnow=0; unsigned int len = now.ans.length(); for(unsigned int i =0;i&lt;len;i++)&#123; if(now.ans[i]&gt;='A'&amp;&amp;now.ans[i]&lt;='Z')cntnow++; &#125; if(cntnow&lt;cntans||(cntnow==cntans&amp;&amp;len&lt;cnt))&#123; ans = now.ans; cntans=cntnow; cnt=len; &#125; continue; &#125; for(int i=0;i&lt;4;i++)&#123; nxt=now; nxt.x = now.x + dx[i]; nxt.y = now.y + dy[i]; if(!valid(nxt.x,nxt.y))continue; if(v[nxt.x][nxt.y][i])continue; prv = now; if(i==3)prv.y=now.y-1; else if(i==2)prv.y=now.y+1; else if(i==1)prv.x=now.x-1; else prv.x=now.x+1; if(!bfs2(prv,now))continue; v[nxt.x][nxt.y][i]=1; nxt.ans=now.ans+tmp+box[i]; nxt.px=now.x; nxt.py=now.y; q.push(nxt); &#125; &#125; return ans;&#125;void work()&#123; for(int i=1;i&lt;=n;i++)cin&gt;&gt;(mmp[i]+1); cout&lt;&lt;"Maze #"&lt;&lt;++num&lt;&lt;endl&lt;&lt;bfs1()&lt;&lt;endl&lt;&lt;endl;&#125;int main()&#123; //freopen("in.txt","r",stdin); //freopen("out.txt","w",stdout); ios::sync_with_stdio(0); cin.tie(0); cout.tie(0); num=0; while(cin&gt;&gt;n&gt;&gt;m&amp;&amp;n&amp;&amp;m)&#123; work(); &#125; return 0;&#125; 刷蓝书真虐心，基础不熟练啊，加油加油。]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>BFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[golang]]></title>
+    <url>%2F2019%2F04%2F01%2Fgolang1%2F</url>
+    <content type="text"><![CDATA[安装go环境go的官方网站 好像有墙(逃 不愧是出自404公司之手的与语言啊 我大arch系，直接pacman装就好了(逃 可以来这里下，一直不知道google.cn是谁在维护的，但是能用。 linux设置在/etc/profile 中增加一下设置 1234export GOROOT=/usr/lib/go //这是你的go所在的目录export GOPATH=~/golib:~/goprojectexport GOBIN=~/gobinexport PATH=$PATH:$GOROOT/bin:$GOBIN 其实很多还是看不懂的（留坑） 修改完之后，输入以下，使配置生效 1source /etc/profile]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[心协日程表]]></title>
+    <url>%2F2019%2F03%2F28%2Fggxx3%2F</url>
+    <content type="text"><![CDATA[下面都是开始事务的时间点，并非持续的时间段 时间点 事务 活动前四周 活动部开始筹备活动 活动前两周半 秘书部申请教室 活动前两周 宣传部做海报/ppt 活动前一周 心联部打印时长条 活动当天 拿物资/资源准备 活动现场 拍照 活动结束 合照 活动后 新闻稿/推文 下面是神奇的活动 学生会主办，心协协办的快乐运动活动?(雾(log:2019/03/28) 时间点 事务 活动前六周 每个部门策划活动 活动前四周 决定最终方案给主办方 活动前三周 统计报名资料/安排道具 活动前两周 拉群/通知注意事项/解答问题 活动前两周 线下宣传 活动现场 拍照 活动后 新闻稿/推文]]></content>
+      <categories>
+        <category>广工心协</category>
+        <category>工作记录</category>
+      </categories>
+      <tags>
+        <tag>docs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[各种数学推论]]></title>
+    <url>%2F2019%2F03%2F17%2Fmathmix%2F</url>
+    <content type="text"><![CDATA[极限$\lim \limits_{n \to inf} (1+\frac{x}{n})^n=e^x$要证上式即是要证下式 n*ln(1+\frac{x}{n})=x令$k=\frac{1}{n}$，使得$n=\frac{1}{k}​$ \frac{ln(1+x*k)}{k}=x下面左式来个洛必达$\frac{0}{0}$ \frac{x}{1+x*k}=x证毕 组合数转自zhaozhengcc C_n^m = C _{n-1}^{m-1}+C _{n-1}^{m} mC_n^m = nC _{n-1}^{m-1} C_n^0+C_n^1+C_n^2+……+C_n^n = 2^n 1C_n^1+2C_n^2+3C_n^3+……+nC_n^n =n2^{n-1} 1^2C_n^1+2^2C_n^2+3^2C_n^3+……+n^2C _n^n =n(n+1)2^{n-2} \frac{C_n^1}{1}-\frac{C_n^2}{2}+\frac{C_n^3}{3}+……+(-1)^{n-1}\frac{C _n^n}{n} =1 + \frac{1}{2}+ \frac{1}{3}+……+ \frac{1}{n} (C_n^0)^2+(C_n^1)^2+(C_n^2)^2+……+(C _n^n)^2 = C_{2n}^n斐波那契数列通项公式 f_n=\frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n)前n项求和公式 S_n=f_{n+2}-1=\sum_{i=1}^{n}f_i不知道怎么来的公式 f_{2n}=f_{n+1}*f_{n}+f_n*f_{n-1}=f_{n+1}*f_{n}+f_n*(f_{n+1}-f_{n}) f_{2n+1}=f_{n+1}*f_{n+1}+f_n*f_n可能会比矩阵快速幂要快]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[manjaro折腾记]]></title>
+    <url>%2F2019%2F03%2F12%2Fmanjaro1%2F</url>
+    <content type="text"><![CDATA[过度过程ubuntu-&gt;deepin-&gt;manjaro-deepin-&gt;manjaro kde 在deepin过度到manjaro-deepindeepin的dde有丶好用（其实是不想 去重新熟悉一个新的环境，例如KDE）真香。 在windows下烧U盘 要用refus，要用DD模式烧。用Universal USB Installer烧的话，会无法引导。 学校的drcom会占用XXshellXXX.dll，忘记具体名称了，会导致refus使用不了，关了就完事 源国内源12sudo pacman-mirrors -i -c China //改为国内源,在n弹出的框中选一个就好sudo pacman -Syy //更新数据源 archlinuxcn修改/etc/pacman.conf，在最后添加 下面选一个就行了 12[archlinuxcn]Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch //添加清华源 12[archlinuxcn]Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch //添加中科大源 之后要添加PGP签名 1sudo pacman -S archlinuxcn-keyring 刷新缓存 1sudo pacman -Syy 我校园网用清华源能跑满带宽，中科大的不行，中科大的更新速度略快于清华。 安装搜狗拼音123sudo pacman -S fcitx-imsudo pacman -S fcitx-configtoolsudo pacman -S fcitx-sogoupinyin 修改配置文件~/.xprofile 123export GTK_IM_MODULE=fcitxexport QT_IM_MODULE=fcitxexport XMODIFIERS=”@im=fcitx” 其他很多都能在manjaro的添加/删除软件里面找gugugu KDEbaloo_file_extractor就是这个家伙，总把我的CPU跑12%，用久之后占用3G的共享内存 123sumv /usr/bin/baloo_file_extractor /usr/bin/baloo_file_extractor.origln -s /bin/true /usr/bin/baloo_file_extractor 这就完事 ibus-rimefcitx后台也好像挺费CPU的，所以也换到ibus了，rime根据github上的来配置简体中文即可（要看看文档了） updata：2019-04-06我又从kde跳回deepin了，kde的设置太多了 update : 2019-05-01尝试了三个flagship版(kde,xfce,gnome)的manjaro和15.10的deepin，本来想用回deepinos的，第一次装wechat什么的都可以的，第二次装就说依赖出问题了，不愧是基于debian的啊，然后又装回来了，晕死。不愧是基于arch的manjaro，xjb装就可以，很少考虑依赖的问题。 ibus1sudo pacman -S ibus ibus-rime 修改配置文件~/.xprofile 添加下面几行 1234export GTK_IM_MODULE=ibusexport QT_IM_MODULE=ibusexport XMODIFIERS=@im=ibusibus-daemon -d -x 修改配置文件~/.bashrc 添加下面几行 123export GTK_IM_MODULE=ibusexport XMODIFIERS=@im=ibusexport QT_IM_MODULE=ibus 感觉操作冗余了，dalao们教一教啊。 oh-my-zsh安装下面两行选一个就行了，第一行为curl，第二行为wget，没装的自己装一下就行。 12sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" .zshrc 12ZSH_THEME="agnoster"plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting archlinux)]]></content>
+      <categories>
+        <category>折腾笔记</category>
+      </categories>
+      <tags>
+        <tag>manjaro</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Bayes'theorem]]></title>
+    <url>%2F2019%2F03%2F10%2Fbayes%2F</url>
+    <content type="text"><![CDATA[贝叶斯公式 P(A_i|B)=\frac{P(A_i)P(B|A_i)}{\sum_{j=1}^{n}P(A_j)P(B|A_j)}一见面先抛公式。 作用当公式左边的概率难以求得的时候，我们可以通过右面的公式求得左边的值，有点像反演的思想。 推 倒 导前置技能 条件概率当发生事件X的时候，发生事件Y的概率。 即是当两件事情同时发生的概率除以发生X发生的概率。 P(Y|X)=\frac{P(XY)}{P(X)}全概率公式将样本空间划分成$n$件相互独立事件，求事件X的发生的概率，就是样本空间每件独立事件与事件X同时发生的概率乘每件事件发生的概率，然后全部加起来即可。 P(X)=\sum_{i=1}^{n} {P(Y_i)P(X|Y_i)}开冲！ P(A_i|B)=\frac{P(A_{i}B)}{P(B)}=\frac{P(A_i)P(B|A_i)}{\sum_{j=1}^{n}P(A_j)P(B|A_j)}就是下面用全概率公式即可推到得出贝叶斯公式。]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+        <tag>Probability theory</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[FTC Warning]]></title>
+    <url>%2F2019%2F03%2F09%2FFTC%20Warning%2F</url>
+    <content type="text"><![CDATA[FXXK the codeACM 检查全局变量和局部变量 改用int就不要用char，该用long long的时候就不要用int switch一定要用break(不熟悉就别用) 跑线性逆元和阶乘的时候，从2开始跑。 Markdown 在有数学表达式的markdown文件里面不要用星号，会被解析为斜体，\cdot(点乘)，\times(叉乘)，\div(除以)。 \cdot(点乘)，\times(叉乘)，\div(除以)]]></content>
+      <categories>
+        <category>错误记录</category>
+      </categories>
+      <tags>
+        <tag>trick</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[莫比乌斯函数]]></title>
+    <url>%2F2019%2F01%2F24%2Fmath1%2F</url>
+    <content type="text"><![CDATA[整除分块 \sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloori 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 $\lfloor \frac {n}{i}\rfloor​$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1 $n/(n/i)​$ $n/i​$就是要求的答案，$n(n/i)​$就是满足大于等于答案的最大值$i_{max}​$，每次根据这个范围去求就好了。$n/(n/i)=i_{max}​$，就可以看成$k*(n/i)\le n​$这个式子就k的最大值。 $O(2\sqrt{n})​$ 1234for(int l=1,r;l&lt;=n;l=r+1)&#123; r=n/(n/l); ans+=(r-l+1)*(n/l);&#125; 莫比乌斯反演积性函数gcd(x,y)=1 $f(xy)=f(x)*f(y)$ 欧拉函数 莫比乌斯函数 完全积性函数$f(xy)=f(x)*f(y)$ g(x)=x 狄利克雷卷积两个数论函数 (f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})单位元 \varepsilon(n)=\mu*1=\sum_{d|n}\mu(d)=[n=1] \varepsilon(n)= \begin{cases} 1&n=1\\ 0&else \end{cases} (\varepsilon*g)(n)=\sum_{d|n}\varepsilon(d)g(\frac{n}{d})=\varepsilon(1)g(\frac{n}{1})=g(n)恒等函数 1 ： f(x)=1 莫比乌斯函数 \mu(n)= \begin{cases} 1&n=1\\ 0&n\text{ 含有平方因子}\\ (-1)^k&k\text{ 为 }n\text{ 的本质不同质因子个数}\\ \end{cases} n=p_1^{k_1}p_2^{k_2}....p_t^{k_t} \sum_{d|n}\mu(d)=[n=1] 假设一个n有k个质因子 \sum_{d|n}\mu(d)=\sum_{i=0}^{k}C^i_k*(-1)^i=\sum_{i=0}^{k}C^i_k*(-1)^i*1^{k-i}=(1-1)^k=[k=0]演设两个函数f(x) g(x) f=f(n)=\sum_{d|n}g(d)=g*1 f*\mu=g*1*\mu=g g=f*\mu两个演 f(n)=\sum_{d|n}g(d)\to g(n)=\sum_{d|n}\mu(d)*f(\frac{n}{d}) f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac{d}{n})*f(d)下推第二个演 设$k=\frac{d}{n}$ \sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{k}\mu(k)f(nk)=\sum_{k}\mu(k)\sum_{(nk)|t}g(t)=\sum_{k}\sum_{(nk)|t}\mu(k)g(t)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k) \sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)=\sum_{t}g(t)\varepsilon(\frac{t}{n})=g(n)1234567891011121314151617181920void primejudge(long long lim)&#123; memset(v,0,sizeof v); pr=0; mu[1]=1; long long tmp; for(long long i=2;i&lt;=lim;++i)&#123; if(!v[i])&#123; prime[pr++]=i; mu[i]=-1; &#125; for(int j=0;j&lt;pr&amp;&amp;(tmp=i*prime[j])&lt;=lim;j++)&#123; v[tmp]=1; if(i%prime[j]==0)&#123; mu[tmp]=0; break; &#125; mu[tmp]=-mu[i]; &#125; &#125;&#125; 解题求这个值$1\le x \le​$ a $1 \le y \le b ​$求​$gcd(x,y)=k​$的种数 \sum_{i=1}^a\sum_{j=1}^b=[gcd(i,j)=k] \sum_{i=1}^{\lfloor \frac{a}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{b}{k} \rfloor}=[gcd(i,j)=1] f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac d n)*f({d})​ $\to$ 函数解释 ： f(x)为x|gcd(i,j)的个数 g(x) gcd(i,j)=x的个数 f(m)=\lfloor \frac{a}{m}\rfloor *\lfloor \frac{b}{m}\rfloor g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+        <tag>math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[约瑟夫环问题]]></title>
+    <url>%2F2018%2F12%2F08%2Falg4%2F</url>
+    <content type="text"><![CDATA[推荐一个博客:约瑟夫环问题详解 约瑟夫问题约瑟夫问题（有时也称为约瑟夫斯置换），是一个出现在计算机科学和数学中的问题。在计算机编程)的算法中，类似问题又称为约瑟夫环。 人们站在一个等待被处决的圈子里。 计数从圆圈中的指定点开始，并沿指定方向围绕圆圈进行。 在跳过指定数量的人之后，执行下一个人。 对剩下的人重复该过程，从下一个人开始，朝同一方向跳过相同数量的人，直到只剩下一个人，并被释放。 问题即，给定人数、起点、方向和要跳过的数字，选择初始圆圈中的位置以避免被处决。 简单约瑟夫环问题给出n个人,间隔k个人,请这个人出列,一直这样下去,最后出列的人是谁? 递归解法1234int fun(int n,int k)&#123; if(n==1)return 0; else return (fun(n-1,k)+k)%n;&#125; 下面来解释一下,假设$k=3$ 在环n的情况下 在环n-1的情况下 0 n-3 1 n-2 2 被请出列了 3 0 4 1 … 2 n-3 3 n-2 4 n-1 5 这里的fun都是对一个子问题的求解,强行解释为$f(n)=(f(n-1)+k)\mod n$.可以去上面推荐的博客看看,有图会看得更清楚. 进阶约瑟夫环问题题目传送门:Gym - 101955K 找出第M个出列的人 所以这是题解?(雾 第$m$个出列的人最后所在的环是$n-m+1$环,想知道算怎么来的?把$1$代进去验证一下就好了啊(逃.其实是因为把第$m$个人请出列之后就是一个$n-m$的环了.所以前一个就是第$m$个出列的人最后所在的环. 知道n-m+1的状态了,第$m$个出列的人在$n-m+1$环上是在(k-1)的位置上(像上面一样用子问题,倒推出主问题).所以用上面的直接跑?$10^{18}$你想用O(n)跑?做你的大头梦去. 如果要跨环的时候还是要用上面的跑的,其他的可以来神仙优化一下,在一个环下,一次跑完它,而不要一步一步跑.$((当前环长度-1)-(你所在的位置+1))$这个是你在当前环最多能跑的长度.怎么算的?(留坑).然后把这个数除以$k-1$就是你在这个环上一次能跑多少次. 为什么除以$k-1$?因为你往回推的时候,别人已经把位置为$k-1$的人给请出列了,所以你只能剩下$[0,k-2]$的人在这个环里面,所以你除以这个才能知道你在这个环上能跑多少次.倒推到n环就要退出了,所以你在跑一整个环的时候,要取个min值,当前还能跑得环数和当前环能跑的次数. 用上面的算法的时候,要特判一下$k$,$k=1$的时候直接输出就好了,不然会RE. 1234567891011121314151617181920212223242526272829303132333435363738394041#include &lt;algorithm&gt;#include &lt;cmath&gt;#include &lt;cstdio&gt;#include &lt;cstdlib&gt;#include &lt;cstring&gt;#include &lt;ctime&gt;#include &lt;iostream&gt;#include &lt;map&gt;#include &lt;queue&gt;#include &lt;set&gt;#include &lt;string&gt;#include &lt;vector&gt;using namespace std;int main() &#123; int T; scanf ( "%d", &amp;T ); for ( int kase = 1; kase &lt;= T; kase++ ) &#123; long long n, m, k; scanf ( "%lld %lld %lld", &amp;n, &amp;m, &amp;k ); long long ans = 0; if ( k == 1 ) &#123; printf ( "Case #%d: %lld\n", kase, m ); continue; &#125; else &#123; ans = ( k - 1 ) % ( n - m + 1 ); for ( long long i = n - m + 2; i &lt;= n; ) &#123; if ( ans + k &gt;= i ) &#123; ans = ( ans + k ) % i; i++; &#125; else &#123; long long t = min ( n - i + 1, ( i - ans -2 ) / (k-1) ); ans += t * k; i += t; &#125; &#125; &#125; printf ( "Case #%d: %lld\n", kase, ans + 1 ); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Gym-101955C题解]]></title>
+    <url>%2F2018%2F12%2F07%2FGym-101955C%2F</url>
+    <content type="text"><![CDATA[题目传送门C - Insertion Sort 不重复题意了，直接写解的过程，场上推不出来，赛后看题解才推出来的 网上题解说存在$k\ge n$的情况，然而我们特判$k+1\ge n$的时候就直接输出$n!$。 特判之后，必定是$k\lt n-1$。 现在来推一下,先不考虑前k项的$k!$,后面再乘一下就算完了. 1.整一个序列完全有序的情况只有1种 2.当前k个数都是$\left[1,k\right]$的情况,在后面$n-k$个数里面选一个数,不放在自己的位置上,根据乘法原理,算出来就是$(n-k)*(n-k-1)$ 3.当前k个数不是$\left[1,k\right]$的情况下,而你又要保证最长上升子序列的长度是$n-1$,只能是一个完全有序的序列中,你在前k个数中拿一个数插入到$\left[k+1,n\right]$的其中一个位置中,有$n-k$种情况,根据乘法原理,算出来就是$(n-k)*k$. 最后就是 ans = \begin{cases} n! , & \text{ $k+1\ge n $}\\ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$} \end{cases}]]></content>
+      <categories>
+        <category>题解报告</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[心灵电影注意事项]]></title>
+    <url>%2F2018%2F11%2F17%2Fggxx2%2F</url>
+    <content type="text"><![CDATA[活动最好能在9点之前搞完 因为9点之后有人过来确认电脑是否关了的。 教室电脑无法使用U盘怎么办 不用U盘 在网盘或者云服务器上，把ppt给下载到学校的电脑上用自己的电脑 教室提供VGA接口 电影画质要好 不要忽然绿一片的，忽然紫一片的，很影响观感 开机 先用指导老师的卡刷一下卡，自己摸索刷卡的地方。（应该在膝盖的位置） 暴力一点把封印多媒体平台的盖子打开 找开机键（红色绿色：一个开机，一个重启）忘记哪个对应哪个了，留坑，下次更新。 所以活动要的文件不要只给一个人负责，要学着给自己一条后路]]></content>
+      <categories>
+        <category>广工心协</category>
+        <category>工作记录</category>
+      </categories>
+      <tags>
+        <tag>docs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Inverse-Element]]></title>
+    <url>%2F2018%2F11%2F10%2Finverse-element%2F</url>
+    <content type="text"><![CDATA[逆元定义$a=\frac{1}{b}(mod p)$，也就是$a*b=1(mod p)$。表示$a$为$b$在$mod p$意义下的逆元 快速幂求逆元a^p=a(mod\ p)用二项式定理证明 a^p=((a-1)+1)^p=\sum_{i=0}^p{C_p^i*(a-1)^i}来康康这里面的组合数鸭 C_n^m=\frac{n!}{m!*(n-m)!}可以发现当n是素数的时候，在$1\le m\le n-1$的项里面都有$n$这个因子，所以所以模运算剩下的只有 C_p^0*(a-1)^0C_p^p*(a-1)^p也就是 a^p=(a-1)^p+1(mod\ p)用数学归纳法就可得 a^p=a(mod\ p)a^{p-1}=1(mod\ p)a^{p-2}=\frac{1}{a}(mod\ p)这样就得到$a$在$mod p$意义下的逆元了。]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Binary-Index-Tree]]></title>
+    <url>%2F2018%2F11%2F06%2Fbinary-index-tree%2F</url>
+    <content type="text"><![CDATA[注意!!!:这不是树状数组的详解,而是利用树状数组做区间修改的方法,当然能区间修改了也能单点修改 先来个简单的树状数组啊功能: 单点更新 区间查询(单点查询也就是特殊的区间查询啦) 1234567891011121314151617int n;int a[100005];void add(int x,int id)&#123;//id的位置上的数加上x while(id&lt;=n)&#123; a[id]+=x; id+=id&amp;(-id); &#125; return ;&#125;int query(int id)&#123;//id位置的前缀和 int ans=0; while(id)&#123; ans+=a[id]; id-=id&amp;(-id); &#125; return ans;&#125; 区间和区间更新以前想区间更新的时候就要跑去写线段树了 但现在有了差分这种思想,就可以用树状数组去区间更新啦[滑稽] 我们对原数列$[1,n]$进行一些操作啊 d_i=a_i -a_{i-1}(a_0=0)那么 a_x=\sum_{i=1}^x d_i又可得 \sum_{i=1}^x a_i=\sum_{i=1}^x\sum_{j=1}^i d_j=\sum_{i=1}^x (x-i+1)d_i显然(滑稽) \sum_{i=1}^x a_i=(x+1)\sum_{i=1}^x d_i - \sum_{i=1}^x d_i*i所以这种要维护两个数组,一个维护$d_i$和一个$d _i$ $*$ $i$快点进正题啊,怎么区间修改啊,我等不及了进正题,区间修改就用到差分的性质了,先来康康这个式子 a_x=\sum_{i=1}^x d_i假设在区间$[L,R]$加$num$我们是不是只要在$d_L$加上$num$,在$R+1$上减去num.(没看懂的,自己想一下,很简单的啦)笔者出来挨锤抛个板子,逃了逃了,怕挨锤12345678910111213141516171819202122232425262728293031323334struct BIT&#123; long long a1[N],a2[N]; int n; inline int lowbit(int x)&#123; return x&amp;-x; &#125; void init(int _n)&#123; n=_n+1; for(int i=0;i&lt;=n;i++)&#123; a1[i]=0; a2[i]=0; &#125; &#125; void add(int x,int y)&#123; for(int i=x;i&lt;=n;i+=lowbit(i))&#123; a1[i]+=y; a2[i]+=1ll*x*y; &#125; &#125; void lradd(int l,int r,int x)&#123; add(l,x); add(r+1,-x); &#125; long long sum(int x)&#123; long long ans=0; for(int i=x;i;i-=lowbit(i))&#123; ans+=1ll*(x+1)*a1[i]-a2[i]; &#125; return ans; &#125; long long lrsum(int l,int r)&#123; return sum(r)-sum(l-1); &#125;&#125;bits; 区间最值，单点更新，区间查询12345678910111213141516171819202122232425inline int lowbit(int x)&#123;return x &amp; (-x);&#125;void updata(int x)&#123; int lx, i; while (x &lt;= n) &#123; h[x] = a[x]; lx = lowbit(x); for (i=1; i&lt;lx; i&lt;&lt;=1) h[x] = max(h[x], h[x-i]); x += lowbit(x); &#125; &#125;int query(int x, int y)&#123; int ans = 0; while (y &gt;= x) &#123; ans = max(a[y], ans); y --; for (; y-lowbit(y) &gt;= x; y -= lowbit(y)) ans = max(h[y], ans); &#125; return ans;&#125;]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[秘书部的主要工作]]></title>
+    <url>%2F2018%2F11%2F05%2Fggxx1%2F</url>
+    <content type="text"><![CDATA[2019/03/13 大锅 申请摊位的时候，也要策划书和活动明细表 去线下校团委的时候，写的申请日期是线上申请的日期，不用带策划书 带物资(2019/03/22) 新闻稿配图片发骆导(2019/03/28) 新审批流程(尽量两周) 跟活动部商量好时间，周五的活动建议在周一开始申请 跟骆导申请教室拿三联单(具体等巨巨们补充)：拿三联单去，老师会盖上名字，然后撕下来还给你 网上填好申请表，提醒一下骆导让叶展航老师确认一下 等啊等（玄学时间），等到全部搞好了，就打印，拿东西给校团委签名盖章（两天） 最后网上结束活动就可以了，点活动结束 教四301的投影仪有点绿(2019/03/22) 2018/11/22马上就要换网上审批了，要和师弟们从同学习申请了，下面的要作修改了，申请表文件也更新了 秘书部的主要工作申请活动场地 需要的东西 学生组织活动审批表 学生组织活动安全工作方案 教室借用单（三联单） 活动策划书（两份） 影音作品播放申请表（心灵电影活动才需要） 活动明细表（钉到策划书最后面，独占一页纸）申请流程 先给指导老师看看策划书有没有问题。 跟指导老师说要申请教室。 把老师申请的教室给填上申请资料上面。 先把该打印的东西核对清楚，然后去打印。 日期要准确 地方不要搞错 人数不要搞错 同一个活动里面的资料要对应好 如还有其他的挂了，请在这里添加，让后下次对着这里检查！！！给指导老师签名、去盖章 心协指导老师在工一223，去之前要跟老师约时间，老师很忙，而且这也是基本的礼貌。 盖章在工一219，学生组织活动审批表、学生组织活动安全工作方案、教室借用单（三联单）。 具体盖章的地方我已经说了。去校团委审批校团委工作时间是周一到周五（13：15~14：00）需要给他看的东西学生组织活动审批表学生组织活动安全工作方案教室借用单（三联单）活动策划书（两份）活动明细表（钉到策划书最后面，独占一页纸）影音作品播放申请表（心灵电影活动才需要）他会收走一份 ++策划书++ 和 ++学生组织活动审批表++到时你另外一天来团委凭 ++回执++ 拿回 ++学生组织活动审批表++去教务处（行政楼320）教务处工作时间是周一到周五（09：00 ~ 12：00和13：30 ~ 16：00）把东西放到盒子里面（三联单、活动审批表）另一天拿回去校安协办公室/保卫处（综合楼104）校安协办公室/保卫处的办公室时间（上午08：30 ~ 12：00、下午14：30 ~ 16：00）周一周四上午都有，且能交表和取表，周二只有上午，而且只能交表。需要的东西学生组织活动安全工作方案活动策划书去多媒体办公室多媒体办公室工作时间是周一到周日（08：00 ~ 21：00）把三联单的多媒体管理中心的那一联给那里的老师活动当天去问指导老师要那个开教室电脑的卡提前去调试好，防止出bug，就算出bug也能提早修复，尽早上线（雾）活动后三天内去校团委备案所以周五的活动一定要在星期一去备案要复印一份学生组织活动审批表原件和复印件都拿过去，自己保留一份他收一份除了多媒体办公室的那里可以不按我打顺序，其他都要按这个流程跑。 活动的签到 懂我意思吧，你把笔拿出来，给别人在其拿到表上签名。 所以你要提前30~45分钟去活动场地。 活动现场的拍照 当然是用手机啦，有单反的话也可以上单反。 怕手抖？让我蕉蕉你（气氛逐渐焦灼） 活动新闻稿 你写的东西是要被发到这里的噢。校内新闻通知网 上面的那个网站需要神奇的账号和密码。 300字左右就ojbk了 word和excel（WPS （国外版没广告）或office 2016） 签到表 通讯录 新闻稿 各种注意事项 骆导的明天给我 意思就是明天早上上班时就要拿到]]></content>
+      <categories>
+        <category>广工心协</category>
+        <category>工作记录</category>
+      </categories>
+      <tags>
+        <tag>docs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[秘书部的主要工作]]></title>
+    <url>%2F2018%2F11%2F05%2Fggxx1%2F</url>
+    <content type="text"><![CDATA[2018/11/22马上就要换网上审批了，要和师弟们从同学习申请了，下面的要作修改了，申请表文件也更新了 秘书部的主要工作申请活动场地 需要的东西 学生组织活动审批表 学生组织活动安全工作方案 教室借用单（三联单） 活动策划书（两份） 影音作品播放申请表（心灵电影活动才需要） 活动明细表（钉到策划书最后面，独占一页纸）申请流程 先给指导老师看看策划书有没有问题。 跟指导老师说要申请教室。 把老师申请的教室给填上申请资料上面。 先把该打印的东西核对清楚，然后去打印。 日期要准确 地方不要搞错 人数不要搞错 同一个活动里面的资料要对应好 如还有其他的挂了，请在这里添加，让后下次对着这里检查！！！给指导老师签名、去盖章 心协指导老师在工一223，去之前要跟老师约时间，老师很忙，而且这也是基本的礼貌。 盖章在工一219，学生组织活动审批表、学生组织活动安全工作方案、教室借用单（三联单）。 具体盖章的地方我已经说了。去校团委审批校团委工作时间是周一到周五（13：15~14：00）需要给他看的东西学生组织活动审批表学生组织活动安全工作方案教室借用单（三联单）活动策划书（两份）活动明细表（钉到策划书最后面，独占一页纸）影音作品播放申请表（心灵电影活动才需要）他会收走一份 ++策划书++ 和 ++学生组织活动审批表++到时你另外一天来团委凭 ++回执++ 拿回 ++学生组织活动审批表++去教务处（行政楼320）教务处工作时间是周一到周五（09：00 ~ 12：00和13：30 ~ 16：00）把东西放到盒子里面（三联单、活动审批表）另一天拿回去校安协办公室/保卫处（综合楼104）校安协办公室/保卫处的办公室时间（上午08：30 ~ 12：00、下午14：30 ~ 16：00）周一周四上午都有，且能交表和取表，周二只有上午，而且只能交表。需要的东西学生组织活动安全工作方案活动策划书去多媒体办公室多媒体办公室工作时间是周一到周日（08：00 ~ 21：00）把三联单的多媒体管理中心的那一联给那里的老师活动当天去问指导老师要那个开教室电脑的卡提前去调试好，防止出bug，就算出bug也能提早修复，尽早上线（雾）活动后三天内去校团委备案所以周五的活动一定要在星期一去备案要复印一份学生组织活动审批表原件和复印件都拿过去，自己保留一份他收一份除了多媒体办公室的那里可以不按我打顺序，其他都要按这个流程跑。 活动的签到 懂我意思吧，你把笔拿出来，给别人在其拿到表上签名。 所以你要提前30~45分钟去活动场地。 活动现场的拍照 当然是用手机啦，有单反的话也可以上单反。 怕手抖？让我蕉蕉你（气氛逐渐焦灼） 活动新闻稿 你写的东西是要被发到这里的噢。校内新闻通知网 上面的那个网站需要神奇的账号和密码。 300字左右就ojbk了 word和excel（WPS （国外版没广告）或office 2016） 签到表 通讯录 新闻稿 各种注意事项 骆导的明天给我 意思就是明天早上上班时就要拿到]]></content>
+      <categories>
+        <category>广工心协</category>
+        <category>工作记录</category>
+      </categories>
+      <tags>
+        <tag>docs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CDQ分治]]></title>
+    <url>%2F2018%2F08%2F29%2Falg3%2F</url>
+    <content type="text"><![CDATA[陈丹琦神犇创造的算法,所以叫CDQ分治,可以用来解决三维偏序问题,好像可以嵌套CDQ来解决N维偏序问题.我苟蒻不会嵌套,据说也没必要嵌套,可以用bitset大法做n维偏序. 分时间更新,每天都有不一样的想法. CDQ分治,我现在理解的是用排序和CDQ和树状数组维护三个维度的数据,苟蒻不敢瞎说话啊.]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[dance link X algorithm]]></title>
+    <url>%2F2018%2F08%2F28%2Falg2%2F</url>
+    <content type="text"><![CDATA[图文并茂的dance link X 算法讲解(点击我啊) dance link X算法是用来解决精确覆盖问题,例如在一个01矩阵中,找n行,能使得每一列都只有一个1,其余全是0. 而怎么将求解数独转化为DLX能解决的问题呢? 假设是一个99的数独,每一行,每一列,每个宫都要有1~9这9个数,每一个格子都有9个状态,所以一共有999的状态,所以DLX要建729行,然后用99来表示每个格子都有数字了,每行每列每宫都要99来表示当前行/列/宫有数字k了.一共49*9列.直接上题目吧POJ3074123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105#include &lt;cstdio&gt;#include &lt;cstring&gt;using namespace std;const int N = 9; //3*3 数独const int MaxN = N * N * N + 10;const int MaxM = N * N * 4 + 10;const int maxnode = MaxN * 4 + MaxM + 10;char g[MaxN];struct DLX &#123; int n, m, size; int U[maxnode], D[maxnode], R[maxnode], L[maxnode], Row[maxnode], Col[maxnode]; int H[MaxN], S[MaxM];//S维护每一列有多少个点,H维护每一行的头 int ansd, ans[MaxN]; void init(int _n, int _m) &#123;//m维护每一列,n维护每一行 n = _n; m = _m; for (int i = 0; i &amp;lt;= m; i++) &#123; S[i] = 0; U[i] = D[i] = i; L[i] = i - 1; R[i] = i + 1; &#125; R[m] = 0; L[0] = m; size = m; for (int i = 1; i &amp;lt;= n; i++)H[i] = - 1; &#125; void Link(int r, int c) &#123; ++S[Col[++size] = c];//size像是每个点的编号 Row[size] = r; D[size] = D[c]; U[D[c]] = size; U[size] = c; D[c] = size; if (H[r] &amp;lt; 0)H[r] = L[size] = R[size] = size; else &#123; R[size] = R[H[r]]; L[R[H[r]]] = size; L[size] = H[r]; R[H[r]] = size; &#125; &#125; void remove(int c) &#123; L[R[c]] = L[c]; R[L[c]] = R[c]; for (int i = D[c]; i != c; i = D[i]) for (int j = R[i]; j != i; j = R[j]) &#123; U[D[j]] = U[j];//断开j D[U[j]] = D[j]; -- S[Col[j]]; &#125; &#125; void resume(int c) &#123; for (int i = U[c]; i != c; i = U[i]) for (int j = L[i]; j != i; j = L[j]) ++S[Col[U[D[j]] = D[U[j]] = j]]; L[R[c]] = R[L[c]] = c; &#125; bool Dance(int d) &#123; if (R[0] == 0) &#123; for (int i = 0; i &amp;lt; d; i++)g[(ans[i] - 1) / 9] = (ans[i] - 1) % 9 + '1'; for (int i = 0; i &amp;lt; N * N; i++)printf("%c", g[i]); printf("\n"); return true; &#125; int c = R[0]; for (int i = R[0]; i != 0; i = R[i]) if (S[i] &amp;lt; S[c]) c = i; remove(c); for (int i = D[c]; i != c; i = D[i]) &#123; ans[d] = Row[i]; for (int j = R[i]; j != i; j = R[j])remove(Col[j]); if (Dance(d + 1))return true; for (int j = L[i]; j != i; j = L[j])resume(Col[j]); &#125; resume(c); return false; &#125;&#125;;void place(int &amp;amp;r, int &amp;amp;c1, int &amp;amp;c2, int &amp;amp;c3, int &amp;amp;c4, int i, int j, int k) &#123; r = (i * N + j) * N + k; c1 = i * N + j + 1; c2 = N * N + i * N + k; c3 = N * N * 2 + j * N + k; c4 = N * N * 3 + ((i / 3) * 3 + (j / 3)) * N + k;&#125;DLX dlx;int main() &#123; while (scanf("%s", g) == 1) &#123; if (strcmp(g, "end") == 0)break; dlx.init(N * N * N, N * N * 4); int r, c1, c2, c3, c4; for (int i = 0; i &amp;lt; N; i++) for (int j = 0; j &amp;lt; N; j++) for (int k = 1; k &amp;lt;= N; k++) if (g[i * N + j] == '.' || g[i * N + j] == '0' + k) &#123; place(r, c1, c2, c3, c4, i, j, k); dlx.Link(r, c1); dlx.Link(r, c2); dlx.Link(r, c3); dlx.Link(r, c4); &#125; dlx.Dance(0); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[查看nginx监听端口]]></title>
+    <url>%2F2018%2F03%2F22%2Fnginx1%2F</url>
+    <content type="text"><![CDATA[netstat -tlnup|grep nginx]]></content>
+      <categories>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>web</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+</search>
