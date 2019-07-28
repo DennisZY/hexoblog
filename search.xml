@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[template]]></title>
+    <title><![CDATA[Template]]></title>
     <url>%2F2019%2F07%2F29%2Facmtemplate%2F</url>
     <content type="text"><![CDATA[IntroducingWe are working on a new ACMtemplate for preparing the coming contest. But it is a long job. We need to take some time to collect template and refactor it in order to make it useful. It has two version. One is made from markdown by using typora, another one is made from $\LaTeX$ by using $\TeX{studio}$. This is the github repo. I would be happy to have your template contributed. Downloadsource code markdown latex pdf markdown latex]]></content>
       <categories>

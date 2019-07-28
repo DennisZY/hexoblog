@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://denniszy.github.io/"/>
-  <updated>2019-07-28T19:01:28.619Z</updated>
+  <updated>2019-07-28T19:02:20.889Z</updated>
   <id>https://denniszy.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>template</title>
+    <title>Template</title>
     <link href="https://denniszy.github.io/2019/07/29/acmtemplate/"/>
     <id>https://denniszy.github.io/2019/07/29/acmtemplate/</id>
     <published>2019-07-28T18:24:02.000Z</published>
-    <updated>2019-07-28T19:01:28.619Z</updated>
+    <updated>2019-07-28T19:02:20.889Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Introducing"><a href="#Introducing" class="headerlink" title="Introducing"></a>Introducing</h3><p>We are working on a new ACMtemplate for preparing the coming contest. But it is a long job. We need to take some time to collect template and refactor it in order to make it useful. It has two version. One is made from markdown by using typora, another one is made from $\LaTeX$ by using $\TeX{studio}$.</p><p>This is the <a href="https://github.com/DennisZY/ACMtemplate" target="_blank" rel="noopener">github repo</a>. I would be happy to have your template contributed.</p><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><h4 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h4><ul><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-markdown-version.md" target="_blank" rel="noopener">markdown</a></li><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-latex-version.tex" target="_blank" rel="noopener">latex</a></li></ul><h4 id="pdf"><a href="#pdf" class="headerlink" title="pdf"></a>pdf</h4><ul><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-markdown-version.pdf" target="_blank" rel="noopener">markdown</a></li><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-latex-version.pdf" target="_blank" rel="noopener">latex</a></li></ul>]]></content>
     
