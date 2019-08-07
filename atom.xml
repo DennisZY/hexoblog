@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://denniszy.github.io/"/>
-  <updated>2019-08-02T19:10:50.032Z</updated>
+  <updated>2019-08-07T13:42:14.441Z</updated>
   <id>https://denniszy.github.io/</id>
   
   <author>
@@ -15,6 +15,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Privacy</title>
+    <link href="https://denniszy.github.io/2019/08/07/privacy/"/>
+    <id>https://denniszy.github.io/2019/08/07/privacy/</id>
+    <published>2019-08-07T13:32:49.000Z</published>
+    <updated>2019-08-07T13:42:14.441Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>DNS加密，使用DoH加密域名解析请求。</p><p>使用Cloudflare的公共DNS，不让DNS记录你的域名解析内容。</p><h3 id="Search-Engine"><a href="#Search-Engine" class="headerlink" title="Search Engine"></a>Search Engine</h3><p>使用<a href="https://duckduckgo.com/" target="_blank" rel="noopener">DuckDuckGo</a>或者<a href="https://mijisou.com/" target="_blank" rel="noopener">秘迹搜索</a>，进行搜索，不记录你的搜索记录。</p><h3 id="Password"><a href="#Password" class="headerlink" title="Password"></a>Password</h3><p>少依赖电子程序或者电子文档去记录密码，可以利用电子程序去生成随机密码，尽量用纸笔记录帐号密码，这有利于你知道你在哪些网站注册过，销号容易，换手机号码也方便。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;DNS&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="折腾笔记" scheme="https://denniszy.github.io/categories/%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="privacy" scheme="https://denniszy.github.io/tags/privacy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>墙裂推荐Firefox</title>
+    <link href="https://denniszy.github.io/2019/08/07/recommend-using-firefox/"/>
+    <id>https://denniszy.github.io/2019/08/07/recommend-using-firefox/</id>
+    <published>2019-08-07T13:28:19.000Z</published>
+    <updated>2019-08-07T13:44:40.551Z</updated>
+    
+    <content type="html"><![CDATA[<p>Firefox的速度还是比不上chrome，这没得说，内存比chrome占用少，但是Firefox在隐私这方面比chrome好，而且现在能设置DoH了，Firefox68能在网络设置界面设置DoH了，用着还算舒服，还有不用神奇的上网方式就能用官方的方式同步标签、装插件，很舒服。<del>github上有破解版的插件装在chrome上就能访问google，使用官方的同步。</del></p><p>chrome是基于chromium内核的浏览器，而且现在越来越多浏览器使用chromium内核，基于chromium内核的浏览器的份额越来越大，巨硬的edge也开始用chromium内核了，一家独大的话，标准的制定就很难起作用了，因为只需要对chromium适配就ojbk，chromium成为了标准，万维网联盟(W3C)会被架空了？导致更多人去使用基于chromium内核的浏览器，第二个IE?而且google公司就能拥有更多的用户，更多用户数据，隐私问题lei了，毕竟google是个广告公司，通过打标签给你推送特定的广告自己能获得更多的收入，也是个正常的行为，毕竟谷歌大部分的收入都来自广告。</p><p><del>你甚至可以使用Tor-browser</del></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Firefox的速度还是比不上ch
+        
+      
+    
+    </summary>
+    
+      <category term="安全" scheme="https://denniszy.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="privacy" scheme="https://denniszy.github.io/tags/privacy/"/>
+    
+      <category term="browser" scheme="https://denniszy.github.io/tags/browser/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DNS-over-HTTPS</title>
+    <link href="https://denniszy.github.io/2019/08/07/dns-over-https/"/>
+    <id>https://denniszy.github.io/2019/08/07/dns-over-https/</id>
+    <published>2019-08-07T11:32:43.000Z</published>
+    <updated>2019-08-07T13:29:30.416Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p>一个帮我们将记住对应域名所指向IP地址的服务器，的确很方便，我们不用去记住一些晦涩难懂的IP地址。</p><h2 id="DNS劫持"><a href="#DNS劫持" class="headerlink" title="DNS劫持"></a>DNS劫持</h2><p>通过劫持DNS来修改某些域名的解析记录，从而使访问该域名的人得到错误的IP，导致我们无法访问一些网站，当然有些网站不应该由DNS背锅，那是有别的一些原因导致的。</p><h2 id="DNS污染"><a href="#DNS污染" class="headerlink" title="DNS污染"></a>DNS污染</h2><p>让用户得到虚拟目标主机的IP，因为DNS没有认证机制，通常基于UDP，速度的确快，但是会被篡改。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h3 id="解决DNS劫持"><a href="#解决DNS劫持" class="headerlink" title="解决DNS劫持"></a>解决DNS劫持</h3><p>将DNS换成公共DNS就ojbk。</p><h3 id="解决DNS污染"><a href="#解决DNS污染" class="headerlink" title="解决DNS污染"></a>解决DNS污染</h3><p>改Hosts、加密DNS请求。</p><h3 id="如何加密DNS请求呢？"><a href="#如何加密DNS请求呢？" class="headerlink" title="如何加密DNS请求呢？"></a>如何加密DNS请求呢？</h3><h4 id="dnscrypt"><a href="#dnscrypt" class="headerlink" title="dnscrypt"></a><a href="https://dnscrypt.info/" target="_blank" rel="noopener">dnscrypt</a></h4><p>我没用过，不会用QAQ。</p><h4 id="DoT"><a href="#DoT" class="headerlink" title="DoT"></a>DoT</h4><p>DNS-over-TLS，TLS(Transport Layer Security)，通过853端口，但是有个很神奇的东西，当你使用853端口的时候，就有人知道你在用DoT，当然，你也可以改端口号。</p><h4 id="DoH"><a href="#DoH" class="headerlink" title="DoH"></a>DoH</h4><p>DNS-over-HTTPS，通过443端口，与HTTPS同端口(废话)，我正在使用，用了之后能访问ddg，dde(deepin desktop environment)+ddg更配噢，差个ddf♂(雾</p><h2 id="公共DNS"><a href="#公共DNS" class="headerlink" title="公共DNS"></a>公共DNS</h2><div class="table-container"><table><thead><tr><th>Name</th><th>DNS1</th><th style="text-align:left">DNS2</th></tr></thead><tbody><tr><td>Cloudflare DNS</td><td>1.1.1.1</td><td style="text-align:left">1.0.0.1</td></tr><tr><td>ALIDNS</td><td>223.5.5.5</td><td style="text-align:left">223.6.6.6</td></tr><tr><td>google DNS</td><td>8.8.8.8</td><td style="text-align:left">8.8.4.4</td></tr></tbody></table></div><p>Cloudflare DNS是Cloudflare与APNIC合作新推出的公共DNS。</p><blockquote><p>原来，Cloudflare 并不拥有 1.1.1.1 和 1.0.0.1 这两个 IP，而是从 APNIC 那里得到了使用权。APNIC  全称 Asia-Pacific Network Information  Centre，亚太网络信息中心，是世界五大区域互联网注册机构之一。它管理亚洲以及太平洋地区的互联网资源，其中我们最熟悉的就是 IP  地址了。APNIC 作为分配 IP 地址的官方，持有几个靓号自然是合情合理了。</p><p>靓号虽好，可不是谁都能用的。如果不是数字简单，方便记忆，1.1.1.1  其实只是几十亿 IPv4 中的普通一个。它也不属于标准规定的保留地址（配置过路由器的同学，多少遇到过 192.168.x.x  这样的为内网或其他用途保留的号段）。但就是因为它太好记，并且一直没有被使用，所以很多网络运维测试需要随便填一个 IP 时就顺手填了个  1.1.1.1。甚至有些黑客也用 1.1.1.1 来测试其僵尸网络。于是，1.1.1.1  就被来自世界各地的垃圾信息洪流淹没了，几乎是一场永不停息的 DDoS 攻击。</p><p>这个时候，主角 Cloudflare  登场了。Cloudflare 的主营业务就是网络安全，应对 DDoS 更是看家本领。所以他们主动找上了  APNIC，提出了自己建立一个隐私优先、速度极致的 DNS 服务的设想。APNIC 十分感动，同意了 Cloudflare  的提议。从此，Cloudflare 要用自己的网络来承受原本指向 1.1.1.1 的“垃圾”信息，也换得了在靓号上运行 DNS  解析服务器的机会。</p><p>来自<a href="https://zhuanlan.zhihu.com/p/36169153" target="_blank" rel="noopener">用上 ip 靓号1.1.1.1，Cloudflare 花了多少钱？</a></p><p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International License</a>.</p></blockquote><h2 id="如何在Firefox上使用DoH"><a href="#如何在Firefox上使用DoH" class="headerlink" title="如何在Firefox上使用DoH"></a>如何在Firefox上使用DoH</h2><ol><li><p>在Firefox的地址栏输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2. 搜索```network.trr</span><br></pre></td></tr></table></figure></p></li><li><p>将<code>network.trr.mode</code>修改为2，意为首选DoH，实在不行就用平常的DNS查询方法</p></li><li><code>network.ttr.uri</code>是<code>https://mozilla.cloudflare-dns.com/dns-query</code>就OK了，当然你也可以改成其他支持DoH的服务器网址。支持的好像不多，感觉这个已经比较快了。</li><li>修改<code>network.trr.bootstrapAddress</code>为一个后备的DNS，我就改为了1.0.0.1，因为我这1.1.1.1是不能用的。</li><li>进入网址<a href="https://www.cloudflare.com/ssl/encrypted-sni/" target="_blank" rel="noopener">Browsing Experience Security Check</a>,cloudflare给的一个检查DNS服务是否走cloudflare的，Check My Browser后，看到最右边是Secure DNS就OK了。</li></ol><h2 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h2><p>访问国内的网站有点慢，国外的网站就感觉快了一丢丢，github不会因为DNS污染而访问不了了，我自己也难得一个个地去改Hosts了，重要的是能上ddg了，再不不需要百毒了，注意，还是用不了谷歌的，别想一些有的没的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;DNS&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="折腾笔记" scheme="https://denniszy.github.io/categories/%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="dns" scheme="https://denniszy.github.io/tags/dns/"/>
+    
+      <category term="DoH" scheme="https://denniszy.github.io/tags/DoH/"/>
+    
+  </entry>
   
   <entry>
     <title>NPM Install Error</title>
@@ -490,90 +578,6 @@
       <category term="ACM" scheme="https://denniszy.github.io/tags/ACM/"/>
     
       <category term="BFS" scheme="https://denniszy.github.io/tags/BFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20190413华工赛 题解报告</title>
-    <link href="https://denniszy.github.io/2019/04/19/2019huagong/"/>
-    <id>https://denniszy.github.io/2019/04/19/2019huagong/</id>
-    <published>2019-04-19T13:28:27.000Z</published>
-    <updated>2019-04-22T17:05:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://ac.nowcoder.com/acm/contest/625#question" target="_blank" rel="noopener">比赛链接</a></p><h2 id="A-NB群友"><a href="#A-NB群友" class="headerlink" title="A.NB群友"></a>A.NB群友</h2><blockquote><p>CC是著名的算法竞赛选手，他不仅人长得帅，而且技术了得，自然而然就有了许多粉丝。</p><p>为了能帮助粉丝们提高竞技水平，CC建立了一个粉丝群，每天CC都会在粉丝群里和群友深入交流黑科技。然而，有些群友老是不努力训练，成天想着复读，比如当CC在群里面发了个整数0，那紧接着就会有群友发整数1，然后又会有群友发整数2……这引起了CC的不满，于是CC决定踢掉一些群友。</p><p>CC的粉丝群人数为无穷大。当CC发出整数0后，其他群友就会跟着轮流发整数1, 2, 3, 4, …，依此类推。需要注意的是，每个群友都会恰好发一次整数，每个群友发的整数两两不同。CC认为，在不考虑前导零的情况下，如果某个群友发的整数在十进制表示下的各位数字不含0及1，那么这个群友就是NB的，否则就是不NB的。例如，群友A发的整数是3482，该数的各位数字分别为3、4、8、2，其中不含0、1，因此群友A是NB的；另一方面，群友B发的整数402，而该数的十位数字是0，因此群友B是不NB的。</p><p>现在CC决定，踢掉所有不NB的群友。于是经过一番奥妙重重的踢人操作后，粉丝群里只剩下NB群友。然而，CC觉得剩下的这些NB群友还是too naive，因此他打算邀请一些NB群友参加线下训练营（来现场教做人）。具体来说，CC会给出两个正整数L,R，然后他会邀请发出的整数的各位数字之积在区间[L,R]内的NB群友。</p><p>举例来说，假如CC给出的区间为L = 50, R = 300，那么发了567的群友会被邀请线下参赛，因为5×6×7=210；同理，发了255的群友也会被邀请，因为2×5×5=50。但是，发了328的群友则不会收到邀请，因为3×2×8=48∉[50,300]。</p></blockquote><h3 id="题意简化-读题读死人"><a href="#题意简化-读题读死人" class="headerlink" title="题意简化(读题读死人)"></a>题意简化(读题读死人)</h3><p>在[L,R]的这个范围里面找有多少个数是只通过[2,9]这些因子组成的。</p><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>爆搜就好，枚举每个因子的数量就行</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> lim = <span class="number">1l</span>l&lt;&lt;<span class="number">32</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> l,r;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> fac[<span class="number">50</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> fac_1[<span class="number">50</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> num[<span class="number">50</span>];</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">dfs</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> res,<span class="keyword">int</span> pre,<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(res&gt;r)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(pre==<span class="number">10</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(res&gt;=l&amp;&amp;res!=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> ttt=fac[len];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">9</span>;i++)&#123;</span><br><span class="line">                ttt=ttt*fac_1[num[i]]%mod;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> ttt;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> kk=<span class="number">1</span>;</span><br><span class="line">    num[pre]=<span class="number">0</span>;</span><br><span class="line">    ans+=dfs(res,pre+<span class="number">1</span>,len);</span><br><span class="line">    <span class="keyword">if</span>(ans&gt;=mod)ans-=mod;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">32</span>;i++)&#123;</span><br><span class="line">        kk*=pre;</span><br><span class="line">        <span class="keyword">if</span>(res*kk&lt;=r)&#123;</span><br><span class="line">            num[pre]=i;</span><br><span class="line">            ans+=dfs(res*kk,pre+<span class="number">1</span>,len+i);</span><br><span class="line">            <span class="keyword">if</span>(ans&gt;=mod)ans-=mod;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    fac[<span class="number">1</span>]=fac[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    fac_1[<span class="number">0</span>]=fac_1[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">40</span>;i++)&#123;</span><br><span class="line">        fac[i]=fac[i<span class="number">-1</span>]*i%mod;</span><br><span class="line">        fac_1[i]=(mod-(mod/i))*fac_1[mod%i]%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">40</span>;i++)&#123;</span><br><span class="line">        fac_1[i]=fac_1[i<span class="number">-1</span>]*fac_1[i]%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;l,&amp;r);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,dfs(<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>)%mod);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="F-翻牌游戏"><a href="#F-翻牌游戏" class="headerlink" title="F.翻牌游戏"></a>F.翻牌游戏</h2><blockquote><p><a href="https://ac.nowcoder.com/acm/contest/625/F" target="_blank" rel="noopener">题目链接</a></p></blockquote><h3 id="题意简化"><a href="#题意简化" class="headerlink" title="题意简化"></a>题意简化</h3><h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><p>概率dp</p><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,(n&lt;&lt;<span class="number">1</span>)<span class="number">-1</span>);<span class="built_in">puts</span>(<span class="string">".00"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="H-Parco-Love-GCD"><a href="#H-Parco-Love-GCD" class="headerlink" title="H.Parco_Love_GCD"></a>H.Parco_Love_GCD</h2><blockquote><p><a href="https://ac.nowcoder.com/acm/contest/625/H" target="_blank" rel="noopener">题目链接</a></p></blockquote><h3 id="题意简化-1"><a href="#题意简化-1" class="headerlink" title="题意简化"></a>题意简化</h3><p>给你一段数字，把所有的区间的GCD的和求出来。</p><h3 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h3><p>数据出水了？$O(n^2)$的代码过了。</p><p>正解是$O(nlogn)$，做个GCD的ST表，枚举左端点，二分找gcd连续的一段来贡献答案。(嘴炮打码)</p><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mod = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">500010</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[N];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> D;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("out.txt","w",stdout);</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,a+i);</span><br><span class="line">    D=a[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)D=__gcd(D,a[i]);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> tmp=a[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n;j++)&#123;</span><br><span class="line">            tmp=__gcd(tmp,a[j]);</span><br><span class="line">            ans+=tmp;</span><br><span class="line">            <span class="keyword">if</span>(ans&gt;=mod)ans-=mod;</span><br><span class="line">            <span class="keyword">if</span>(tmp==D)&#123;</span><br><span class="line">                (ans+=(n-j)*D)%=mod;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><del>技能前摇过长警告</del></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="题解报告" scheme="https://denniszy.github.io/categories/%E9%A2%98%E8%A7%A3%E6%8A%A5%E5%91%8A/"/>
-    
-    
-      <category term="algorithm" scheme="https://denniszy.github.io/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CRT/exCRT</title>
-    <link href="https://denniszy.github.io/2019/04/15/math3/"/>
-    <id>https://denniszy.github.io/2019/04/15/math3/</id>
-    <published>2019-04-14T18:15:36.000Z</published>
-    <updated>2019-04-22T16:56:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="CRT-中国剩余定理"><a href="#CRT-中国剩余定理" class="headerlink" title="CRT(中国剩余定理)"></a>CRT(中国剩余定理)</h2><p>给你一个方程组</p><script type="math/tex; mode=display">x=a_1 \mod {m_1}</script><script type="math/tex; mode=display">x=a_2 \mod{m_2}</script><script type="math/tex; mode=display">x=a_3 \mod{m_3}</script><p>保证每个$m_i​$两两互质，求$x​$。</p><p>我们先臆想一个神奇的解出来，</p><p>设$m=\prod_{1}^{n}{m_i}$，$M_i=m / m_i$，$t_i\times M_i=1(\mod m_i)$。</p><p>得 $x=\sum_{i=1}^{n}a_i\times M_i\times t_i$</p><p>得出的$x​$是在M范围内的唯一解。</p><h3 id="假装证明"><a href="#假装证明" class="headerlink" title="假装证明"></a>假装证明</h3><p>当求$x\mod m_i$的时候，其他的$a_j\times M_j\times t_j(j\neq i)$都会有$m_i$的这个因子，所以只需考虑$a_i\times M_i\times t_i$这个式子。因为$M_i\times t_i= 1(\mod m_i)$，所以 $ x=a_i(\mod m_i) $ 。证毕。</p><p>当然这只是其中一个解啦。</p><h2 id="exCRT-留坑"><a href="#exCRT-留坑" class="headerlink" title="exCRT(留坑)"></a>exCRT(留坑)</h2><p>不保证每个$m_i​$两两互质，求$x​$。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://denniszy.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="math" scheme="https://denniszy.github.io/tags/math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MIOJ_142_数学等式题解报告</title>
-    <link href="https://denniszy.github.io/2019/04/08/MIOJ142/"/>
-    <id>https://denniszy.github.io/2019/04/08/MIOJ142/</id>
-    <published>2019-04-08T15:46:41.000Z</published>
-    <updated>2019-04-22T16:59:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><script type="math/tex; mode=display">a*{x_1}^3+b*{x_2}^3+c*{x_3}^3=d*{x_4}^3+e*{x_5}^3</script><p>给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>无脑暴力$O(n^5)$是不行的。</p><p>优雅的暴力$O(n^3)$，先把左边的全部数值给暴力出来，再做右边的数，看看有没有数在左边的数值中出现过。我写了二分查找，好像也可以直接计数。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> num[<span class="number">1040000</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n3[<span class="number">120</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("out.txt","w",stdout);</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">-50</span>;i&lt;=<span class="number">50</span>;i++)&#123;</span><br><span class="line">        n3[i+<span class="number">50</span>]=i*i*i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> a,b,c,d,e;</span><br><span class="line">    <span class="keyword">int</span> top=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld%lld%lld"</span>,&amp;a,&amp;b,&amp;c,&amp;d,&amp;e);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">-50</span>;i&lt;=<span class="number">50</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">-50</span>;j&lt;=<span class="number">50</span>;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(j==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">-50</span>;k&lt;=<span class="number">50</span>;k++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(k==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">                num[top]=(a*n3[i+<span class="number">50</span>]+b*n3[j+<span class="number">50</span>]+c*n3[k+<span class="number">50</span>]);</span><br><span class="line">                top++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>,tmp;</span><br><span class="line">    sort(num,num+top);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">-50</span>;i&lt;=<span class="number">50</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">-50</span>;j&lt;=<span class="number">50</span>;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(j==<span class="number">0</span>)<span class="keyword">continue</span>;</span><br><span class="line">            tmp=d*n3[i+<span class="number">50</span>]+e*n3[j+<span class="number">50</span>];</span><br><span class="line">            ans+=upper_bound(num,num+top,tmp)-lower_bound(num,num+top,tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>开num数组的时候想着是$100<em>100</em>100$，编译器已经给warning了，然后跑了一下RE，后面才发现是$101<em>101</em>101$，我佛了。</p><h2 id="附"><a href="#附" class="headerlink" title="附"></a>附</h2><p>这里有一个比较重要的思想：MITM(meet in the middle)</p><p><a href="https://www.zhihu.com/people/ruan-xing-zhi/activities" target="_blank" rel="noopener">阮行止聚聚的知乎</a></p><p><a href="https://ruanx.pw/post/MEET-IN-THE-MIDDLE.html" target="_blank" rel="noopener">阮行止聚聚的课件</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;题意&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="题解报告" scheme="https://denniszy.github.io/categories/%E9%A2%98%E8%A7%A3%E6%8A%A5%E5%91%8A/"/>
-    
-    
-      <category term="MITM" scheme="https://denniszy.github.io/tags/MITM/"/>
     
   </entry>
   

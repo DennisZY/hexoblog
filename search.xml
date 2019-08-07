@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Privacy]]></title>
+    <url>%2F2019%2F08%2F07%2Fprivacy%2F</url>
+    <content type="text"><![CDATA[DNSDNS加密，使用DoH加密域名解析请求。 使用Cloudflare的公共DNS，不让DNS记录你的域名解析内容。 Search Engine使用DuckDuckGo或者秘迹搜索，进行搜索，不记录你的搜索记录。 Password少依赖电子程序或者电子文档去记录密码，可以利用电子程序去生成随机密码，尽量用纸笔记录帐号密码，这有利于你知道你在哪些网站注册过，销号容易，换手机号码也方便。]]></content>
+      <categories>
+        <category>折腾笔记</category>
+      </categories>
+      <tags>
+        <tag>privacy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[墙裂推荐Firefox]]></title>
+    <url>%2F2019%2F08%2F07%2Frecommend-using-firefox%2F</url>
+    <content type="text"><![CDATA[Firefox的速度还是比不上chrome，这没得说，内存比chrome占用少，但是Firefox在隐私这方面比chrome好，而且现在能设置DoH了，Firefox68能在网络设置界面设置DoH了，用着还算舒服，还有不用神奇的上网方式就能用官方的方式同步标签、装插件，很舒服。github上有破解版的插件装在chrome上就能访问google，使用官方的同步。 chrome是基于chromium内核的浏览器，而且现在越来越多浏览器使用chromium内核，基于chromium内核的浏览器的份额越来越大，巨硬的edge也开始用chromium内核了，一家独大的话，标准的制定就很难起作用了，因为只需要对chromium适配就ojbk，chromium成为了标准，万维网联盟(W3C)会被架空了？导致更多人去使用基于chromium内核的浏览器，第二个IE?而且google公司就能拥有更多的用户，更多用户数据，隐私问题lei了，毕竟google是个广告公司，通过打标签给你推送特定的广告自己能获得更多的收入，也是个正常的行为，毕竟谷歌大部分的收入都来自广告。 你甚至可以使用Tor-browser]]></content>
+      <categories>
+        <category>安全</category>
+      </categories>
+      <tags>
+        <tag>privacy</tag>
+        <tag>browser</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DNS-over-HTTPS]]></title>
+    <url>%2F2019%2F08%2F07%2Fdns-over-https%2F</url>
+    <content type="text"><![CDATA[DNS一个帮我们将记住对应域名所指向IP地址的服务器，的确很方便，我们不用去记住一些晦涩难懂的IP地址。 DNS劫持通过劫持DNS来修改某些域名的解析记录，从而使访问该域名的人得到错误的IP，导致我们无法访问一些网站，当然有些网站不应该由DNS背锅，那是有别的一些原因导致的。 DNS污染让用户得到虚拟目标主机的IP，因为DNS没有认证机制，通常基于UDP，速度的确快，但是会被篡改。 解决方法解决DNS劫持将DNS换成公共DNS就ojbk。 解决DNS污染改Hosts、加密DNS请求。 如何加密DNS请求呢？dnscrypt我没用过，不会用QAQ。 DoTDNS-over-TLS，TLS(Transport Layer Security)，通过853端口，但是有个很神奇的东西，当你使用853端口的时候，就有人知道你在用DoT，当然，你也可以改端口号。 DoHDNS-over-HTTPS，通过443端口，与HTTPS同端口(废话)，我正在使用，用了之后能访问ddg，dde(deepin desktop environment)+ddg更配噢，差个ddf♂(雾 公共DNS Name DNS1 DNS2 Cloudflare DNS 1.1.1.1 1.0.0.1 ALIDNS 223.5.5.5 223.6.6.6 google DNS 8.8.8.8 8.8.4.4 Cloudflare DNS是Cloudflare与APNIC合作新推出的公共DNS。 原来，Cloudflare 并不拥有 1.1.1.1 和 1.0.0.1 这两个 IP，而是从 APNIC 那里得到了使用权。APNIC 全称 Asia-Pacific Network Information Centre，亚太网络信息中心，是世界五大区域互联网注册机构之一。它管理亚洲以及太平洋地区的互联网资源，其中我们最熟悉的就是 IP 地址了。APNIC 作为分配 IP 地址的官方，持有几个靓号自然是合情合理了。 靓号虽好，可不是谁都能用的。如果不是数字简单，方便记忆，1.1.1.1 其实只是几十亿 IPv4 中的普通一个。它也不属于标准规定的保留地址（配置过路由器的同学，多少遇到过 192.168.x.x 这样的为内网或其他用途保留的号段）。但就是因为它太好记，并且一直没有被使用，所以很多网络运维测试需要随便填一个 IP 时就顺手填了个 1.1.1.1。甚至有些黑客也用 1.1.1.1 来测试其僵尸网络。于是，1.1.1.1 就被来自世界各地的垃圾信息洪流淹没了，几乎是一场永不停息的 DDoS 攻击。 这个时候，主角 Cloudflare 登场了。Cloudflare 的主营业务就是网络安全，应对 DDoS 更是看家本领。所以他们主动找上了 APNIC，提出了自己建立一个隐私优先、速度极致的 DNS 服务的设想。APNIC 十分感动，同意了 Cloudflare 的提议。从此，Cloudflare 要用自己的网络来承受原本指向 1.1.1.1 的“垃圾”信息，也换得了在靓号上运行 DNS 解析服务器的机会。 来自用上 ip 靓号1.1.1.1，Cloudflare 花了多少钱？ This work is licensed under a Creative Commons Attribution 4.0 International License. 如何在Firefox上使用DoH 在Firefox的地址栏输入12. 搜索```network.trr 将network.trr.mode修改为2，意为首选DoH，实在不行就用平常的DNS查询方法 network.ttr.uri是https://mozilla.cloudflare-dns.com/dns-query就OK了，当然你也可以改成其他支持DoH的服务器网址。支持的好像不多，感觉这个已经比较快了。 修改network.trr.bootstrapAddress为一个后备的DNS，我就改为了1.0.0.1，因为我这1.1.1.1是不能用的。 进入网址Browsing Experience Security Check,cloudflare给的一个检查DNS服务是否走cloudflare的，Check My Browser后，看到最右边是Secure DNS就OK了。 使用体验访问国内的网站有点慢，国外的网站就感觉快了一丢丢，github不会因为DNS污染而访问不了了，我自己也难得一个个地去改Hosts了，重要的是能上ddg了，再不不需要百毒了，注意，还是用不了谷歌的，别想一些有的没的。]]></content>
+      <categories>
+        <category>折腾笔记</category>
+      </categories>
+      <tags>
+        <tag>dns</tag>
+        <tag>DoH</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[NPM Install Error]]></title>
     <url>%2F2019%2F08%2F03%2Fnpm-install-error%2F</url>
     <content type="text"><![CDATA[Resolving EACCES permissions errors when installing packages globally Note: This section does not apply to Microsoft Windows. Just follow the next few steps: 12mkdir ~/.npm-globalnpm config set prefix '~/.npm-global' Open your editor to edit ‘~/.profile’. If this file doesn’t exist, just create it. And add this line: 1export PATH=~/.npm-global/bin:$PATH Update your system variables: 1source ~/.profile If you use cnpm, just change npm to cnpm.]]></content>
