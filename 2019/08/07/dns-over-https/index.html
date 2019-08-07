@@ -157,7 +157,7 @@
 <meta property="og:site_name" content="Dennis&#39;s Blog">
 <meta property="og:description" content="DNS一个帮我们将记住对应域名所指向IP地址的服务器，的确很方便，我们不用去记住一些晦涩难懂的IP地址。 DNS劫持通过劫持DNS来修改某些域名的解析记录，从而使访问该域名的人得到错误的IP，导致我们无法访问一些网站，当然有些网站不应该由DNS背锅，那是有别的一些原因导致的。 DNS污染让用户得到虚拟目标主机的IP，因为DNS没有认证机制，通常基于UDP，速度的确快，但是会被篡改。 解决方法解决D">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-07T13:29:30.416Z">
+<meta property="og:updated_time" content="2019-08-07T13:52:10.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DNS-over-HTTPS">
 <meta name="twitter:description" content="DNS一个帮我们将记住对应域名所指向IP地址的服务器，的确很方便，我们不用去记住一些晦涩难懂的IP地址。 DNS劫持通过劫持DNS来修改某些域名的解析记录，从而使访问该域名的人得到错误的IP，导致我们无法访问一些网站，当然有些网站不应该由DNS背锅，那是有别的一些原因导致的。 DNS污染让用户得到虚拟目标主机的IP，因为DNS没有认证机制，通常基于UDP，速度的确快，但是会被篡改。 解决方法解决D">
@@ -508,7 +508,7 @@
                 
               
 
-              <time title="创建时间：2019-08-07 19:32:43 / 修改时间：21:29:30" itemprop="dateCreated datePublished" datetime="2019-08-07T19:32:43+08:00">2019-08-07</time>
+              <time title="创建时间：2019-08-07 19:32:43 / 修改时间：21:52:10" itemprop="dateCreated datePublished" datetime="2019-08-07T19:32:43+08:00">2019-08-07</time>
             </span>
           
 
@@ -635,10 +635,9 @@
 <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">Creative Commons Attribution 4.0 International License</a>.</p>
 </blockquote>
 <h2 id="如何在Firefox上使用DoH"><a href="#如何在Firefox上使用DoH" class="headerlink" title="如何在Firefox上使用DoH"></a>如何在Firefox上使用DoH</h2><ol>
-<li><p>在Firefox的地址栏输入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2. 搜索```network.trr</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>将<code>network.trr.mode</code>修改为2，意为首选DoH，实在不行就用平常的DNS查询方法</p>
-</li>
+<li>在Firefox的地址栏输入 <code>about:config</code>，并确认了解此风险，不了解就不使用DoH呗</li>
+<li>搜索<code>network.trr</code></li>
+<li>将<code>network.trr.mode</code>修改为2，意为首选DoH，实在不行就用平常的DNS查询方法</li>
 <li><code>network.ttr.uri</code>是<code>https://mozilla.cloudflare-dns.com/dns-query</code>就OK了，当然你也可以改成其他支持DoH的服务器网址。支持的好像不多，感觉这个已经比较快了。</li>
 <li>修改<code>network.trr.bootstrapAddress</code>为一个后备的DNS，我就改为了1.0.0.1，因为我这1.1.1.1是不能用的。</li>
 <li>进入网址<a href="https://www.cloudflare.com/ssl/encrypted-sni/" target="_blank" rel="noopener">Browsing Experience Security Check</a>,cloudflare给的一个检查DNS服务是否走cloudflare的，Check My Browser后，看到最右边是Secure DNS就OK了。</li>

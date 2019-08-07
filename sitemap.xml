@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://denniszy.github.io/2019/08/07/dns-over-https/</loc>
+    
+    <lastmod>2019-08-07T13:52:10.257Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://denniszy.github.io/2019/08/07/recommend-using-firefox/</loc>
     
     <lastmod>2019-08-07T13:44:40.551Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://denniszy.github.io/2019/08/07/privacy/</loc>
     
     <lastmod>2019-08-07T13:42:14.441Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://denniszy.github.io/2019/08/07/dns-over-https/</loc>
-    
-    <lastmod>2019-08-07T13:29:30.416Z</lastmod>
     
   </url>
   
