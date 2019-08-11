@@ -149,18 +149,18 @@
   };
 </script>
 
-  <meta name="description" content="FXXK the codeACM 检查全局变量和局部变量 改用int就不要用char，该用long long的时候就不要用int switch一定要用break(不熟悉就别用) 跑线性逆元和阶乘的时候，从2开始跑。 BFS要注意入队情况  Markdown 在有数学表达式的markdown文件里面不要用星号，会被解析为斜体，\cdot(点乘)，\times(叉乘)，\div(除以)。 \cdot(">
-<meta name="keywords" content="trick">
+  <meta name="description" content="整除分块 \sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20     $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1     $n/(n/i)$ $n/i$就">
+<meta name="keywords" content="algorithm,math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="FTC Warning">
-<meta property="og:url" content="https://denniszy.github.io/2019/03/09/FTC Warning/index.html">
+<meta property="og:title" content="Mobius inversion formula">
+<meta property="og:url" content="https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="FXXK the codeACM 检查全局变量和局部变量 改用int就不要用char，该用long long的时候就不要用int switch一定要用break(不熟悉就别用) 跑线性逆元和阶乘的时候，从2开始跑。 BFS要注意入队情况  Markdown 在有数学表达式的markdown文件里面不要用星号，会被解析为斜体，\cdot(点乘)，\times(叉乘)，\div(除以)。 \cdot(">
+<meta property="og:description" content="整除分块 \sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20     $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1     $n/(n/i)$ $n/i$就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-28T18:23:44.094Z">
+<meta property="og:updated_time" content="2019-08-11T17:31:14.931Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FTC Warning">
-<meta name="twitter:description" content="FXXK the codeACM 检查全局变量和局部变量 改用int就不要用char，该用long long的时候就不要用int switch一定要用break(不熟悉就别用) 跑线性逆元和阶乘的时候，从2开始跑。 BFS要注意入队情况  Markdown 在有数学表达式的markdown文件里面不要用星号，会被解析为斜体，\cdot(点乘)，\times(叉乘)，\div(除以)。 \cdot(">
+<meta name="twitter:title" content="Mobius inversion formula">
+<meta name="twitter:description" content="整除分块 \sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20     $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1     $n/(n/i)$ $n/i$就">
 
 
 
@@ -170,7 +170,7 @@
 
   
   
-  <link rel="canonical" href="https://denniszy.github.io/2019/03/09/FTC Warning/">
+  <link rel="canonical" href="https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/">
 
 
 
@@ -181,7 +181,7 @@
 </script>
 
   
-  <title>FTC Warning | Dennis's Blog</title>
+  <title>Mobius inversion formula | Dennis's Blog</title>
   
 
 
@@ -465,7 +465,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://denniszy.github.io/2019/03/09/FTC Warning/">
+    <link itemprop="mainEntityOfPage" href="https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dennis">
@@ -482,7 +482,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">FTC Warning
+          <h2 class="post-title" itemprop="name headline">Mobius inversion formula
 
               
             
@@ -508,7 +508,7 @@
                 
               
 
-              <time title="创建时间：2019-03-09 14:57:50" itemprop="dateCreated datePublished" datetime="2019-03-09T14:57:50+08:00">2019-03-09</time>
+              <time title="创建时间：2019-01-24 01:21:51" itemprop="dateCreated datePublished" datetime="2019-01-24T01:21:51+08:00">2019-01-24</time>
             </span>
           
 
@@ -523,7 +523,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-29 02:23:44" itemprop="dateModified" datetime="2019-07-29T02:23:44+08:00">2019-07-29</time>
+                <time title="修改时间：2019-08-12 01:31:14" itemprop="dateModified" datetime="2019-08-12T01:31:14+08:00">2019-08-12</time>
               </span>
             
           
@@ -537,7 +537,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/错误记录/" itemprop="url" rel="index"><span itemprop="name">错误记录</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
 
                 
                 
@@ -569,7 +569,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">225</span>
+              <span title="本文字数">2.5k</span>
             </span>
           
 
@@ -581,7 +581,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">2 分钟</span>
             </span>
           
 
@@ -600,18 +600,98 @@
       
 
       
-        <h2 id="FXXK-the-code"><a href="#FXXK-the-code" class="headerlink" title="FXXK the code"></a>FXXK the code</h2><h3 id="ACM"><a href="#ACM" class="headerlink" title="ACM"></a>ACM</h3><ul>
-<li>检查全局变量和局部变量</li>
-<li>改用int就不要用char，该用long long的时候就不要用int</li>
-<li>switch一定要用break(不熟悉就别用)</li>
-<li>跑线性逆元和阶乘的时候，从2开始跑。</li>
-<li>BFS要注意入队情况</li>
-</ul>
-<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><ul>
-<li>在有数学表达式的markdown文件里面不要用星号，会被解析为斜体，\cdot(点乘)，\times(叉乘)，\div(除以)。<script type="math/tex; mode=display">
-\cdot(点乘)，\times(叉乘)，\div(除以)</script></li>
-</ul>
-
+        <h2 id="整除分块"><a href="#整除分块" class="headerlink" title="整除分块"></a>整除分块</h2><script type="math/tex; mode=display">
+\sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">i</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">9</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">12</th>
+<th style="text-align:center">13</th>
+<th style="text-align:center">14</th>
+<th style="text-align:center">15</th>
+<th style="text-align:center">16</th>
+<th style="text-align:center">17</th>
+<th style="text-align:center">18</th>
+<th style="text-align:center">19</th>
+<th style="text-align:center">20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\lfloor \frac {n}{i}\rfloor$</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>$n/(n/i)$</p>
+<p>$n/i$就是要求的答案，$n(n/i)$就是满足大于等于答案的最大值$i_{max}$，每次根据这个范围去求就好了。$n/(n/i)=i_{max}$，就可以看成$k*(n/i)\le n$这个式子就k的最大值。</p>
+<p>$O(2\sqrt{n})$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">1</span>,r;l&lt;=n;l=r+<span class="number">1</span>)&#123;</span><br><span class="line">	r=n/(n/l);</span><br><span class="line">   ans+=(r-l+<span class="number">1</span>)*(n/l);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><h3 id="积性函数"><a href="#积性函数" class="headerlink" title="积性函数"></a>积性函数</h3><p>$\gcd(x,y)=1$ $f(xy)=f(x)*f(y)$  欧拉函数 莫比乌斯函数</p>
+<h3 id="完全积性函数"><a href="#完全积性函数" class="headerlink" title="完全积性函数"></a>完全积性函数</h3><p>$f(x\cdot y)=f(x)\cdot f(y)$  </p>
+<p>Example:  $f(x)=x$</p>
+<h3 id="狄利克雷卷积"><a href="#狄利克雷卷积" class="headerlink" title="狄利克雷卷积"></a>狄利克雷卷积</h3><p>两个数论函数</p>
+<script type="math/tex; mode=display">
+(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><h4 id="单位元"><a href="#单位元" class="headerlink" title="单位元"></a>单位元</h4><script type="math/tex; mode=display">
+\varepsilon(n)=\mu \cdot 1=\sum_{d|n}\mu(d)=[n=1]</script><script type="math/tex; mode=display">
+\varepsilon(n)= \begin{cases} 1&n=1\\ 0&else \end{cases}</script><script type="math/tex; mode=display">
+(\varepsilon*g)(n)=\sum_{d|n}\varepsilon(d)g(\frac{n}{d})=\varepsilon(1)g(\frac{n}{1})=g(n)</script><p>恒等函数 1 ：   f(x)=1</p>
+<h3 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h3><script type="math/tex; mode=display">
+\mu(n)= \begin{cases} 1&n=1\\ 0&n\text{ 含有平方因子}\\ (-1)^k&k\text{ 为 }n\text{ 的本质不同质因子个数}\\ \end{cases}</script><script type="math/tex; mode=display">
+n=p_1^{k_1}p_2^{k_2}....p_t^{k_t}</script><script type="math/tex; mode=display">
+\sum_{d|n}\mu(d)=[n=1]</script><p> 假设一个n有k个质因子</p>
+<script type="math/tex; mode=display">
+\sum_{d|n}\mu(d)=\sum_{i=0}^{k}C^i_k*(-1)^i=\sum_{i=0}^{k}C^i_k*(-1)^i*1^{k-i}=(1-1)^k=[k=0]</script><h3 id="演"><a href="#演" class="headerlink" title="演"></a>演</h3><p>设两个函数f(x) g(x)</p>
+<script type="math/tex; mode=display">
+f=f(n)=\sum_{d|n}g(d)=g*1</script><script type="math/tex; mode=display">
+f*\mu=g*1*\mu=g</script><script type="math/tex; mode=display">
+g=f*\mu</script><h4 id="两个演"><a href="#两个演" class="headerlink" title="两个演"></a>两个演</h4><script type="math/tex; mode=display">
+f(n)=\sum_{d|n}g(d)\to g(n)=\sum_{d|n}\mu(d)*f(\frac{n}{d})</script><script type="math/tex; mode=display">
+f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac{d}{n})*f(d)</script><p>下推第二个演</p>
+<p>设$k=\frac{d}{n}$</p>
+<script type="math/tex; mode=display">
+\sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{k}\mu(k)f(nk)=\sum_{k}\mu(k)\sum_{(nk)|t}g(t)=\sum_{k}\sum_{(nk)|t}\mu(k)g(t)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)</script><script type="math/tex; mode=display">
+\sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)=\sum_{t}g(t)\varepsilon(\frac{t}{n})=g(n)</script><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">primejudge</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> lim)</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(v,<span class="number">0</span>,<span class="keyword">sizeof</span> v);</span><br><span class="line">    pr=<span class="number">0</span>;</span><br><span class="line">    mu[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> tmp;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">2</span>;i&lt;=lim;++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!v[i])&#123;</span><br><span class="line">            prime[pr++]=i;</span><br><span class="line">            mu[i]=<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;pr&amp;&amp;(tmp=i*prime[j])&lt;=lim;j++)&#123;</span><br><span class="line">            v[tmp]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)&#123;</span><br><span class="line">                mu[tmp]=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            mu[tmp]=-mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h3><p>求这个值$1\le x \le$ a    $1 \le y \le b $求$gcd(x,y)=k$的种数</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^a\sum_{j=1}^b=[gcd(i,j)=k]</script><script type="math/tex; mode=display">
+\sum_{i=1}^{\lfloor \frac{a}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{b}{k} \rfloor}=[gcd(i,j)=1]</script><script type="math/tex; mode=display">
+f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac d n)*f({d})</script><p>​                                            $\to$ 函数解释 ：  f(x)为x|gcd(i,j)的个数           g(x)    gcd(i,j)=x的个数</p>
+<script type="math/tex; mode=display">
+f(m)=\lfloor \frac{a}{m}\rfloor *\lfloor \frac{b}{m}\rfloor</script><script type="math/tex; mode=display">
+g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
       
     </div>
 
@@ -649,7 +729,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://denniszy.github.io/2019/03/09/FTC Warning/" title="FTC Warning">https://denniszy.github.io/2019/03/09/FTC Warning/</a>
+    <a href="https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/" title="Mobius inversion formula">https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>ZERO</a> 许可协议。转载请注明出处！</li>
@@ -665,7 +745,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/trick/" rel="tag"><i class="fa fa-tag"></i> trick</a>
+            <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
+          
+            <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
           
         </div>
       
@@ -698,8 +780,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/24/Mobius-inversion-formula/" rel="next" title="Mobius inversion formula">
-                <i class="fa fa-chevron-left"></i> Mobius inversion formula
+              <a href="/2018/12/08/alg4/" rel="next" title="约瑟夫环问题">
+                <i class="fa fa-chevron-left"></i> 约瑟夫环问题
               </a>
             
           </div>
@@ -708,8 +790,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/10/bayes/" rel="prev" title="Bayes'theorem">
-                Bayes'theorem <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/09/FTC Warning/" rel="prev" title="FTC Warning">
+                FTC Warning <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -973,7 +1055,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FXXK-the-code"><span class="nav-number">1.</span> <span class="nav-text">FXXK the code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ACM"><span class="nav-number">1.1.</span> <span class="nav-text">ACM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markdown"><span class="nav-number">1.2.</span> <span class="nav-text">Markdown</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整除分块"><span class="nav-number">1.</span> <span class="nav-text">整除分块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">2.</span> <span class="nav-text">莫比乌斯反演</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#积性函数"><span class="nav-number">2.1.</span> <span class="nav-text">积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全积性函数"><span class="nav-number">2.2.</span> <span class="nav-text">完全积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狄利克雷卷积"><span class="nav-number">2.3.</span> <span class="nav-text">狄利克雷卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位元"><span class="nav-number">2.3.1.</span> <span class="nav-text">单位元</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫比乌斯函数"><span class="nav-number">2.4.</span> <span class="nav-text">莫比乌斯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#演"><span class="nav-number">2.5.</span> <span class="nav-text">演</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两个演"><span class="nav-number">2.5.1.</span> <span class="nav-text">两个演</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题"><span class="nav-number">2.6.</span> <span class="nav-text">解题</span></a></li></ol></li></ol></div>
             
 
           </div>

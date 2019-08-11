@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/</loc>
+    
+    <lastmod>2019-08-11T17:31:14.931Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://denniszy.github.io/2019/08/07/dns-over-https/</loc>
     
     <lastmod>2019-08-07T13:52:10.257Z</lastmod>
@@ -222,13 +229,6 @@
     <loc>https://denniszy.github.io/2018/03/22/nginx1/</loc>
     
     <lastmod>2019-04-22T16:59:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://denniszy.github.io/2019/01/24/math1/</loc>
-    
-    <lastmod>2019-04-22T16:59:12.000Z</lastmod>
     
   </url>
   
