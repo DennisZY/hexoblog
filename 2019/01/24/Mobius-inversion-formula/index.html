@@ -157,7 +157,7 @@
 <meta property="og:site_name" content="Dennis&#39;s Blog">
 <meta property="og:description" content="整除分块 \sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20     $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1     $n/(n/i)$ $n/i$就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-11T17:31:14.931Z">
+<meta property="og:updated_time" content="2019-08-11T18:16:21.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mobius inversion formula">
 <meta name="twitter:description" content="整除分块 \sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20     $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1     $n/(n/i)$ $n/i$就">
@@ -523,7 +523,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-12 01:31:14" itemprop="dateModified" datetime="2019-08-12T01:31:14+08:00">2019-08-12</time>
+                <time title="修改时间：2019-08-12 02:16:21" itemprop="dateModified" datetime="2019-08-12T02:16:21+08:00">2019-08-12</time>
               </span>
             
           
@@ -683,8 +683,8 @@ f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac{d}{n})*f(d)</script><p>下推第
 <p>设$k=\frac{d}{n}$</p>
 <script type="math/tex; mode=display">
 \sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{k}\mu(k)f(nk)=\sum_{k}\mu(k)\sum_{(nk)|t}g(t)=\sum_{k}\sum_{(nk)|t}\mu(k)g(t)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)</script><script type="math/tex; mode=display">
-\sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)=\sum_{t}g(t)\varepsilon(\frac{t}{n})=g(n)</script><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">primejudge</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> lim)</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(v,<span class="number">0</span>,<span class="keyword">sizeof</span> v);</span><br><span class="line">    pr=<span class="number">0</span>;</span><br><span class="line">    mu[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> tmp;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">2</span>;i&lt;=lim;++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!v[i])&#123;</span><br><span class="line">            prime[pr++]=i;</span><br><span class="line">            mu[i]=<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;pr&amp;&amp;(tmp=i*prime[j])&lt;=lim;j++)&#123;</span><br><span class="line">            v[tmp]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)&#123;</span><br><span class="line">                mu[tmp]=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            mu[tmp]=-mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h3><p>求这个值$1\le x \le$ a    $1 \le y \le b $求$gcd(x,y)=k$的种数</p>
+\sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)=\sum_{t}g(t)\varepsilon(\frac{t}{n})=g(n)</script><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">primejudge</span><span class="params">(<span class="keyword">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(v, <span class="number">0</span>, <span class="keyword">sizeof</span> v);</span><br><span class="line">    pr = <span class="number">0</span>;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= lim; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!v[i]) &#123;</span><br><span class="line">            prime[pr++] = i;</span><br><span class="line">            v[i] = i;</span><br><span class="line">            mu[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; pr &amp;&amp; lim / i &gt;= prime[j]; j++) &#123;</span><br><span class="line">            v[i * prime[j]] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (v[i] &lt;= prime[j])<span class="keyword">break</span>;</span><br><span class="line">            mu[i * prime[j]] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><p>求这个值$1\le x \le$ a    $1 \le y \le b $求$gcd(x,y)=k$的种数</p>
 <script type="math/tex; mode=display">
 \sum_{i=1}^a\sum_{j=1}^b=[gcd(i,j)=k]</script><script type="math/tex; mode=display">
 \sum_{i=1}^{\lfloor \frac{a}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{b}{k} \rfloor}=[gcd(i,j)=1]</script><script type="math/tex; mode=display">
@@ -865,7 +865,7 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1055,7 +1055,7 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整除分块"><span class="nav-number">1.</span> <span class="nav-text">整除分块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">2.</span> <span class="nav-text">莫比乌斯反演</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#积性函数"><span class="nav-number">2.1.</span> <span class="nav-text">积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全积性函数"><span class="nav-number">2.2.</span> <span class="nav-text">完全积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狄利克雷卷积"><span class="nav-number">2.3.</span> <span class="nav-text">狄利克雷卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位元"><span class="nav-number">2.3.1.</span> <span class="nav-text">单位元</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫比乌斯函数"><span class="nav-number">2.4.</span> <span class="nav-text">莫比乌斯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#演"><span class="nav-number">2.5.</span> <span class="nav-text">演</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两个演"><span class="nav-number">2.5.1.</span> <span class="nav-text">两个演</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题"><span class="nav-number">2.6.</span> <span class="nav-text">解题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整除分块"><span class="nav-number">1.</span> <span class="nav-text">整除分块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">2.</span> <span class="nav-text">莫比乌斯反演</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#积性函数"><span class="nav-number">2.1.</span> <span class="nav-text">积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全积性函数"><span class="nav-number">2.2.</span> <span class="nav-text">完全积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狄利克雷卷积"><span class="nav-number">2.3.</span> <span class="nav-text">狄利克雷卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位元"><span class="nav-number">2.3.1.</span> <span class="nav-text">单位元</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫比乌斯函数"><span class="nav-number">2.4.</span> <span class="nav-text">莫比乌斯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#演"><span class="nav-number">2.5.</span> <span class="nav-text">演</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两个演"><span class="nav-number">2.5.1.</span> <span class="nav-text">两个演</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题"><span class="nav-number">3.</span> <span class="nav-text">解题</span></a></li></ol></div>
             
 
           </div>
@@ -1097,7 +1097,7 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">80k</span>
+    <span title="站点总字数">81k</span>
   
 
   
@@ -1108,7 +1108,7 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:13</span>
+    <span title="站点阅读时长">1:14</span>
   
 </div>
 
