@@ -149,18 +149,18 @@
   };
 </script>
 
-  <meta name="description" content="传送门 题意给你n个点，m条边，每个点的加油站的油的价格不同，每段路要消耗d升油。给你q个询问，你的油箱最大容量为c，从s到t的最少花费。 题解优先队列bfs，每个状态有两种转移的方式。  如果当前状态加一升油比这个状态多一升的状态所花费更少，就转移过去，有点绕啊。看看代码8。 12if(d[u][fuel+1]&amp;gt;d[u][fuel]+p[u])	d[u][fuel+1]=d[u][fuel">
-<meta name="keywords" content="ACM,BFS">
+  <meta name="description" content="github repo 前端用法官方给出的用法  下载整个仓库，然后从 docs 文件夹中打开index.html 通过访问 https://ziahamza.github.io/webui-aria2来下载文件 在项目文件夹内通过node node-server.js来创建一个服务  后端用法通过以下命令启动aria2 1aria2c --enable-rpc --rpc-listen-all">
+<meta name="keywords" content="linux,aria2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[POJ3635]Full Tank题解报告">
-<meta property="og:url" content="https://denniszy.github.io/2019/04/22/POJ3635/index.html">
+<meta property="og:title" content="WebUI-Aria2">
+<meta property="og:url" content="https://denniszy.github.io/2019/08/18/webui-aria2/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="传送门 题意给你n个点，m条边，每个点的加油站的油的价格不同，每段路要消耗d升油。给你q个询问，你的油箱最大容量为c，从s到t的最少花费。 题解优先队列bfs，每个状态有两种转移的方式。  如果当前状态加一升油比这个状态多一升的状态所花费更少，就转移过去，有点绕啊。看看代码8。 12if(d[u][fuel+1]&amp;gt;d[u][fuel]+p[u])	d[u][fuel+1]=d[u][fuel">
+<meta property="og:description" content="github repo 前端用法官方给出的用法  下载整个仓库，然后从 docs 文件夹中打开index.html 通过访问 https://ziahamza.github.io/webui-aria2来下载文件 在项目文件夹内通过node node-server.js来创建一个服务  后端用法通过以下命令启动aria2 1aria2c --enable-rpc --rpc-listen-all">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-22T18:06:30.000Z">
+<meta property="og:updated_time" content="2019-08-17T16:38:15.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[POJ3635]Full Tank题解报告">
-<meta name="twitter:description" content="传送门 题意给你n个点，m条边，每个点的加油站的油的价格不同，每段路要消耗d升油。给你q个询问，你的油箱最大容量为c，从s到t的最少花费。 题解优先队列bfs，每个状态有两种转移的方式。  如果当前状态加一升油比这个状态多一升的状态所花费更少，就转移过去，有点绕啊。看看代码8。 12if(d[u][fuel+1]&amp;gt;d[u][fuel]+p[u])	d[u][fuel+1]=d[u][fuel">
+<meta name="twitter:title" content="WebUI-Aria2">
+<meta name="twitter:description" content="github repo 前端用法官方给出的用法  下载整个仓库，然后从 docs 文件夹中打开index.html 通过访问 https://ziahamza.github.io/webui-aria2来下载文件 在项目文件夹内通过node node-server.js来创建一个服务  后端用法通过以下命令启动aria2 1aria2c --enable-rpc --rpc-listen-all">
 
 
 
@@ -170,7 +170,7 @@
 
   
   
-  <link rel="canonical" href="https://denniszy.github.io/2019/04/22/POJ3635/">
+  <link rel="canonical" href="https://denniszy.github.io/2019/08/18/webui-aria2/">
 
 
 
@@ -181,7 +181,7 @@
 </script>
 
   
-  <title>[POJ3635]Full Tank题解报告 | Dennis's Blog</title>
+  <title>WebUI-Aria2 | Dennis's Blog</title>
   
 
 
@@ -465,7 +465,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://denniszy.github.io/2019/04/22/POJ3635/">
+    <link itemprop="mainEntityOfPage" href="https://denniszy.github.io/2019/08/18/webui-aria2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dennis">
@@ -482,7 +482,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">[POJ3635]Full Tank题解报告
+          <h2 class="post-title" itemprop="name headline">WebUI-Aria2
 
               
             
@@ -508,23 +508,13 @@
                 
               
 
-              <time title="创建时间：2019-04-22 23:04:05" itemprop="dateCreated datePublished" datetime="2019-04-22T23:04:05+08:00">2019-04-22</time>
+              <time title="创建时间：2019-08-18 00:13:36 / 修改时间：00:38:15" itemprop="dateCreated datePublished" datetime="2019-08-18T00:13:36+08:00">2019-08-18</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-23 02:06:30" itemprop="dateModified" datetime="2019-04-23T02:06:30+08:00">2019-04-23</time>
-              </span>
             
           
 
@@ -537,7 +527,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/题解报告/" itemprop="url" rel="index"><span itemprop="name">题解报告</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/折腾笔记/" itemprop="url" rel="index"><span itemprop="name">折腾笔记</span></a></span>
 
                 
                 
@@ -569,7 +559,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.8k</span>
+              <span title="本文字数">634</span>
             </span>
           
 
@@ -581,7 +571,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">3 分钟</span>
+              <span title="阅读时长">1 分钟</span>
             </span>
           
 
@@ -600,19 +590,20 @@
       
 
       
-        <p><a href="http://poj.org/problem?id=3635" target="_blank" rel="noopener">传送门</a></p>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给你n个点，m条边，每个点的加油站的油的价格不同，每段路要消耗d升油。给你q个询问，你的油箱最大容量为c，从s到t的最少花费。</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>优先队列bfs，每个状态有两种转移的方式。</p>
-<ol>
-<li><p>如果当前状态加一升油比这个状态多一升的状态所花费更少，就转移过去，有点绕啊。看看代码8。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(d[u][fuel+<span class="number">1</span>]&gt;d[u][fuel]+p[u])</span><br><span class="line">	d[u][fuel+<span class="number">1</span>]=d[u][fuel]+p[u];</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果在这个点有能够走的路就路上的另外一个点去转移。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(d[v][fuel-z]&gt;d[u][fuel])</span><br><span class="line">	d[v][fuel-z]&gt;d[u][fuel];</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">1010</span>][<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> Head[<span class="number">1010</span>],nxt[<span class="number">20020</span>],ver[<span class="number">20020</span>],w[<span class="number">20020</span>];</span><br><span class="line"><span class="keyword">int</span> p[<span class="number">1010</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> cost,u,fuel;</span><br><span class="line">    node(<span class="keyword">int</span> _cost=<span class="number">0</span>,<span class="keyword">int</span> _u=<span class="number">0</span>,<span class="keyword">int</span> _fuel=<span class="number">0</span>):cost(_cost),u(_u),fuel(_fuel)&#123;&#125;;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp;x)<span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cost&gt;x.cost;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> tot;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> d)</span></span>&#123;</span><br><span class="line">    ver[tot]=v;</span><br><span class="line">    w[tot]=d;</span><br><span class="line">    nxt[tot]=Head[u];</span><br><span class="line">    Head[u]=tot++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">bool</span> v[<span class="number">1010</span>][<span class="number">110</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> c,<span class="keyword">int</span> s,<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">    priority_queue&lt;node&gt;q;</span><br><span class="line">    <span class="built_in">memset</span>(d,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> d);</span><br><span class="line">    <span class="built_in">memset</span>(v,<span class="number">0</span>,<span class="keyword">sizeof</span> v);</span><br><span class="line">    q.push(node(<span class="number">0</span>,s,<span class="number">0</span>));</span><br><span class="line">    d[s][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(q.size())&#123;</span><br><span class="line">        node tmp = q.top();q.pop();</span><br><span class="line">        <span class="keyword">if</span>(tmp.u==t)<span class="keyword">return</span> tmp.cost;</span><br><span class="line">        <span class="keyword">int</span> city = tmp.u;</span><br><span class="line">        <span class="keyword">int</span> fuel = tmp.fuel;</span><br><span class="line">        <span class="keyword">if</span>(v[city][fuel])<span class="keyword">continue</span>;</span><br><span class="line">        v[city][fuel]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(fuel&lt;c&amp;&amp;d[city][fuel+<span class="number">1</span>]&gt;d[city][fuel]+p[city])&#123;</span><br><span class="line">            d[city][fuel+<span class="number">1</span>]=d[city][fuel]+p[city];</span><br><span class="line">            q.push(node(d[city][fuel+<span class="number">1</span>],city,fuel+<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=Head[city],v;i;i=nxt[i])&#123;</span><br><span class="line">            v=ver[i];</span><br><span class="line">            <span class="keyword">if</span>(w[i]&lt;=fuel&amp;&amp;d[v][tmp.fuel-w[i]]&gt;d[city][tmp.fuel])&#123;</span><br><span class="line">                d[v][tmp.fuel-w[i]]=d[city][tmp.fuel];</span><br><span class="line">                q.push(node(tmp.cost,v,fuel-w[i]));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("out.txt","w",stdout);</span></span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m))&#123;</span><br><span class="line">        tot=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,p+i);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,x,y,z;i&lt;=m;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;x,&amp;y,&amp;z);</span><br><span class="line">            add(x,y,z);</span><br><span class="line">            add(y,x,z);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> q;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;q);</span><br><span class="line">        <span class="keyword">while</span>(q--)&#123;</span><br><span class="line">            <span class="keyword">int</span> c,s,t;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;c,&amp;s,&amp;t);</span><br><span class="line">            <span class="keyword">int</span> ans=bfs(c,s,t);</span><br><span class="line">            <span class="keyword">if</span>(ans==<span class="number">-1</span>)&#123;</span><br><span class="line">                <span class="built_in">puts</span>(<span class="string">"impossible"</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><p>在用优先队列bfs的时候，虽然维护了像普通bfs那样的有序，但是还是有点不同的。不要因为它是优先队列就猛地迈大步，还是要像普通bfs一样一步一步地走，不能迈大的步伐。</p>
+        <p><a href="https://github.com/ziahamza/webui-aria2" target="_blank" rel="noopener">github repo</a></p>
+<h3 id="前端用法"><a href="#前端用法" class="headerlink" title="前端用法"></a>前端用法</h3><p>官方给出的用法</p>
+<ul>
+<li>下载整个仓库，然后从 <code>docs</code> 文件夹中打开index.html</li>
+<li>通过访问 <a href="https://ziahamza.github.io/webui-aria2来下载文件" target="_blank" rel="noopener">https://ziahamza.github.io/webui-aria2来下载文件</a></li>
+<li>在项目文件夹内通过<code>node node-server.js</code>来创建一个服务</li>
+</ul>
+<h3 id="后端用法"><a href="#后端用法" class="headerlink" title="后端用法"></a>后端用法</h3><p>通过以下命令启动aria2</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">aria2c</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">enable</span><span class="literal">-</span><span class="comment">rpc</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">rpc</span><span class="literal">-</span><span class="comment">listen</span><span class="literal">-</span><span class="comment">all</span></span><br></pre></td></tr></table></figure>
+<p>因为默认端口为6800，如果是部署在云端服务器的话，可以通过配置文件更改端口，或者在服务器商开启特定端口，使得服务正常使用。</p>
+<h3 id="将aria2设置为开机自启"><a href="#将aria2设置为开机自启" class="headerlink" title="将aria2设置为开机自启"></a>将aria2设置为开机自启</h3><p>创建/修改文件<code>/lib/systemd/system/aria2.service</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description= aria2</span><br><span class="line">After=network.target</span><br><span class="line"> </span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/aria2c --conf-path=***************</span><br><span class="line">ExecStop=/bin/kill $MAINPID</span><br><span class="line">RestartSec=always</span><br><span class="line"> </span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">systemctl</span> <span class="selector-tag">enable</span> <span class="selector-tag">aria2</span><span class="selector-class">.service</span></span><br><span class="line"><span class="selector-tag">systemctl</span> <span class="selector-tag">start</span> <span class="selector-tag">aria2</span><span class="selector-class">.service</span></span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果你是通过https访问的话，aria2的rpc服务可能也需要开启SSL/TLS加密，我是直接用网站的https的证书就ojbk了。</p>
 
       
     </div>
@@ -651,7 +642,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://denniszy.github.io/2019/04/22/POJ3635/" title="[POJ3635]Full Tank题解报告">https://denniszy.github.io/2019/04/22/POJ3635/</a>
+    <a href="https://denniszy.github.io/2019/08/18/webui-aria2/" title="WebUI-Aria2">https://denniszy.github.io/2019/08/18/webui-aria2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>ZERO</a> 许可协议。转载请注明出处！</li>
@@ -667,9 +658,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/ACM/" rel="tag"><i class="fa fa-tag"></i> ACM</a>
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
           
-            <a href="/tags/BFS/" rel="tag"><i class="fa fa-tag"></i> BFS</a>
+            <a href="/tags/aria2/" rel="tag"><i class="fa fa-tag"></i> aria2</a>
           
         </div>
       
@@ -702,8 +693,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/19/2019huagong/" rel="next" title="20190413华工赛 题解报告">
-                <i class="fa fa-chevron-left"></i> 20190413华工赛 题解报告
+              <a href="/2019/08/16/Newton's-method/" rel="next" title="牛顿迭代法">
+                <i class="fa fa-chevron-left"></i> 牛顿迭代法
               </a>
             
           </div>
@@ -711,10 +702,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/23/POJ3085/" rel="prev" title="[POJ3085]Nightmare Ⅱ 题解报告">
-                [POJ3085]Nightmare Ⅱ 题解报告 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -979,7 +966,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Note"><span class="nav-number">4.</span> <span class="nav-text">Note</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端用法"><span class="nav-number">1.</span> <span class="nav-text">前端用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后端用法"><span class="nav-number">2.</span> <span class="nav-text">后端用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将aria2设置为开机自启"><span class="nav-number">3.</span> <span class="nav-text">将aria2设置为开机自启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">4.</span> <span class="nav-text">注意</span></a></li></ol></div>
             
 
           </div>

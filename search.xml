@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[WebUI-Aria2]]></title>
+    <url>%2F2019%2F08%2F18%2Fwebui-aria2%2F</url>
+    <content type="text"><![CDATA[github repo 前端用法官方给出的用法 下载整个仓库，然后从 docs 文件夹中打开index.html 通过访问 https://ziahamza.github.io/webui-aria2来下载文件 在项目文件夹内通过node node-server.js来创建一个服务 后端用法通过以下命令启动aria2 1aria2c --enable-rpc --rpc-listen-all 因为默认端口为6800，如果是部署在云端服务器的话，可以通过配置文件更改端口，或者在服务器商开启特定端口，使得服务正常使用。 将aria2设置为开机自启创建/修改文件/lib/systemd/system/aria2.service 1234567891011[Unit]Description= aria2After=network.target [Service]ExecStart=/usr/bin/aria2c --conf-path=***************ExecStop=/bin/kill $MAINPIDRestartSec=always [Install]WantedBy=multi-user.target 12systemctl enable aria2.servicesystemctl start aria2.service 注意如果你是通过https访问的话，aria2的rpc服务可能也需要开启SSL/TLS加密，我是直接用网站的https的证书就ojbk了。]]></content>
+      <categories>
+        <category>折腾笔记</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>aria2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[牛顿迭代法]]></title>
     <url>%2F2019%2F08%2F16%2FNewton's-method%2F</url>
     <content type="text"><![CDATA[为什么会牛顿迭代法伽罗瓦用群论证明了高于四次的方程不存在求根公式，那么需要一种快速求方程根的做法了。 牛顿迭代法是求方程根的重要方法之一，其最大优点是在方程的单根附近具有平方收敛，比二分求根快了很door。 牛顿迭代的原理随便选取一个点，做函数的切线，你可以计算出这条切线与x轴上的交点的x坐标，显然是要靠近根了，做多几遍就会越靠近了。 牛顿迭代的公式上面的描述，先选取一个$x_0$，做切线找与x轴上的交点，$x_1=x_0-\frac{f(x_0)}{f’(x_0)}$，也就是按照$x_i=x_{i-1}-\frac{f(x_{i-1})}{f’(x_{i-1})}$一直迭代，可以按照精度迭代，也可以自定数量迭代。 牛顿迭代适用范围 只能用来求方程的一个根，可导即可。 多根函数可能会出大锅，而且对初始值有要求 实例开平方12345678double sqrt(double x)&#123; double ans=x*0.5; while (abs(ans*ans-x)&gt;1e-7) &#123; ans-=(ans*ans-x)/(2*ans); &#125; return x0;&#125; exp对于$e^b=x$，我们需要求x时，你可以设函数为$y=x-e^b$，但你先不正要求这个$e^b$吗？所以你需要把函数设成$y=ln(x)-b$来做牛顿迭代。 设函数为$y=\ln(x)-b$，求得根时，我们就知道$e^x$的值。]]></content>
@@ -30,8 +42,8 @@
         <category>安全</category>
       </categories>
       <tags>
-        <tag>browser</tag>
         <tag>privacy</tag>
+        <tag>browser</tag>
       </tags>
   </entry>
   <entry>
