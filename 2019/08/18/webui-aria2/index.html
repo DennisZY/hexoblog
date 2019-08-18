@@ -157,7 +157,7 @@
 <meta property="og:site_name" content="Dennis&#39;s Blog">
 <meta property="og:description" content="github repo 前端用法官方给出的用法  下载整个仓库，然后从 docs 文件夹中打开index.html 通过访问 https://ziahamza.github.io/webui-aria2来下载文件 在项目文件夹内通过node node-server.js来创建一个服务  后端用法通过以下命令启动aria2 1aria2c --enable-rpc --rpc-listen-all">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-17T16:38:15.971Z">
+<meta property="og:updated_time" content="2019-08-18T05:56:59.317Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebUI-Aria2">
 <meta name="twitter:description" content="github repo 前端用法官方给出的用法  下载整个仓库，然后从 docs 文件夹中打开index.html 通过访问 https://ziahamza.github.io/webui-aria2来下载文件 在项目文件夹内通过node node-server.js来创建一个服务  后端用法通过以下命令启动aria2 1aria2c --enable-rpc --rpc-listen-all">
@@ -508,7 +508,7 @@
                 
               
 
-              <time title="创建时间：2019-08-18 00:13:36 / 修改时间：00:38:15" itemprop="dateCreated datePublished" datetime="2019-08-18T00:13:36+08:00">2019-08-18</time>
+              <time title="创建时间：2019-08-18 00:13:36 / 修改时间：13:56:59" itemprop="dateCreated datePublished" datetime="2019-08-18T00:13:36+08:00">2019-08-18</time>
             </span>
           
 
@@ -559,7 +559,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">634</span>
+              <span title="本文字数">1.1k</span>
             </span>
           
 
@@ -604,6 +604,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description= aria2</span><br><span class="line">After=network.target</span><br><span class="line"> </span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/usr/bin/aria2c --conf-path=***************</span><br><span class="line">ExecStop=/bin/kill $MAINPID</span><br><span class="line">RestartSec=always</span><br><span class="line"> </span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">systemctl</span> <span class="selector-tag">enable</span> <span class="selector-tag">aria2</span><span class="selector-class">.service</span></span><br><span class="line"><span class="selector-tag">systemctl</span> <span class="selector-tag">start</span> <span class="selector-tag">aria2</span><span class="selector-class">.service</span></span><br></pre></td></tr></table></figure>
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果你是通过https访问的话，aria2的rpc服务可能也需要开启SSL/TLS加密，我是直接用网站的https的证书就ojbk了。</p>
+<h3 id="aria2-bt下载加速"><a href="#aria2-bt下载加速" class="headerlink" title="aria2 bt下载加速"></a>aria2 bt下载加速</h3><p>在<code>aria2.conf</code>的目录内运行这个sh文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">killall aria2c</span><br><span class="line">list=`wget -qO- https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt|awk NF|sed <span class="string">":a;N;s/\n/,/g;ta"</span>`</span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"`grep "</span>bt-tracker<span class="string">" ./aria2.conf`"</span> ]; <span class="keyword">then</span></span><br><span class="line">    sed -i <span class="string">'$a bt-tracker='</span><span class="variable">$&#123;list&#125;</span> /root/.aria2/aria2.conf</span><br><span class="line">    <span class="built_in">echo</span> add......</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    sed -i <span class="string">"s@bt-tracker.*@bt-tracker=<span class="variable">$list</span>@g"</span> ./aria2.conf</span><br><span class="line">    <span class="built_in">echo</span> update......</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>如果无法运行请给它改为可运行文件</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x ./trackers-<span class="keyword">list</span>-aria2.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -966,7 +970,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端用法"><span class="nav-number">1.</span> <span class="nav-text">前端用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后端用法"><span class="nav-number">2.</span> <span class="nav-text">后端用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将aria2设置为开机自启"><span class="nav-number">3.</span> <span class="nav-text">将aria2设置为开机自启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">4.</span> <span class="nav-text">注意</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端用法"><span class="nav-number">1.</span> <span class="nav-text">前端用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后端用法"><span class="nav-number">2.</span> <span class="nav-text">后端用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将aria2设置为开机自启"><span class="nav-number">3.</span> <span class="nav-text">将aria2设置为开机自启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">4.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aria2-bt下载加速"><span class="nav-number">5.</span> <span class="nav-text">aria2 bt下载加速</span></a></li></ol></div>
             
 
           </div>
@@ -1019,7 +1023,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:14</span>
+    <span title="站点阅读时长">1:15</span>
   
 </div>
 
