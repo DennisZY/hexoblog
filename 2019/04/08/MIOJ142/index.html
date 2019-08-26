@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="题意$$a{x_1}^3+b{x_2}^3+c{x_3}^3=d{x_4}^3+e*{x_5}^3$$ 给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$O(n^3)$，先把左边的全部数值给暴力出来，再做右边的数">
+  <meta name="description" content="题意$$a\times{x_1}^3+b\times{x_2}^3+c\times{x_3}^3=d\times{x_4}^3+e\times{x_5}^3$$ 给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$">
 <meta name="keywords" content="MITM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MIOJ_142_数学等式题解报告">
 <meta property="og:url" content="https://denniszy.github.io/2019/04/08/MIOJ142/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="题意$$a{x_1}^3+b{x_2}^3+c{x_3}^3=d{x_4}^3+e*{x_5}^3$$ 给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$O(n^3)$，先把左边的全部数值给暴力出来，再做右边的数">
+<meta property="og:description" content="题意$$a\times{x_1}^3+b\times{x_2}^3+c\times{x_3}^3=d\times{x_4}^3+e\times{x_5}^3$$ 给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T06:30:44.529Z">
+<meta property="og:updated_time" content="2019-08-26T07:02:23.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIOJ_142_数学等式题解报告">
-<meta name="twitter:description" content="题意$$a{x_1}^3+b{x_2}^3+c{x_3}^3=d{x_4}^3+e*{x_5}^3$$ 给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$O(n^3)$，先把左边的全部数值给暴力出来，再做右边的数">
+<meta name="twitter:description" content="题意$$a\times{x_1}^3+b\times{x_2}^3+c\times{x_3}^3=d\times{x_4}^3+e\times{x_5}^3$$ 给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$">
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
   <link rel="canonical" href="https://denniszy.github.io/2019/04/08/MIOJ142/">
 
@@ -329,7 +329,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:30:44" itemprop="dateModified" datetime="2019-08-26T14:30:44+08:00">2019-08-26</time>
+                <time title="修改时间：2019-08-26 15:02:23" itemprop="dateModified" datetime="2019-08-26T15:02:23+08:00">2019-08-26</time>
               </span>
             
           
@@ -387,7 +387,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>$$<br>a<em>{x_1}^3+b</em>{x_2}^3+c<em>{x_3}^3=d</em>{x_4}^3+e*{x_5}^3<br>$$</p>
+        <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>$$<br>a\times{x_1}^3+b\times{x_2}^3+c\times{x_3}^3=d\times{x_4}^3+e\times{x_5}^3<br>$$</p>
 <p>给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>无脑暴力$O(n^5)$是不行的。</p>
 <p>优雅的暴力$O(n^3)$，先把左边的全部数值给暴力出来，再做右边的数，看看有没有数在左边的数值中出现过。我写了二分查找，好像也可以直接计数。</p>
