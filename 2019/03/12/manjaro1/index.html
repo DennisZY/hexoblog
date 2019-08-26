@@ -4,142 +4,49 @@
 
 
 
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
-
-
-
-
-
-
-
-
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=7.2.0">
-
-
-  <link rel="mask-icon" href="/images/favicon.png?v=7.2.0" color="#222">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
-
-
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-    
-    
-      
-      
-      
-      
-        
-        
-      
-    
-    
-    
-<link rel="stylesheet" href="https://fonts.loli.net/css?family=&display=swap&subset=latin,latin-ext">
-  
-
-
-
-
-
-
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Fira Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-
-  
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
   <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
 
 
-
-
-
-<script id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '7.2.0',
+    version: '7.3.0',
+    exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
-    search: {
-      root: '/',
-      path: 'search.xml'
-    },
-    tabs: true,
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
@@ -157,36 +64,28 @@
 <meta property="og:site_name" content="Dennis&#39;s Blog">
 <meta property="og:description" content="过度过程ubuntu-&amp;gt;deepin-&amp;gt;manjaro-deepin-&amp;gt;manjaro kde 在deepin过度到manjaro-deepindeepin的dde有丶好用（其实是不想 去重新熟悉一个新的环境，例如KDE）真香。 在windows下烧U盘 要用refus，要用DD模式烧。用Universal USB Installer烧的话，会无法引导。 学校的drcom会占用X">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T15:31:38.000Z">
+<meta property="og:updated_time" content="2019-08-26T06:30:28.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="manjaro折腾记">
 <meta name="twitter:description" content="过度过程ubuntu-&amp;gt;deepin-&amp;gt;manjaro-deepin-&amp;gt;manjaro kde 在deepin过度到manjaro-deepindeepin的dde有丶好用（其实是不想 去重新熟悉一个新的环境，例如KDE）真香。 在windows下烧U盘 要用refus，要用DD模式烧。用Universal USB Installer烧的话，会无法引导。 学校的drcom会占用X">
-
-
-
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
-
-
-
-  
-  
   <link rel="canonical" href="https://denniszy.github.io/2019/03/12/manjaro1/">
 
 
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
   };
 </script>
 
-  
   <title>manjaro折腾记 | Dennis's Blog</title>
+  <meta name="generator" content="Hexo 3.9.0">
   
-
-
-
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=116145543"></script>
   <script>
     var host = window.location.hostname;
@@ -205,10 +104,8 @@
 
 
 
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -217,7 +114,7 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .logo,
   .use-motion .site-title,
@@ -234,29 +131,20 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container use-motion">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
-    
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Dennis's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-    
   </div>
 
   <div class="site-nav-toggle">
@@ -269,202 +157,139 @@
 </div>
 
 
-
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
+  <ul id="menu" class="menu">
+      
+      
       
         
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
+        <li class="menu-item menu-item-home">
       
-    
-
     
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
     
 
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
     
 
     <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
     
 
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
     
 
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-sitemap">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
     
 
     <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-commonweal">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-commonweal">
+      
     
 
     <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
 
-      
-      
-        <li class="menu-item menu-item-search">
-          <a href="javascript:;" class="popup-trigger">
-          
-            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
 
+</div>
+<div class="search-pop-overlay"></div>
 
-
+  </div>
 </div>
     </header>
 
     
-  
-  
+  <div class="reading-progress-bar"></div>
 
-  
-
-  <a href="https://github.com/yourname" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
-
+  <a href="https://github.com/denniszy" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
             
 
-          
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
-      
-
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  
-    <div class="reading-progress-bar"></div>
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="https://denniszy.github.io/2019/03/12/manjaro1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -476,33 +301,18 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Dennis's Blog">
     </span>
-
-    
       <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">manjaro折腾记
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">manjaro折腾记
-
-              
-            
-          </h2>
-        
+          
+        </h2>
 
         <div class="post-meta">
-          
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
@@ -511,8 +321,6 @@
               <time title="创建时间：2019-03-12 08:42:55" itemprop="dateCreated datePublished" datetime="2019-03-12T08:42:55+08:00">2019-03-12</time>
             </span>
           
-
-          
             
 
             
@@ -520,22 +328,16 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-01 23:31:38" itemprop="dateModified" datetime="2019-05-01T23:31:38+08:00">2019-05-01</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-26 14:30:28" itemprop="dateModified" datetime="2019-08-26T14:30:28+08:00">2019-08-26</time>
               </span>
             
-          
-
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/折腾笔记/" itemprop="url" rel="index"><span itemprop="name">折腾笔记</span></a></span>
 
@@ -546,50 +348,38 @@
           
 
           
-          
-
-          
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
-                 阅读次数： 
-                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
               </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
-
-          
-
           <br>
-          
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">1.9k</span>
+              <span>1.9k</span>
             </span>
           
-
-          
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">2 分钟</span>
+              <span>2 分钟</span>
             </span>
-          
-
           
 
         </div>
       </header>
-    
 
     
     
@@ -597,29 +387,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <h2 id="过度过程"><a href="#过度过程" class="headerlink" title="过度过程"></a>过度过程</h2><p>ubuntu-&gt;deepin-&gt;manjaro-deepin-&gt;manjaro kde</p>
 <h2 id="在deepin过度到manjaro-deepin"><a href="#在deepin过度到manjaro-deepin" class="headerlink" title="在deepin过度到manjaro-deepin"></a>在deepin过度到manjaro-deepin</h2><p>deepin的dde有丶好用<del>（其实是不想 去重新熟悉一个新的环境，例如KDE）</del>真香。</p>
 <h2 id="在windows下烧U盘"><a href="#在windows下烧U盘" class="headerlink" title="在windows下烧U盘"></a>在windows下烧U盘</h2><p> 要用<a href="https://rufus.ie/" target="_blank" rel="noopener">refus</a>，要用DD模式烧。用Universal USB Installer烧的话，会无法引导。</p>
 <p>学校的drcom会占用XXshellXXX.dll，忘记具体名称了，会导致refus使用不了，关了就完事</p>
 <h2 id="源"><a href="#源" class="headerlink" title="源"></a>源</h2><h3 id="国内源"><a href="#国内源" class="headerlink" title="国内源"></a>国内源</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -i -c China  //改为国内源,在n弹出的框中选一个就好</span><br><span class="line">sudo pacman -Syy  //更新数据源</span><br></pre></td></tr></table></figure>
+
 <h3 id="archlinuxcn"><a href="#archlinuxcn" class="headerlink" title="archlinuxcn"></a>archlinuxcn</h3><p>修改/etc/pacman.conf，在最后添加</p>
 <p>下面选一个就行了</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch  //添加清华源</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch //添加中科大源</span><br></pre></td></tr></table></figure>
+
 <p>之后要添加PGP签名</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
+
 <p>刷新缓存</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br></pre></td></tr></table></figure>
+
 <p>我校园网用清华源能跑满带宽，中科大的不行，中科大的更新速度略快于清华。</p>
 <h2 id="安装搜狗拼音"><a href="#安装搜狗拼音" class="headerlink" title="安装搜狗拼音"></a>安装搜狗拼音</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx-im</span><br><span class="line">sudo pacman -S fcitx-configtool</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br></pre></td></tr></table></figure>
+
 <p>修改配置文件~/.xprofile</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=”@im=fcitx”</span><br></pre></td></tr></table></figure>
+
 <h2 id="其他很多都能在manjaro的添加-删除软件里面找"><a href="#其他很多都能在manjaro的添加-删除软件里面找" class="headerlink" title="其他很多都能在manjaro的添加/删除软件里面找"></a>其他很多都能在manjaro的添加/删除软件里面找</h2><p>gugugu</p>
 <h2 id="KDE"><a href="#KDE" class="headerlink" title="KDE"></a>KDE</h2><h3 id="baloo-file-extractor"><a href="#baloo-file-extractor" class="headerlink" title="baloo_file_extractor"></a>baloo_file_extractor</h3><p>就是这个家伙，总把我的CPU跑12%，用久之后占用3G的共享内存</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line">mv /usr/bin/baloo_file_extractor /usr/bin/baloo_file_extractor.orig</span><br><span class="line">ln -s /bin/<span class="literal">true</span> /usr/bin/baloo_file_extractor</span><br></pre></td></tr></table></figure>
+
 <p>这就完事</p>
 <h2 id="ibus-rime"><a href="#ibus-rime" class="headerlink" title="ibus-rime"></a>ibus-rime</h2><p>fcitx后台也好像挺费CPU的，所以也换到ibus了，rime根据github上的来配置简体中文即可（要看看文档了）</p>
 <hr>
@@ -627,126 +422,82 @@
 <hr>
 <h1 id="update-2019-05-01"><a href="#update-2019-05-01" class="headerlink" title="update : 2019-05-01"></a>update : 2019-05-01</h1><p>尝试了三个flagship版(kde,xfce,gnome)的manjaro和15.10的deepin，本来想用回deepinos的，第一次装wechat什么的都可以的，第二次装就说依赖出问题了，不愧是基于debian的啊，然后又装回来了，晕死。不愧是基于arch的manjaro，xjb装就可以，很少考虑依赖的问题。</p>
 <h2 id="ibus"><a href="#ibus" class="headerlink" title="ibus"></a>ibus</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ibus ibus-rime</span><br></pre></td></tr></table></figure>
+
 <p>修改配置文件~/.xprofile</p>
 <p>添加下面几行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=ibus</span><br><span class="line">export QT_IM_MODULE=ibus</span><br><span class="line">export XMODIFIERS=@im=ibus</span><br><span class="line">ibus-daemon -d -x</span><br></pre></td></tr></table></figure>
+
 <p>修改配置文件~/.bashrc</p>
 <p>添加下面几行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=ibus</span><br><span class="line">export XMODIFIERS=@im=ibus</span><br><span class="line">export QT_IM_MODULE=ibus</span><br></pre></td></tr></table></figure>
+
 <p>感觉操作冗余了，dalao们教一教啊。</p>
 <h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下面两行选一个就行了，第一行为curl，第二行为wget，没装的自己装一下就行。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"</span><br><span class="line">sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"</span><br></pre></td></tr></table></figure>
+
 <p>.zshrc</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ZSH_THEME</span>=<span class="string">"agnoster"</span></span><br><span class="line"><span class="attr">plugins</span>=(git autojump zsh-autosuggestions zsh-syntax-highlighting archlinux)</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
-
     
+    
+        
       
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-      <div>
         
 
-
-
-
-  
-
-
-
+<div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者： </strong>Dennis</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    
     <a href="https://denniszy.github.io/2019/03/12/manjaro1/" title="manjaro折腾记">https://denniszy.github.io/2019/03/12/manjaro1/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>ZERO</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
+</div>
 
-      </div>
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/manjaro/" rel="tag"><i class="fa fa-tag"></i> manjaro</a>
+            
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/03/10/bayes/" rel="next" title="Bayes'theorem">
+                  <i class="fa fa-chevron-left"></i> Bayes'theorem
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/03/17/mathmix/" rel="prev" title="各种数学推论">
+                  各种数学推论 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
     
-
-    <footer class="post-footer">
-      
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/manjaro/" rel="tag"><i class="fa fa-tag"></i> manjaro</a>
-          
-            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
-          
-        </div>
-      
-
-      
-      
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div class="social_share">
-            
-            
-              <div id="needsharebutton-postbottom">
-                <span class="btn">
-                  <i class="fa fa-share-alt" aria-hidden="true"></i>
-                </span>
-              </div>
-            
-          </div>
-        
-        </div>
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/03/10/bayes/" rel="next" title="Bayes'theorem">
-                <i class="fa fa-chevron-left"></i> Bayes'theorem
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/17/mathmix/" rel="prev" title="各种数学推论">
-                各种数学推论 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
   </div>
   
   
@@ -758,15 +509,11 @@
 
           </div>
           
-  
     
     <div class="comments" id="gitalk-container"></div>
   
 
-
-
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -777,46 +524,47 @@
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
-
+        
+        
+        
+        
       
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过度过程"><span class="nav-number">1.</span> <span class="nav-text">过度过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在deepin过度到manjaro-deepin"><span class="nav-number">2.</span> <span class="nav-text">在deepin过度到manjaro-deepin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在windows下烧U盘"><span class="nav-number">3.</span> <span class="nav-text">在windows下烧U盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源"><span class="nav-number">4.</span> <span class="nav-text">源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#国内源"><span class="nav-number">4.1.</span> <span class="nav-text">国内源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#archlinuxcn"><span class="nav-number">4.2.</span> <span class="nav-text">archlinuxcn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装搜狗拼音"><span class="nav-number">5.</span> <span class="nav-text">安装搜狗拼音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他很多都能在manjaro的添加-删除软件里面找"><span class="nav-number">6.</span> <span class="nav-text">其他很多都能在manjaro的添加/删除软件里面找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KDE"><span class="nav-number">7.</span> <span class="nav-text">KDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#baloo-file-extractor"><span class="nav-number">7.1.</span> <span class="nav-text">baloo_file_extractor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ibus-rime"><span class="nav-number">8.</span> <span class="nav-text">ibus-rime</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#updata：2019-04-06"><span class="nav-number"></span> <span class="nav-text">updata：2019-04-06</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#update-2019-05-01"><span class="nav-number"></span> <span class="nav-text">update : 2019-05-01</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ibus"><span class="nav-number">1.</span> <span class="nav-text">ibus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-zsh"><span class="nav-number">2.</span> <span class="nav-text">oh-my-zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  
-    <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Dennis">
-  
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Dennis">
   <p class="site-author-name" itemprop="name">Dennis</p>
-  <div class="site-description motion-element" itemprop="description">Pigeon's blog.</div>
+  <div class="site-description" itemprop="description">Pigeon's blog.</div>
 </div>
-
-
   <nav class="site-state motion-element">
-    
       <div class="site-state-item site-state-posts">
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-
     
       
       
@@ -844,12 +592,12 @@
         
           
         
-        <span class="site-state-item-count">8</span>
+          
+        
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
-    
-
     
       
       
@@ -921,21 +669,12 @@
       </div>
     
   </nav>
-
-
-
   <div class="feed-link motion-element">
     <a href="/atom.xml" rel="alternate">
       <i class="fa fa-rss"></i>RSS
     </a>
   </div>
-
-
-
-
-
   <div class="links-of-author motion-element">
-    
       <span class="links-of-author-item">
       
       
@@ -948,29 +687,19 @@
       </span>
     
   </div>
-
-
-
   <div class="cc-license motion-element" itemprop="license">
-  
-  
     
   
-  
-  
-    <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-zero.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
-
-
-  <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+  <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa  fa-fw fa-link"></i>
+      <i class="fa fa-fw fa-link"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
-      
         <li class="links-of-blogroll-item">
           <a href="https://yycoderape.github.io" title="https://yycoderape.github.io" rel="noopener" target="_blank">YYcoder</a>
         </li>
@@ -986,37 +715,10 @@
     </ul>
   </div>
 
-
-          
-          
-        </div>
       </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过度过程"><span class="nav-number">1.</span> <span class="nav-text">过度过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在deepin过度到manjaro-deepin"><span class="nav-number">2.</span> <span class="nav-text">在deepin过度到manjaro-deepin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在windows下烧U盘"><span class="nav-number">3.</span> <span class="nav-text">在windows下烧U盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源"><span class="nav-number">4.</span> <span class="nav-text">源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#国内源"><span class="nav-number">4.1.</span> <span class="nav-text">国内源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#archlinuxcn"><span class="nav-number">4.2.</span> <span class="nav-text">archlinuxcn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装搜狗拼音"><span class="nav-number">5.</span> <span class="nav-text">安装搜狗拼音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他很多都能在manjaro的添加-删除软件里面找"><span class="nav-number">6.</span> <span class="nav-text">其他很多都能在manjaro的添加/删除软件里面找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KDE"><span class="nav-number">7.</span> <span class="nav-text">KDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#baloo-file-extractor"><span class="nav-number">7.1.</span> <span class="nav-text">baloo_file_extractor</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ibus-rime"><span class="nav-number">8.</span> <span class="nav-text">ibus-rime</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#updata：2019-04-06"><span class="nav-number"></span> <span class="nav-text">updata：2019-04-06</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#update-2019-05-01"><span class="nav-number"></span> <span class="nav-text">update : 2019-05-01</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ibus"><span class="nav-number">1.</span> <span class="nav-text">ibus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-zsh"><span class="nav-number">2.</span> <span class="nav-text">oh-my-zsh</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li></ol></li></ol></li></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+          <span>0%</span>
         </div>
       
 
@@ -1025,7 +727,6 @@
   <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
@@ -1036,49 +737,24 @@
     <i class="fa fa-dennis"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Dennis</span>
-
-  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    
-      <span class="post-meta-item-text">站点总字数：</span>
-    
-    <span title="站点总字数">82k</span>
-  
-
-  
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    
-    <span title="站点阅读时长">1:15</span>
-  
+    <span title="站点阅读时长">1:19</span>
 </div>
-
-
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.2.0</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.3.0</div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
     <span class="post-meta-item-icon">
       <i class="fa fa-user"></i>
     </span>
@@ -1086,11 +762,7 @@
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
     </span>
   
-
-  
     <span class="post-meta-divider">|</span>
-  
-
   
     <span class="post-meta-item-icon">
       <i class="fa fa-eye"></i>
@@ -1109,138 +781,66 @@
 
 
 
+
+
+
         
       </div>
     </footer>
-
-    
-
-    
-
-    
-  
-  
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
-  <script>
-    
-      pbOptions = {};
-      
-        pbOptions.iconStyle = "box";
-      
-        pbOptions.boxForm = "horizontal";
-      
-        pbOptions.position = "bottomCenter";
-      
-        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
-  </script>
-
-
-    
-
   </div>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  
-
-
-
-  
-    
     
   
-  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-
-
-
-
-
-  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
-  <script src="/lib/reading_progress/reading_progress.js"></script>
-
-  
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-
-
-  <script src="/js/utils.js?v=7.2.0"></script>
-
-  <script src="/js/motion.js?v=7.2.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
 
 
   
-  
-
-
-  <script src="/js/affix.js?v=7.2.0"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
-  <script src="/js/next-boot.js?v=7.2.0"></script>
-
-  
-
-  
-
-  
 
 
-  
-  
 
-  
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      
+<script type="text/x-mathjax-config">
 
   MathJax.Hub.Config({
     tex2jax: {
@@ -1249,7 +849,6 @@
       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     },
     TeX: {
-      
       equationNumbers: {
         autoNumber: 'AMS'
       }
@@ -1281,86 +880,37 @@
     }
   });
 </script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
 
     
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="/js/local-search.js?v=7.2.0"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-
-
-
+  
 
   
-    
-
-
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
-
-
-<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
-
 <script>
-  var gitalk = new Gitalk({
-    clientID: '2dd8ece88adb7c9a022e',
-    clientSecret: '75448c8d73ebcab31e7580b19e38a3a8f83e13ea',
-    repo: 'gittalk',
-    owner: 'DennisZY',
-    admin: ['DennisZY'],
-    id: md5(location.pathname),
-    
-      language: window.navigator.language || window.navigator.userLanguage,
-    
-    distractionFreeMode: 'true'
-  });
-  gitalk.render('gitalk-container');
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '2dd8ece88adb7c9a022e',
+      clientSecret: '75448c8d73ebcab31e7580b19e38a3a8f83e13ea',
+      repo: 'hexo-comment',
+      owner: 'DennisZY',
+      admin: ['DennisZY'],
+      id: '156855fe06e8e03182c062930db9fd04',
+        language: window.navigator.language || window.navigator.userLanguage,
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
 </script>
-
-
-  
 
 </body>
 </html>

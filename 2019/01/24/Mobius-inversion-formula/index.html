@@ -4,142 +4,49 @@
 
 
 
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
 
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
 
-
-
-
-
-
-
-
-
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=7.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=7.2.0">
-
-
-  <link rel="mask-icon" href="/images/favicon.png?v=7.2.0" color="#222">
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/main.css?v=7.2.0">
-
-
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-    
-    
-      
-      
-      
-      
-        
-        
-      
-    
-    
-    
-<link rel="stylesheet" href="https://fonts.loli.net/css?family=&display=swap&subset=latin,latin-ext">
-  
-
-
-
-
-
-
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Fira Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-
-  
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
   <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
 
 
-
-
-
-<script id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '7.2.0',
+    version: '7.3.0',
+    exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
     localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
-    search: {
-      root: '/',
-      path: 'search.xml'
-    },
-    tabs: true,
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
@@ -149,44 +56,36 @@
   };
 </script>
 
-  <meta name="description" content="整除分块 \sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20     $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1     $n/(n/i)$ $n/i$就">
+  <meta name="description" content="整除分块$$\sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor$$    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20    $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1   $n/(n/i)$ $n/i$就">
 <meta name="keywords" content="algorithm,math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mobius inversion formula">
 <meta property="og:url" content="https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="整除分块 \sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20     $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1     $n/(n/i)$ $n/i$就">
+<meta property="og:description" content="整除分块$$\sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor$$    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20    $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1   $n/(n/i)$ $n/i$就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-11T18:16:21.822Z">
+<meta property="og:updated_time" content="2019-08-26T06:30:48.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mobius inversion formula">
-<meta name="twitter:description" content="整除分块 \sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20     $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1     $n/(n/i)$ $n/i$就">
-
-
-
+<meta name="twitter:description" content="整除分块$$\sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor$$    i 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20    $\lfloor \frac {n}{i}\rfloor$ 20 10 6 5 4 3 2 2 2 2 1 1 1 1 1 1 1 1 1 1   $n/(n/i)$ $n/i$就">
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
-
-
-
-  
-  
   <link rel="canonical" href="https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/">
 
 
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
   };
 </script>
 
-  
   <title>Mobius inversion formula | Dennis's Blog</title>
+  <meta name="generator" content="Hexo 3.9.0">
   
-
-
-
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=116145543"></script>
   <script>
     var host = window.location.hostname;
@@ -205,10 +104,8 @@
 
 
 
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -217,7 +114,7 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .logo,
   .use-motion .site-title,
@@ -234,29 +131,20 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container use-motion">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
-    
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Dennis's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-    
   </div>
 
   <div class="site-nav-toggle">
@@ -269,202 +157,139 @@
 </div>
 
 
-
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
+  <ul id="menu" class="menu">
+      
+      
       
         
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
+        <li class="menu-item menu-item-home">
       
-    
-
     
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
     
 
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
     
 
     <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
     
 
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
     
 
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-sitemap">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-sitemap">
+      
     
 
     <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-commonweal">
-
-    
-    
       
-    
-
+      
+      
+        
+        <li class="menu-item menu-item-commonweal">
+      
     
 
     <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
 
-      
-      
-        <li class="menu-item menu-item-search">
-          <a href="javascript:;" class="popup-trigger">
-          
-            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
 
+</div>
+<div class="search-pop-overlay"></div>
 
-
+  </div>
 </div>
     </header>
 
     
-  
-  
+  <div class="reading-progress-bar"></div>
 
-  
-
-  <a href="https://github.com/yourname" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
-
+  <a href="https://github.com/denniszy" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
             
 
-          
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
-      
-
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-
-  
-    <div class="reading-progress-bar"></div>
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -476,33 +301,18 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Dennis's Blog">
     </span>
-
-    
       <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Mobius inversion formula
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">Mobius inversion formula
-
-              
-            
-          </h2>
-        
+          
+        </h2>
 
         <div class="post-meta">
-          
-          
-          
-          
-
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
               
                 
@@ -511,8 +321,6 @@
               <time title="创建时间：2019-01-24 01:21:51" itemprop="dateCreated datePublished" datetime="2019-01-24T01:21:51+08:00">2019-01-24</time>
             </span>
           
-
-          
             
 
             
@@ -520,22 +328,16 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-12 02:16:21" itemprop="dateModified" datetime="2019-08-12T02:16:21+08:00">2019-08-12</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-26 14:30:48" itemprop="dateModified" datetime="2019-08-26T14:30:48+08:00">2019-08-26</time>
               </span>
             
-          
-
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
 
@@ -546,50 +348,38 @@
           
 
           
-          
-
-          
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
-                 阅读次数： 
-                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
               </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
-
-          
-
           <br>
-          
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.5k</span>
+              <span>2.5k</span>
             </span>
           
-
-          
-            <span class="post-meta-item">
+            <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">2 分钟</span>
+              <span>2 分钟</span>
             </span>
-          
-
           
 
         </div>
       </header>
-    
 
     
     
@@ -597,210 +387,150 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <h2 id="整除分块"><a href="#整除分块" class="headerlink" title="整除分块"></a>整除分块</h2><script type="math/tex; mode=display">
-\sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor</script><div class="table-container">
+        <h2 id="整除分块"><a href="#整除分块" class="headerlink" title="整除分块"></a>整除分块</h2><p>$$<br>\sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor<br>$$</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">i</th>
-<th style="text-align:center">1</th>
-<th style="text-align:center">2</th>
-<th style="text-align:center">3</th>
-<th style="text-align:center">4</th>
-<th style="text-align:center">5</th>
-<th style="text-align:center">6</th>
-<th style="text-align:center">7</th>
-<th style="text-align:center">8</th>
-<th style="text-align:center">9</th>
-<th style="text-align:center">10</th>
-<th style="text-align:center">11</th>
-<th style="text-align:center">12</th>
-<th style="text-align:center">13</th>
-<th style="text-align:center">14</th>
-<th style="text-align:center">15</th>
-<th style="text-align:center">16</th>
-<th style="text-align:center">17</th>
-<th style="text-align:center">18</th>
-<th style="text-align:center">19</th>
-<th style="text-align:center">20</th>
+<th align="center">i</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+<th align="center">6</th>
+<th align="center">7</th>
+<th align="center">8</th>
+<th align="center">9</th>
+<th align="center">10</th>
+<th align="center">11</th>
+<th align="center">12</th>
+<th align="center">13</th>
+<th align="center">14</th>
+<th align="center">15</th>
+<th align="center">16</th>
+<th align="center">17</th>
+<th align="center">18</th>
+<th align="center">19</th>
+<th align="center">20</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">$\lfloor \frac {n}{i}\rfloor$</td>
-<td style="text-align:center">20</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
+<tbody><tr>
+<td align="center">$\lfloor \frac {n}{i}\rfloor$</td>
+<td align="center">20</td>
+<td align="center">10</td>
+<td align="center">6</td>
+<td align="center">5</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>$n/(n/i)$</p>
 <p>$n/i$就是要求的答案，$n(n/i)$就是满足大于等于答案的最大值$i_{max}$，每次根据这个范围去求就好了。$n/(n/i)=i_{max}$，就可以看成$k*(n/i)\le n$这个式子就k的最大值。</p>
 <p>$O(2\sqrt{n})$</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">1</span>,r;l&lt;=n;l=r+<span class="number">1</span>)&#123;</span><br><span class="line">	r=n/(n/l);</span><br><span class="line">   ans+=(r-l+<span class="number">1</span>)*(n/l);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><h3 id="积性函数"><a href="#积性函数" class="headerlink" title="积性函数"></a>积性函数</h3><p>$\gcd(x,y)=1$ $f(xy)=f(x)*f(y)$  欧拉函数 莫比乌斯函数</p>
 <h3 id="完全积性函数"><a href="#完全积性函数" class="headerlink" title="完全积性函数"></a>完全积性函数</h3><p>$f(x\cdot y)=f(x)\cdot f(y)$  </p>
 <p>Example:  $f(x)=x$</p>
-<h3 id="狄利克雷卷积"><a href="#狄利克雷卷积" class="headerlink" title="狄利克雷卷积"></a>狄利克雷卷积</h3><p>两个数论函数</p>
-<script type="math/tex; mode=display">
-(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})</script><h4 id="单位元"><a href="#单位元" class="headerlink" title="单位元"></a>单位元</h4><script type="math/tex; mode=display">
-\varepsilon(n)=\mu \cdot 1=\sum_{d|n}\mu(d)=[n=1]</script><script type="math/tex; mode=display">
-\varepsilon(n)= \begin{cases} 1&n=1\\ 0&else \end{cases}</script><script type="math/tex; mode=display">
-(\varepsilon*g)(n)=\sum_{d|n}\varepsilon(d)g(\frac{n}{d})=\varepsilon(1)g(\frac{n}{1})=g(n)</script><p>恒等函数 1 ：   f(x)=1</p>
-<h3 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h3><script type="math/tex; mode=display">
-\mu(n)= \begin{cases} 1&n=1\\ 0&n\text{ 含有平方因子}\\ (-1)^k&k\text{ 为 }n\text{ 的本质不同质因子个数}\\ \end{cases}</script><script type="math/tex; mode=display">
-n=p_1^{k_1}p_2^{k_2}....p_t^{k_t}</script><script type="math/tex; mode=display">
-\sum_{d|n}\mu(d)=[n=1]</script><p> 假设一个n有k个质因子</p>
-<script type="math/tex; mode=display">
-\sum_{d|n}\mu(d)=\sum_{i=0}^{k}C^i_k*(-1)^i=\sum_{i=0}^{k}C^i_k*(-1)^i*1^{k-i}=(1-1)^k=[k=0]</script><h3 id="演"><a href="#演" class="headerlink" title="演"></a>演</h3><p>设两个函数f(x) g(x)</p>
-<script type="math/tex; mode=display">
-f=f(n)=\sum_{d|n}g(d)=g*1</script><script type="math/tex; mode=display">
-f*\mu=g*1*\mu=g</script><script type="math/tex; mode=display">
-g=f*\mu</script><h4 id="两个演"><a href="#两个演" class="headerlink" title="两个演"></a>两个演</h4><script type="math/tex; mode=display">
-f(n)=\sum_{d|n}g(d)\to g(n)=\sum_{d|n}\mu(d)*f(\frac{n}{d})</script><script type="math/tex; mode=display">
-f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac{d}{n})*f(d)</script><p>下推第二个演</p>
-<p>设$k=\frac{d}{n}$</p>
-<script type="math/tex; mode=display">
-\sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{k}\mu(k)f(nk)=\sum_{k}\mu(k)\sum_{(nk)|t}g(t)=\sum_{k}\sum_{(nk)|t}\mu(k)g(t)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)</script><script type="math/tex; mode=display">
-\sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)=\sum_{t}g(t)\varepsilon(\frac{t}{n})=g(n)</script><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">primejudge</span><span class="params">(<span class="keyword">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(v, <span class="number">0</span>, <span class="keyword">sizeof</span> v);</span><br><span class="line">    pr = <span class="number">0</span>;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= lim; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!v[i]) &#123;</span><br><span class="line">            prime[pr++] = i;</span><br><span class="line">            v[i] = i;</span><br><span class="line">            mu[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; pr &amp;&amp; lim / i &gt;= prime[j]; j++) &#123;</span><br><span class="line">            v[i * prime[j]] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (v[i] &lt;= prime[j])<span class="keyword">break</span>;</span><br><span class="line">            mu[i * prime[j]] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><p>求这个值$1\le x \le$ a    $1 \le y \le b $求$gcd(x,y)=k$的种数</p>
-<script type="math/tex; mode=display">
-\sum_{i=1}^a\sum_{j=1}^b=[gcd(i,j)=k]</script><script type="math/tex; mode=display">
-\sum_{i=1}^{\lfloor \frac{a}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{b}{k} \rfloor}=[gcd(i,j)=1]</script><script type="math/tex; mode=display">
-f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac d n)*f({d})</script><p>​                                            $\to$ 函数解释 ：  f(x)为x|gcd(i,j)的个数           g(x)    gcd(i,j)=x的个数</p>
-<script type="math/tex; mode=display">
-f(m)=\lfloor \frac{a}{m}\rfloor *\lfloor \frac{b}{m}\rfloor</script><script type="math/tex; mode=display">
-g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
-      
+<h3 id="狄利克雷卷积"><a href="#狄利克雷卷积" class="headerlink" title="狄利克雷卷积"></a>狄利克雷卷积</h3><p>两个数论函数<br>$$<br>(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})<br>$$</p>
+<h4 id="单位元"><a href="#单位元" class="headerlink" title="单位元"></a>单位元</h4><p>$$<br>\varepsilon(n)=\mu \cdot 1=\sum_{d|n}\mu(d)=[n=1]<br>$$</p>
+<p>$$<br>\varepsilon(n)= \begin{cases} 1&amp;n=1\ 0&amp;else \end{cases}<br>$$</p>
+<p>$$<br>(\varepsilon*g)(n)=\sum_{d|n}\varepsilon(d)g(\frac{n}{d})=\varepsilon(1)g(\frac{n}{1})=g(n)<br>$$</p>
+<p>恒等函数 1 ：   f(x)=1</p>
+<h3 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h3><p>$$<br>\mu(n)= \begin{cases} 1&amp;n=1\ 0&amp;n\text{ 含有平方因子}\ (-1)^k&amp;k\text{ 为 }n\text{ 的本质不同质因子个数}\ \end{cases}<br>$$</p>
+<p>$$<br>n=p_1^{k_1}p_2^{k_2}….p_t^{k_t}<br>$$</p>
+<p>$$<br>\sum_{d|n}\mu(d)=[n=1]<br>$$<br> 假设一个n有k个质因子<br>$$<br>\sum_{d|n}\mu(d)=\sum_{i=0}^{k}C^i_k<em>(-1)^i=\sum_{i=0}^{k}C^i_k</em>(-1)^i*1^{k-i}=(1-1)^k=[k=0]<br>$$</p>
+<h3 id="演"><a href="#演" class="headerlink" title="演"></a>演</h3><p>设两个函数f(x) g(x)<br>$$<br>f=f(n)=\sum_{d|n}g(d)=g*1<br>$$</p>
+<p>$$<br>f<em>\mu=g</em>1*\mu=g<br>$$</p>
+<p>$$<br>g=f*\mu<br>$$</p>
+<h4 id="两个演"><a href="#两个演" class="headerlink" title="两个演"></a>两个演</h4><p>$$<br>f(n)=\sum_{d|n}g(d)\to g(n)=\sum_{d|n}\mu(d)*f(\frac{n}{d})<br>$$</p>
+<p>$$<br>f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac{d}{n})*f(d)<br>$$</p>
+<p>下推第二个演</p>
+<p>设$k=\frac{d}{n}$<br>$$<br>\sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{k}\mu(k)f(nk)=\sum_{k}\mu(k)\sum_{(nk)|t}g(t)=\sum_{k}\sum_{(nk)|t}\mu(k)g(t)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)<br>$$</p>
+<p>$$<br>\sum_{n|d}\mu(\frac{d}{n})*f(d)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)=\sum_{t}g(t)\varepsilon(\frac{t}{n})=g(n)<br>$$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">primejudge</span><span class="params">(<span class="keyword">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(v, <span class="number">0</span>, <span class="keyword">sizeof</span> v);</span><br><span class="line">    pr = <span class="number">0</span>;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= lim; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!v[i]) &#123;</span><br><span class="line">            prime[pr++] = i;</span><br><span class="line">            v[i] = i;</span><br><span class="line">            mu[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; pr &amp;&amp; lim / i &gt;= prime[j]; j++) &#123;</span><br><span class="line">            v[i * prime[j]] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (v[i] &lt;= prime[j])<span class="keyword">break</span>;</span><br><span class="line">            mu[i * prime[j]] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><p>求这个值$1\le x \le$ a    $1 \le y \le b $求$gcd(x,y)=k$的种数<br>$$<br>\sum_{i=1}^a\sum_{j=1}^b=[gcd(i,j)=k]<br>$$</p>
+<p>$$<br>\sum_{i=1}^{\lfloor \frac{a}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{b}{k} \rfloor}=[gcd(i,j)=1]<br>$$</p>
+<p>$$<br>f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac d n)*f({d})<br>$$</p>
+<p>​                                            $\to$ 函数解释 ：  f(x)为x|gcd(i,j)的个数           g(x)    gcd(i,j)=x的个数<br>$$<br>f(m)=\lfloor \frac{a}{m}\rfloor *\lfloor \frac{b}{m}\rfloor<br>$$</p>
+<p>$$<br>g(1)=\sum_{1|d}\mu(\frac d 1)<em>f({d})=\sum_{1|d}\mu(d)</em>f({d})<br>$$</p>
+
     </div>
 
     
-
     
+    
+        
       
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-      <div>
         
 
-
-
-
-  
-
-
-
+<div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者： </strong>Dennis</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    
     <a href="https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/" title="Mobius inversion formula">https://denniszy.github.io/2019/01/24/Mobius-inversion-formula/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>ZERO</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
+</div>
 
-      </div>
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
+            
+              <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/12/08/alg4/" rel="next" title="约瑟夫环问题">
+                  <i class="fa fa-chevron-left"></i> 约瑟夫环问题
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/03/09/FTC Warning/" rel="prev" title="FTC Warning">
+                  FTC Warning <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
     
-
-    <footer class="post-footer">
-      
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
-          
-            <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
-          
-        </div>
-      
-
-      
-      
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div class="social_share">
-            
-            
-              <div id="needsharebutton-postbottom">
-                <span class="btn">
-                  <i class="fa fa-share-alt" aria-hidden="true"></i>
-                </span>
-              </div>
-            
-          </div>
-        
-        </div>
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/12/08/alg4/" rel="next" title="约瑟夫环问题">
-                <i class="fa fa-chevron-left"></i> 约瑟夫环问题
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/09/FTC Warning/" rel="prev" title="FTC Warning">
-                FTC Warning <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
   </div>
   
   
@@ -812,15 +542,11 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
 
           </div>
           
-  
     
     <div class="comments" id="gitalk-container"></div>
   
 
-
-
         </div>
-        
           
   
   <div class="sidebar-toggle">
@@ -831,46 +557,47 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
-
+        
+        
+        
+        
       
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整除分块"><span class="nav-number">1.</span> <span class="nav-text">整除分块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">2.</span> <span class="nav-text">莫比乌斯反演</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#积性函数"><span class="nav-number">2.1.</span> <span class="nav-text">积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全积性函数"><span class="nav-number">2.2.</span> <span class="nav-text">完全积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狄利克雷卷积"><span class="nav-number">2.3.</span> <span class="nav-text">狄利克雷卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位元"><span class="nav-number">2.3.1.</span> <span class="nav-text">单位元</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫比乌斯函数"><span class="nav-number">2.4.</span> <span class="nav-text">莫比乌斯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#演"><span class="nav-number">2.5.</span> <span class="nav-text">演</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两个演"><span class="nav-number">2.5.1.</span> <span class="nav-text">两个演</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题"><span class="nav-number">3.</span> <span class="nav-text">解题</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  
-    <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Dennis">
-  
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.jpg"
+      alt="Dennis">
   <p class="site-author-name" itemprop="name">Dennis</p>
-  <div class="site-description motion-element" itemprop="description">Pigeon's blog.</div>
+  <div class="site-description" itemprop="description">Pigeon's blog.</div>
 </div>
-
-
   <nav class="site-state motion-element">
-    
       <div class="site-state-item site-state-posts">
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-
     
       
       
@@ -898,12 +625,12 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
         
           
         
-        <span class="site-state-item-count">8</span>
+          
+        
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
-    
-
     
       
       
@@ -975,21 +702,12 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
       </div>
     
   </nav>
-
-
-
   <div class="feed-link motion-element">
     <a href="/atom.xml" rel="alternate">
       <i class="fa fa-rss"></i>RSS
     </a>
   </div>
-
-
-
-
-
   <div class="links-of-author motion-element">
-    
       <span class="links-of-author-item">
       
       
@@ -1002,29 +720,19 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
       </span>
     
   </div>
-
-
-
   <div class="cc-license motion-element" itemprop="license">
-  
-  
     
   
-  
-  
-    <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-zero.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
-
-
-  <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+  <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title">
-      <i class="fa  fa-fw fa-link"></i>
+      <i class="fa fa-fw fa-link"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
-      
         <li class="links-of-blogroll-item">
           <a href="https://yycoderape.github.io" title="https://yycoderape.github.io" rel="noopener" target="_blank">YYcoder</a>
         </li>
@@ -1040,37 +748,10 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
     </ul>
   </div>
 
-
-          
-          
-        </div>
       </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整除分块"><span class="nav-number">1.</span> <span class="nav-text">整除分块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯反演"><span class="nav-number">2.</span> <span class="nav-text">莫比乌斯反演</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#积性函数"><span class="nav-number">2.1.</span> <span class="nav-text">积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全积性函数"><span class="nav-number">2.2.</span> <span class="nav-text">完全积性函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狄利克雷卷积"><span class="nav-number">2.3.</span> <span class="nav-text">狄利克雷卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单位元"><span class="nav-number">2.3.1.</span> <span class="nav-text">单位元</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫比乌斯函数"><span class="nav-number">2.4.</span> <span class="nav-text">莫比乌斯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#演"><span class="nav-number">2.5.</span> <span class="nav-text">演</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两个演"><span class="nav-number">2.5.1.</span> <span class="nav-text">两个演</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题"><span class="nav-number">3.</span> <span class="nav-text">解题</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+          <span>0%</span>
         </div>
       
 
@@ -1079,7 +760,6 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
   <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
@@ -1090,49 +770,24 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
     <i class="fa fa-dennis"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Dennis</span>
-
-  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    
-      <span class="post-meta-item-text">站点总字数：</span>
-    
-    <span title="站点总字数">82k</span>
-  
-
-  
+    <span title="站点总字数">87k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    
-    <span title="站点阅读时长">1:15</span>
-  
+    <span title="站点阅读时长">1:19</span>
 </div>
-
-
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.2.0</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.3.0</div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
     <span class="post-meta-item-icon">
       <i class="fa fa-user"></i>
     </span>
@@ -1140,11 +795,7 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
     </span>
   
-
-  
     <span class="post-meta-divider">|</span>
-  
-
   
     <span class="post-meta-item-icon">
       <i class="fa fa-eye"></i>
@@ -1163,138 +814,66 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
 
 
 
+
+
+
         
       </div>
     </footer>
-
-    
-
-    
-
-    
-  
-  
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
-  <script>
-    
-      pbOptions = {};
-      
-        pbOptions.iconStyle = "box";
-      
-        pbOptions.boxForm = "horizontal";
-      
-        pbOptions.position = "bottomCenter";
-      
-        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
-  </script>
-
-
-    
-
   </div>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  
-
-
-
-  
-    
     
   
-  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
-
-
-
-
-
-
-  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
-  <script src="/lib/reading_progress/reading_progress.js"></script>
-
-  
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-
-
-  <script src="/js/utils.js?v=7.2.0"></script>
-
-  <script src="/js/motion.js?v=7.2.0"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
 
 
 
   
-  
-
-
-  <script src="/js/affix.js?v=7.2.0"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.2.0"></script>
-<script src="/js/post-details.js?v=7.2.0"></script>
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
-  <script src="/js/next-boot.js?v=7.2.0"></script>
-
-  
-
-  
-
-  
 
 
-  
-  
 
-  
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
   
     
-      <script type="text/x-mathjax-config">
-  
+      
+<script type="text/x-mathjax-config">
 
   MathJax.Hub.Config({
     tex2jax: {
@@ -1303,7 +882,6 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
       skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
     },
     TeX: {
-      
       equationNumbers: {
         autoNumber: 'AMS'
       }
@@ -1335,86 +913,37 @@ g(1)=\sum_{1|d}\mu(\frac d 1)*f({d})=\sum_{1|d}\mu(d)*f({d})</script>
     }
   });
 </script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
 
     
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="/js/local-search.js?v=7.2.0"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-
-
-
+  
 
   
-    
-
-
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
-
-
-<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
-
 <script>
-  var gitalk = new Gitalk({
-    clientID: '2dd8ece88adb7c9a022e',
-    clientSecret: '75448c8d73ebcab31e7580b19e38a3a8f83e13ea',
-    repo: 'gittalk',
-    owner: 'DennisZY',
-    admin: ['DennisZY'],
-    id: md5(location.pathname),
-    
-      language: window.navigator.language || window.navigator.userLanguage,
-    
-    distractionFreeMode: 'true'
-  });
-  gitalk.render('gitalk-container');
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '2dd8ece88adb7c9a022e',
+      clientSecret: '75448c8d73ebcab31e7580b19e38a3a8f83e13ea',
+      repo: 'hexo-comment',
+      owner: 'DennisZY',
+      admin: ['DennisZY'],
+      id: 'b8f4dd29912fd69bbf4a56700fcbdfcc',
+        language: window.navigator.language || window.navigator.userLanguage,
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
 </script>
-
-
-  
 
 </body>
 </html>
