@@ -19,7 +19,7 @@
 
 <link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Fira Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-loading-bar.min.css?v=1.0.2">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-loading-bar.min.css?v=1.0.2">
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
 
 
@@ -64,12 +64,12 @@
 <meta property="og:site_name" content="Dennis&#39;s Blog">
 <meta property="og:description" content="为什么会牛顿迭代法伽罗瓦用群论证明了高于四次的方程不存在求根公式，那么需要一种快速求方程根的做法了。 牛顿迭代法是求方程根的重要方法之一，其最大优点是在方程的单根附近具有平方收敛，比二分求根快了很door。 牛顿迭代的原理随便选取一个点，做函数的切线，你可以计算出这条切线与x轴上的交点的x坐标，显然是要靠近根了，做多几遍就会越靠近了。 牛顿迭代的公式上面的描述，先选取一个$x_0$，做切线找与x轴">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.loli.net/2019/08/16/lJvkKzNF6h2I9Vm.gif">
-<meta property="og:updated_time" content="2019-08-26T06:30:51.325Z">
+<meta property="og:image" content="https://i.loli.net/2019/08/29/W3F1X7KC5tQHos8.gif">
+<meta property="og:updated_time" content="2019-08-29T07:02:51.643Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛顿迭代法">
 <meta name="twitter:description" content="为什么会牛顿迭代法伽罗瓦用群论证明了高于四次的方程不存在求根公式，那么需要一种快速求方程根的做法了。 牛顿迭代法是求方程根的重要方法之一，其最大优点是在方程的单根附近具有平方收敛，比二分求根快了很door。 牛顿迭代的原理随便选取一个点，做函数的切线，你可以计算出这条切线与x轴上的交点的x坐标，显然是要靠近根了，做多几遍就会越靠近了。 牛顿迭代的公式上面的描述，先选取一个$x_0$，做切线找与x轴">
-<meta name="twitter:image" content="https://i.loli.net/2019/08/16/lJvkKzNF6h2I9Vm.gif">
+<meta name="twitter:image" content="https://i.loli.net/2019/08/29/W3F1X7KC5tQHos8.gif">
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
   <link rel="canonical" href="https://denniszy.github.io/2019/08/16/Newton's-method/">
 
@@ -169,6 +169,8 @@
         <li class="menu-item menu-item-home">
       
     
+      
+    
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
@@ -178,6 +180,8 @@
       
         
         <li class="menu-item menu-item-about">
+      
+    
       
     
 
@@ -191,8 +195,10 @@
         <li class="menu-item menu-item-tags">
       
     
+      
+    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">29</span></a>
 
   </li>
       
@@ -202,8 +208,10 @@
         <li class="menu-item menu-item-categories">
       
     
+      
+    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">8</span></a>
 
   </li>
       
@@ -213,8 +221,10 @@
         <li class="menu-item menu-item-archives">
       
     
+      
+    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">46</span></a>
 
   </li>
       
@@ -222,6 +232,8 @@
       
         
         <li class="menu-item menu-item-sitemap">
+      
+    
       
     
 
@@ -233,6 +245,8 @@
       
         
         <li class="menu-item menu-item-commonweal">
+      
+    
       
     
 
@@ -331,7 +345,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:30:51" itemprop="dateModified" datetime="2019-08-26T14:30:51+08:00">2019-08-26</time>
+                <time title="修改时间：2019-08-29 15:02:51" itemprop="dateModified" datetime="2019-08-29T15:02:51+08:00">2019-08-29</time>
               </span>
             
           
@@ -366,7 +380,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>629</span>
+              <span>475</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -393,7 +407,7 @@
 <p>牛顿迭代法是求方程根的重要方法之一，其最大优点是在方程的单根附近具有<a href="[当我们谈论收敛速度时，我们都在谈什么？](https://zhuanlan.zhihu.com/p/27644403)">平方收敛</a>，比二分求根快了很door。</p>
 <h3 id="牛顿迭代的原理"><a href="#牛顿迭代的原理" class="headerlink" title="牛顿迭代的原理"></a>牛顿迭代的原理</h3><p><del>随便</del>选取一个点，做函数的切线，你可以计算出这条切线与x轴上的交点的x坐标，显然是要靠近根了，做多几遍就会越靠近了。</p>
 <h3 id="牛顿迭代的公式"><a href="#牛顿迭代的公式" class="headerlink" title="牛顿迭代的公式"></a>牛顿迭代的公式</h3><p>上面的描述，先选取一个$x_0$，做切线找与x轴上的交点，$x_1=x_0-\frac{f(x_0)}{f’(x_0)}$，也就是按照$x_i=x_{i-1}-\frac{f(x_{i-1})}{f’(x_{i-1})}$一直迭代，可以按照精度迭代，也可以自定数量迭代。</p>
-<p><img src="https://i.loli.net/2019/08/16/lJvkKzNF6h2I9Vm.gif" alt="NewtonIteration_Ani.gif"></p>
+<p><img src="https://i.loli.net/2019/08/29/W3F1X7KC5tQHos8.gif" alt="NewtonIteration.gif"></p>
 <h3 id="牛顿迭代适用范围"><a href="#牛顿迭代适用范围" class="headerlink" title="牛顿迭代适用范围"></a>牛顿迭代适用范围</h3><ul>
 <li>只能用来求方程的一个根，可导即可。</li>
 <li>多根函数可能会出大锅，而且对初始值有要求</li>
@@ -525,7 +539,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -556,9 +570,7 @@
         
           
         
-          
-        
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -627,7 +639,11 @@
         
           
         
-        <span class="site-state-item-count">27</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -705,12 +721,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">87k</span>
+    <span title="站点总字数">25k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:19</span>
+    <span title="站点阅读时长">23 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
@@ -868,7 +884,7 @@
       owner: 'DennisZY',
       admin: ['DennisZY'],
       id: '3718bda19846d455e3d92ad51037f2ac',
-        language: window.navigator.language || window.navigator.userLanguage,
+        language: 'zh-CN',
       
       distractionFreeMode: 'true'
     });
