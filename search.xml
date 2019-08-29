@@ -4,33 +4,6 @@
   
     
     <entry>
-      <title>oi-advance</title>
-      <link href="/2019/08/27/oi-advance/"/>
-      <url>/2019/08/27/oi-advance/</url>
-      
-        <content type="html"><![CDATA[<ol start="0"><li>基本算法</li><li>基本数据结构</li><li>搜索</li><li>数学知识<ul><li><input disabled type="checkbox"> 0x39 0/1分数规划</li></ul></li><li>数据结构进阶</li><li>动态规划<ul><li><input disabled type="checkbox"> 0x5B 四边形不等式</li></ul></li><li>图论</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 读书计划 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> algorithm </tag>
-            
-            <tag> ACM </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Using hexo</title>
       <link href="/2019/08/26/hexo-blog/"/>
       <url>/2019/08/26/hexo-blog/</url>
@@ -577,9 +550,9 @@
       
         <tags>
             
-            <tag> algorithm </tag>
-            
             <tag> ACM </tag>
+            
+            <tag> algorithm </tag>
             
             <tag> A_star </tag>
             
