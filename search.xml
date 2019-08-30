@@ -124,9 +124,9 @@
       
         <tags>
             
-            <tag> browser </tag>
-            
             <tag> privacy </tag>
+            
+            <tag> browser </tag>
             
         </tags>
       
@@ -550,9 +550,9 @@
       
         <tags>
             
-            <tag> algorithm </tag>
-            
             <tag> ACM </tag>
+            
+            <tag> algorithm </tag>
             
             <tag> A_star </tag>
             
