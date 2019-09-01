@@ -45,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="传送门 题意推箱子，输出路径，先要求整个的路径最短，如果有多个最短路径，选推箱子的次数最少的。没有路径的输出Impossible。 题解很明显，箱子要跑bfs，但跑bfs的时候要判断移动是否合法，箱子移动后，人必在箱子移动前的位置，而人要能到达箱子移动的反方向的那个格子上。 例子112345#############.......TB###..........##......S...#######">
+  <meta name="description" content="POJ1475题解报告">
 <meta name="keywords" content="BFS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[POJ1475] Pushing Boxes 题解报告">
 <meta property="og:url" content="https://denniszy.github.io/2019/04/06/POJ1475/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="传送门 题意推箱子，输出路径，先要求整个的路径最短，如果有多个最短路径，选推箱子的次数最少的。没有路径的输出Impossible。 题解很明显，箱子要跑bfs，但跑bfs的时候要判断移动是否合法，箱子移动后，人必在箱子移动前的位置，而人要能到达箱子移动的反方向的那个格子上。 例子112345#############.......TB###..........##......S...#######">
+<meta property="og:description" content="POJ1475题解报告">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T06:31:01.446Z">
+<meta property="og:updated_time" content="2019-09-01T18:34:24.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[POJ1475] Pushing Boxes 题解报告">
-<meta name="twitter:description" content="传送门 题意推箱子，输出路径，先要求整个的路径最短，如果有多个最短路径，选推箱子的次数最少的。没有路径的输出Impossible。 题解很明显，箱子要跑bfs，但跑bfs的时候要判断移动是否合法，箱子移动后，人必在箱子移动前的位置，而人要能到达箱子移动的反方向的那个格子上。 例子112345#############.......TB###..........##......S...#######">
+<meta name="twitter:description" content="POJ1475题解报告">
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
   <link rel="canonical" href="https://denniszy.github.io/2019/04/06/POJ1475/">
 
@@ -343,7 +343,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:31:01" itemprop="dateModified" datetime="2019-08-26T14:31:01+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:34:24" itemprop="dateModified" datetime="2019-09-02T02:34:24+08:00">2019-09-02</time>
               </span>
             
           
@@ -390,6 +390,8 @@
               
               <span>1 分钟</span>
             </span>
+          
+            <div class="post-description">POJ1475题解报告</div>
           
 
         </div>
@@ -695,6 +697,10 @@
           <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
         </li>
       
+        <li class="links-of-blogroll-item">
+          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+        </li>
+      
     </ul>
   </div>
 
@@ -715,7 +721,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heartbeat"></i>
   </span>
@@ -784,6 +790,7 @@
     
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>

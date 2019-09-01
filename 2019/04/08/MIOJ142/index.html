@@ -45,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="题意$$a\times{x_1}^3+b\times{x_2}^3+c\times{x_3}^3=d\times{x_4}^3+e\times{x_5}^3$$ 给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$">
+  <meta name="description" content="MIOJ142题解报告">
 <meta name="keywords" content="MITM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MIOJ_142_数学等式题解报告">
 <meta property="og:url" content="https://denniszy.github.io/2019/04/08/MIOJ142/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="题意$$a\times{x_1}^3+b\times{x_2}^3+c\times{x_3}^3=d\times{x_4}^3+e\times{x_5}^3$$ 给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$">
+<meta property="og:description" content="MIOJ142题解报告">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T07:02:23.116Z">
+<meta property="og:updated_time" content="2019-09-01T18:32:04.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MIOJ_142_数学等式题解报告">
-<meta name="twitter:description" content="题意$$a\times{x_1}^3+b\times{x_2}^3+c\times{x_3}^3=d\times{x_4}^3+e\times{x_5}^3$$ 给你这个式子，给你$abcde$ 这5个数，你找出满足这条式子的($x_1,x_2,x_3,x_4,x_5$)的组数。而且$x,a,b,c,d,e$均在$[-50,50]$的范围里面。 题解无脑暴力$O(n^5)$是不行的。 优雅的暴力$">
+<meta name="twitter:description" content="MIOJ142题解报告">
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
   <link rel="canonical" href="https://denniszy.github.io/2019/04/08/MIOJ142/">
 
@@ -343,7 +343,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 15:02:23" itemprop="dateModified" datetime="2019-08-26T15:02:23+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:32:04" itemprop="dateModified" datetime="2019-09-02T02:32:04+08:00">2019-09-02</time>
               </span>
             
           
@@ -390,6 +390,8 @@
               
               <span>1 分钟</span>
             </span>
+          
+            <div class="post-description">MIOJ142题解报告</div>
           
 
         </div>
@@ -687,6 +689,10 @@
           <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
         </li>
       
+        <li class="links-of-blogroll-item">
+          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+        </li>
+      
     </ul>
   </div>
 
@@ -707,7 +713,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heartbeat"></i>
   </span>
@@ -776,6 +782,7 @@
     
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>

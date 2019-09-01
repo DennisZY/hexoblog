@@ -45,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="题目传送门C - Insertion Sort 不重复题意了，直接写解的过程，场上推不出来，赛后看题解才推出来的 网上题解说存在$k\ge n$的情况，然而我们特判$k+1\ge n$的时候就直接输出$n!$。 特判之后，必定是$k\lt n-1$。 现在来推一下,先不考虑前k项的$k!$,后面再乘一下就算完了. 1.整一个序列完全有序的情况只有1种 2.当前k个数都是$\left[1,k\rig">
+  <meta name="description" content="Gym-101955C题解">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gym-101955C题解">
 <meta property="og:url" content="https://denniszy.github.io/2018/12/07/Gym-101955C/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="题目传送门C - Insertion Sort 不重复题意了，直接写解的过程，场上推不出来，赛后看题解才推出来的 网上题解说存在$k\ge n$的情况，然而我们特判$k+1\ge n$的时候就直接输出$n!$。 特判之后，必定是$k\lt n-1$。 现在来推一下,先不考虑前k项的$k!$,后面再乘一下就算完了. 1.整一个序列完全有序的情况只有1种 2.当前k个数都是$\left[1,k\rig">
+<meta property="og:description" content="Gym-101955C题解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T06:30:11.712Z">
+<meta property="og:updated_time" content="2019-09-01T18:29:11.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gym-101955C题解">
-<meta name="twitter:description" content="题目传送门C - Insertion Sort 不重复题意了，直接写解的过程，场上推不出来，赛后看题解才推出来的 网上题解说存在$k\ge n$的情况，然而我们特判$k+1\ge n$的时候就直接输出$n!$。 特判之后，必定是$k\lt n-1$。 现在来推一下,先不考虑前k项的$k!$,后面再乘一下就算完了. 1.整一个序列完全有序的情况只有1种 2.当前k个数都是$\left[1,k\rig">
+<meta name="twitter:description" content="Gym-101955C题解">
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
   <link rel="canonical" href="https://denniszy.github.io/2018/12/07/Gym-101955C/">
 
@@ -343,7 +343,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:30:11" itemprop="dateModified" datetime="2019-08-26T14:30:11+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:29:11" itemprop="dateModified" datetime="2019-09-02T02:29:11+08:00">2019-09-02</time>
               </span>
             
           
@@ -378,7 +378,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>517</span>
+              <span>541</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -390,6 +390,8 @@
               
               <span>1 分钟</span>
             </span>
+          
+            <div class="post-description">Gym-101955C题解</div>
           
 
         </div>
@@ -410,13 +412,7 @@
 <p>2.当前k个数都是$\left[1,k\right]$的情况,在后面$n-k$个数里面选一个数,不放在自己的位置上,根据乘法原理,算出来就是$(n-k)*(n-k-1)$</p>
 <p>3.当前k个数不是$\left[1,k\right]$的情况下,而你又要保证最长上升子序列的长度是$n-1$,只能是一个完全有序的序列中,你在前k个数中拿一个数插入到$\left[k+1,n\right]$的其中一个位置中,有$n-k$种情况,根据乘法原理,算出来就是$(n-k)*k$.</p>
 <p>最后就是</p>
-<script type="math/tex; mode=display">
-  ans =
-\begin{cases}
-n! , & \text{ $k+1\ge n $}\\
-k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
-\end{cases}
-</script>
+<p>$$<br>ans=\begin{cases}<br>n!  &amp; \text{ $k+1\ge n $} \\<br>k!\times(1+(n-k)\times(n-k-1)+(n-k)\times k) &amp; \text{$1\le k\lt n-1$}<br>\end{cases}<br>$$</p>
 
     </div>
 
@@ -691,6 +687,10 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
           <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
         </li>
       
+        <li class="links-of-blogroll-item">
+          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+        </li>
+      
     </ul>
   </div>
 
@@ -711,7 +711,7 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heartbeat"></i>
   </span>
@@ -780,6 +780,7 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
     
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>

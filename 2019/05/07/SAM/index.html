@@ -45,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="Suffix automaton后缀自动机，由一个parent树和一个DAG构成。DAG的边连接着状态转移的两点，点就是状态。 每个节点就是一个endpos等价类，每条parent树的边代表的是endpos等价类包含的关系。DAG就是状态转移的过程。 解析一下代码，个人感觉讲得不太好，可以移步看一下史上最通俗的后缀自动机详解和oi-wiki上的SAM，了解一下endpos类等等的定义。 luogu">
+  <meta name="description" content="后缀自动机学习笔记">
 <meta name="keywords" content="data structure,SAM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SAM">
 <meta property="og:url" content="https://denniszy.github.io/2019/05/07/SAM/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="Suffix automaton后缀自动机，由一个parent树和一个DAG构成。DAG的边连接着状态转移的两点，点就是状态。 每个节点就是一个endpos等价类，每条parent树的边代表的是endpos等价类包含的关系。DAG就是状态转移的过程。 解析一下代码，个人感觉讲得不太好，可以移步看一下史上最通俗的后缀自动机详解和oi-wiki上的SAM，了解一下endpos类等等的定义。 luogu">
+<meta property="og:description" content="后缀自动机学习笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T06:31:17.279Z">
+<meta property="og:updated_time" content="2019-09-01T18:36:49.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SAM">
-<meta name="twitter:description" content="Suffix automaton后缀自动机，由一个parent树和一个DAG构成。DAG的边连接着状态转移的两点，点就是状态。 每个节点就是一个endpos等价类，每条parent树的边代表的是endpos等价类包含的关系。DAG就是状态转移的过程。 解析一下代码，个人感觉讲得不太好，可以移步看一下史上最通俗的后缀自动机详解和oi-wiki上的SAM，了解一下endpos类等等的定义。 luogu">
+<meta name="twitter:description" content="后缀自动机学习笔记">
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
   <link rel="canonical" href="https://denniszy.github.io/2019/05/07/SAM/">
 
@@ -343,7 +343,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:31:17" itemprop="dateModified" datetime="2019-08-26T14:31:17+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:36:49" itemprop="dateModified" datetime="2019-09-02T02:36:49+08:00">2019-09-02</time>
               </span>
             
           
@@ -390,6 +390,8 @@
               
               <span>1 分钟</span>
             </span>
+          
+            <div class="post-description">后缀自动机学习笔记</div>
           
 
         </div>
@@ -685,6 +687,10 @@
           <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
         </li>
       
+        <li class="links-of-blogroll-item">
+          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+        </li>
+      
     </ul>
   </div>
 
@@ -705,7 +711,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heartbeat"></i>
   </span>
@@ -774,6 +780,7 @@
     
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>

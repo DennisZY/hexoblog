@@ -45,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="CRT(中国剩余定理)给你一个方程组$$x=a_1 \mod {m_1}$$ $$x=a_2 \mod{m_2}$$ $$x=a_3 \mod{m_3}$$ 保证每个$m_i$两两互质，求$x$。 我们先臆想一个神奇的解出来， 设$m=\prod_{1}^{n}{m_i}$，$M_i=m / m_i$，$t_i\times M_i=1(\mod m_i)$。 得 $x=\sum_{i=1}^{n}">
+  <meta name="description" content="中国剩余定理与扩展中国剩余定理笔记">
 <meta name="keywords" content="math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CRT&#x2F;exCRT">
 <meta property="og:url" content="https://denniszy.github.io/2019/04/15/math3/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="CRT(中国剩余定理)给你一个方程组$$x=a_1 \mod {m_1}$$ $$x=a_2 \mod{m_2}$$ $$x=a_3 \mod{m_3}$$ 保证每个$m_i$两两互质，求$x$。 我们先臆想一个神奇的解出来， 设$m=\prod_{1}^{n}{m_i}$，$M_i=m / m_i$，$t_i\times M_i=1(\mod m_i)$。 得 $x=\sum_{i=1}^{n}">
+<meta property="og:description" content="中国剩余定理与扩展中国剩余定理笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T06:29:49.755Z">
+<meta property="og:updated_time" content="2019-09-01T18:17:15.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CRT&#x2F;exCRT">
-<meta name="twitter:description" content="CRT(中国剩余定理)给你一个方程组$$x=a_1 \mod {m_1}$$ $$x=a_2 \mod{m_2}$$ $$x=a_3 \mod{m_3}$$ 保证每个$m_i$两两互质，求$x$。 我们先臆想一个神奇的解出来， 设$m=\prod_{1}^{n}{m_i}$，$M_i=m / m_i$，$t_i\times M_i=1(\mod m_i)$。 得 $x=\sum_{i=1}^{n}">
+<meta name="twitter:description" content="中国剩余定理与扩展中国剩余定理笔记">
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
   <link rel="canonical" href="https://denniszy.github.io/2019/04/15/math3/">
 
@@ -343,7 +343,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:29:49" itemprop="dateModified" datetime="2019-08-26T14:29:49+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:17:15" itemprop="dateModified" datetime="2019-09-02T02:17:15+08:00">2019-09-02</time>
               </span>
             
           
@@ -390,6 +390,8 @@
               
               <span>1 分钟</span>
             </span>
+          
+            <div class="post-description">中国剩余定理与扩展中国剩余定理笔记</div>
           
 
         </div>
@@ -463,8 +465,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/04/19/2019huagong/" rel="prev" title="20190413华工赛 题解报告">
-                  20190413华工赛 题解报告 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/04/19/2019huagong/" rel="prev" title="20190413华工赛">
+                  20190413华工赛 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -688,6 +690,10 @@
           <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
         </li>
       
+        <li class="links-of-blogroll-item">
+          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+        </li>
+      
     </ul>
   </div>
 
@@ -708,7 +714,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heartbeat"></i>
   </span>
@@ -777,6 +783,7 @@
     
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>

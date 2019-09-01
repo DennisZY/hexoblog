@@ -45,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="solutionE.Path题意：给你n个点和m条边，让你断开若干条边，使得从1到n的最短路长度变大或者不连通，求最小花费的花费为多少。断开一条边花费为对应边的长度(边权)。 题解：跑最短路算法，求出能够构成最短路的边，根据这些边建一个新图，跑最小鸽。 我写这个的时候人都傻了，找最短路的边的bfs写歪了，然后就超时了QAQ。 123456789101112131415161718192021222">
+  <meta name="description" content="2019杭电多校第一场题解">
 <meta name="keywords" content="algorithm,2019-Multi-University-Training-Contest">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019-Multi-University-Training-Contest-1">
 <meta property="og:url" content="https://denniszy.github.io/2019/07/28/2019hdumutc1/index.html">
 <meta property="og:site_name" content="Dennis&#39;s Blog">
-<meta property="og:description" content="solutionE.Path题意：给你n个点和m条边，让你断开若干条边，使得从1到n的最短路长度变大或者不连通，求最小花费的花费为多少。断开一条边花费为对应边的长度(边权)。 题解：跑最短路算法，求出能够构成最短路的边，根据这些边建一个新图，跑最小鸽。 我写这个的时候人都傻了，找最短路的边的bfs写歪了，然后就超时了QAQ。 123456789101112131415161718192021222">
+<meta property="og:description" content="2019杭电多校第一场题解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T06:28:33.304Z">
+<meta property="og:updated_time" content="2019-09-01T18:14:04.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019-Multi-University-Training-Contest-1">
-<meta name="twitter:description" content="solutionE.Path题意：给你n个点和m条边，让你断开若干条边，使得从1到n的最短路长度变大或者不连通，求最小花费的花费为多少。断开一条边花费为对应边的长度(边权)。 题解：跑最短路算法，求出能够构成最短路的边，根据这些边建一个新图，跑最小鸽。 我写这个的时候人都傻了，找最短路的边的bfs写歪了，然后就超时了QAQ。 123456789101112131415161718192021222">
+<meta name="twitter:description" content="2019杭电多校第一场题解">
   <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
   <link rel="canonical" href="https://denniszy.github.io/2019/07/28/2019hdumutc1/">
 
@@ -343,7 +343,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:28:33" itemprop="dateModified" datetime="2019-08-26T14:28:33+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:14:04" itemprop="dateModified" datetime="2019-09-02T02:14:04+08:00">2019-09-02</time>
               </span>
             
           
@@ -390,6 +390,8 @@
               
               <span>1 分钟</span>
             </span>
+          
+            <div class="post-description">2019杭电多校第一场题解</div>
           
 
         </div>
@@ -684,6 +686,10 @@
           <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
         </li>
       
+        <li class="links-of-blogroll-item">
+          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+        </li>
+      
     </ul>
   </div>
 
@@ -704,7 +710,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heartbeat"></i>
   </span>
@@ -773,6 +779,7 @@
     
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>

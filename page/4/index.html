@@ -45,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -342,7 +342,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 15:11:53" itemprop="dateModified" datetime="2019-08-26T15:11:53+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:31:25" itemprop="dateModified" datetime="2019-09-02T02:31:25+08:00">2019-09-02</time>
               </span>
             
           
@@ -392,20 +392,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><h3 id="lim-limits-n-to-inf-1-frac-x-n-n-e-x"><a href="#lim-limits-n-to-inf-1-frac-x-n-n-e-x" class="headerlink" title="$\lim \limits_{n \to inf} (1+\frac{x}{n})^n=e^x$"></a>$\lim \limits_{n \to inf} (1+\frac{x}{n})^n=e^x$</h3><p>要证上式即是要证下式<br>$$<br>n\times ln(1+\frac{x}{n})=x<br>$$<br>令$k=\frac{1}{n}$，使得$n=\frac{1}{k}$<br>$$<br>\frac{ln(1+x\times k)}{k}=x<br>$$<br>下面左式来个洛必达$\frac{0}{0}$<br>$$<br>\frac{x}{1+x\times k}=x<br>$$<br>证毕</p>
-<h2 id="组合数"><a href="#组合数" class="headerlink" title="组合数"></a>组合数</h2><p><a href="https://blog.csdn.net/bigtiao097/article/details/77242624" target="_blank" rel="noopener">转自zhaozhengcc</a><br>$$<br>C_n^m = C _{n-1}^{m-1}+C _{n-1}^{m}<br>$$</p>
-<p>$$<br>mC_n^m = nC _{n-1}^{m-1}<br>$$</p>
-<p>$$<br>C_n^0+C_n^1+C_n^2+……+C_n^n = 2^n<br>$$</p>
-<p>$$<br>1C_n^1+2C_n^2+3C_n^3+……+nC_n^n =n2^{n-1}<br>$$</p>
-<p>$$<br>1^2C_n^1+2^2C_n^2+3^2C_n^3+……+n^2C _n^n =n(n+1)2^{n-2}<br>$$</p>
-<p>$$<br>\frac{C_n^1}{1}-\frac{C_n^2}{2}+\frac{C_n^3}{3}+……+(-1)^{n-1}\frac{C _n^n}{n} =1 + \frac{1}{2}+ \frac{1}{3}+……+ \frac{1}{n}<br>$$</p>
-<p>$$<br>(C_n^0)^2+(C_n^1)^2+(C_n^2)^2+\cdots+(C_n^{n})^2 = C_{2n}^n<br>$$</p>
-<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><h3 id="通项公式"><a href="#通项公式" class="headerlink" title="通项公式"></a>通项公式</h3><p>$$<br>f_n=\frac{1}{\sqrt{5}}((\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n)<br>$$</p>
-<h3 id="前n项求和公式"><a href="#前n项求和公式" class="headerlink" title="前n项求和公式"></a>前n项求和公式</h3><p>$$<br>S_n=f_{n+2}-1=\sum_{i=1}^{n}f_i<br>$$</p>
-<h3 id="不知道怎么来的公式"><a href="#不知道怎么来的公式" class="headerlink" title="不知道怎么来的公式"></a>不知道怎么来的公式</h3><p>$$<br>f_{2n}=f_{n+1}\times f_{n}+f_n\times f_{n-1}=f_{n+1}\times f_{n}+f_n\times(f_{n+1}-f_{n})<br>$$</p>
-<p>$$<br>f_{2n+1}=f_{n+1}\times f_{n+1}+f_n\times f_n<br>$$</p>
-<p>可能会比矩阵快速幂要快</p>
-
+          常用的数学公式，其实是自己很容易忘
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/17/mathmix/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -469,7 +465,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:30:28" itemprop="dateModified" datetime="2019-08-26T14:30:28+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:30:39" itemprop="dateModified" datetime="2019-09-02T02:30:39+08:00">2019-09-02</time>
               </span>
             
           
@@ -496,7 +492,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>858</span>
+              <span>877</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -519,56 +515,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="过度过程"><a href="#过度过程" class="headerlink" title="过度过程"></a>过度过程</h2><p>ubuntu-&gt;deepin-&gt;manjaro-deepin-&gt;manjaro kde</p>
-<h2 id="在deepin过度到manjaro-deepin"><a href="#在deepin过度到manjaro-deepin" class="headerlink" title="在deepin过度到manjaro-deepin"></a>在deepin过度到manjaro-deepin</h2><p>deepin的dde有丶好用<del>（其实是不想 去重新熟悉一个新的环境，例如KDE）</del>真香。</p>
-<h2 id="在windows下烧U盘"><a href="#在windows下烧U盘" class="headerlink" title="在windows下烧U盘"></a>在windows下烧U盘</h2><p> 要用<a href="https://rufus.ie/" target="_blank" rel="noopener">refus</a>，要用DD模式烧。用Universal USB Installer烧的话，会无法引导。</p>
-<p>学校的drcom会占用XXshellXXX.dll，忘记具体名称了，会导致refus使用不了，关了就完事</p>
-<h2 id="源"><a href="#源" class="headerlink" title="源"></a>源</h2><h3 id="国内源"><a href="#国内源" class="headerlink" title="国内源"></a>国内源</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -i -c China  //改为国内源,在n弹出的框中选一个就好</span><br><span class="line">sudo pacman -Syy  //更新数据源</span><br></pre></td></tr></table></figure>
-
-<h3 id="archlinuxcn"><a href="#archlinuxcn" class="headerlink" title="archlinuxcn"></a>archlinuxcn</h3><p>修改/etc/pacman.conf，在最后添加</p>
-<p>下面选一个就行了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch  //添加清华源</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch //添加中科大源</span><br></pre></td></tr></table></figure>
-
-<p>之后要添加PGP签名</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
-
-<p>刷新缓存</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syy</span><br></pre></td></tr></table></figure>
-
-<p>我校园网用清华源能跑满带宽，中科大的不行，中科大的更新速度略快于清华。</p>
-<h2 id="安装搜狗拼音"><a href="#安装搜狗拼音" class="headerlink" title="安装搜狗拼音"></a>安装搜狗拼音</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx-im</span><br><span class="line">sudo pacman -S fcitx-configtool</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br></pre></td></tr></table></figure>
-
-<p>修改配置文件~/.xprofile</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=”@im=fcitx”</span><br></pre></td></tr></table></figure>
-
-<h2 id="其他很多都能在manjaro的添加-删除软件里面找"><a href="#其他很多都能在manjaro的添加-删除软件里面找" class="headerlink" title="其他很多都能在manjaro的添加/删除软件里面找"></a>其他很多都能在manjaro的添加/删除软件里面找</h2><p>gugugu</p>
-<h2 id="KDE"><a href="#KDE" class="headerlink" title="KDE"></a>KDE</h2><h3 id="baloo-file-extractor"><a href="#baloo-file-extractor" class="headerlink" title="baloo_file_extractor"></a>baloo_file_extractor</h3><p>就是这个家伙，总把我的CPU跑12%，用久之后占用3G的共享内存</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su</span><br><span class="line">mv /usr/bin/baloo_file_extractor /usr/bin/baloo_file_extractor.orig</span><br><span class="line">ln -s /bin/<span class="literal">true</span> /usr/bin/baloo_file_extractor</span><br></pre></td></tr></table></figure>
-
-<p>这就完事</p>
-<h2 id="ibus-rime"><a href="#ibus-rime" class="headerlink" title="ibus-rime"></a>ibus-rime</h2><p>fcitx后台也好像挺费CPU的，所以也换到ibus了，rime根据github上的来配置简体中文即可（要看看文档了）</p>
-<hr>
-<h1 id="updata：2019-04-06"><a href="#updata：2019-04-06" class="headerlink" title="updata：2019-04-06"></a>updata：2019-04-06</h1><p>我又从kde跳回deepin了，kde的设置太多了</p>
-<hr>
-<h1 id="update-2019-05-01"><a href="#update-2019-05-01" class="headerlink" title="update : 2019-05-01"></a>update : 2019-05-01</h1><p>尝试了三个flagship版(kde,xfce,gnome)的manjaro和15.10的deepin，本来想用回deepinos的，第一次装wechat什么的都可以的，第二次装就说依赖出问题了，不愧是基于debian的啊，然后又装回来了，晕死。不愧是基于arch的manjaro，xjb装就可以，很少考虑依赖的问题。</p>
-<h2 id="ibus"><a href="#ibus" class="headerlink" title="ibus"></a>ibus</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ibus ibus-rime</span><br></pre></td></tr></table></figure>
-
-<p>修改配置文件~/.xprofile</p>
-<p>添加下面几行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=ibus</span><br><span class="line">export QT_IM_MODULE=ibus</span><br><span class="line">export XMODIFIERS=@im=ibus</span><br><span class="line">ibus-daemon -d -x</span><br></pre></td></tr></table></figure>
-
-<p>修改配置文件~/.bashrc</p>
-<p>添加下面几行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GTK_IM_MODULE=ibus</span><br><span class="line">export XMODIFIERS=@im=ibus</span><br><span class="line">export QT_IM_MODULE=ibus</span><br></pre></td></tr></table></figure>
-
-<p>感觉操作冗余了，dalao们教一教啊。</p>
-<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>下面两行选一个就行了，第一行为curl，第二行为wget，没装的自己装一下就行。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"</span><br><span class="line">sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"</span><br></pre></td></tr></table></figure>
-
-<p>.zshrc</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ZSH_THEME=&quot;agnoster&quot;</span><br><span class="line">plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting archlinux)</span><br></pre></td></tr></table></figure>
+          manjaro心路历程
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/12/manjaro1/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -632,7 +588,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:29:29" itemprop="dateModified" datetime="2019-08-26T14:29:29+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:16:12" itemprop="dateModified" datetime="2019-09-02T02:16:12+08:00">2019-09-02</time>
               </span>
             
           
@@ -682,16 +638,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h3><p>$$<br>P(A_i|B)=\frac{P(A_i)P(B|A_i)}{\sum_{j=1}^{n}P(A_j)P(B|A_j)}<br>$$</p>
-<p>一见面先抛公式。</p>
-<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>当公式左边的概率难以求得的时候，我们可以通过右面的公式求得左边的值，有点像反演的思想。</p>
-<h4 id="推-倒-导"><a href="#推-倒-导" class="headerlink" title="推 倒 导"></a>推 <del>倒</del> 导</h4><p>前置技能</p>
-<h5 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h5><p>当发生事件X的时候，发生事件Y的概率。</p>
-<p>即是当两件事情同时发生的概率除以发生X发生的概率。<br>$$<br>P(Y|X)=\frac{P(XY)}{P(X)}<br>$$</p>
-<h5 id="全概率公式"><a href="#全概率公式" class="headerlink" title="全概率公式"></a>全概率公式</h5><p>将样本空间划分成$n$件相互独立事件，求事件X的发生的概率，就是样本空间每件独立事件与事件X同时发生的概率乘每件事件发生的概率，然后全部加起来即可。<br>$$<br>P(X)=\sum_{i=1}^{n} {P(Y_i)P(X|Y_i)}<br>$$</p>
-<h5 id="开冲！"><a href="#开冲！" class="headerlink" title="开冲！"></a>开冲！</h5><p>$$<br>P(A_i|B)=\frac{P(A_{i}B)}{P(B)}=\frac{P(A_i)P(B|A_i)}{\sum_{j=1}^{n}P(A_j)P(B|A_j)}<br>$$</p>
-<p>就是下面用全概率公式即可推到得出贝叶斯公式。</p>
-
+          贝叶斯公式学习笔记
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/10/bayes/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -755,7 +711,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:30:00" itemprop="dateModified" datetime="2019-08-26T14:30:00+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:19:07" itemprop="dateModified" datetime="2019-09-02T02:19:07+08:00">2019-09-02</time>
               </span>
             
           
@@ -805,17 +761,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="FXXK-the-code"><a href="#FXXK-the-code" class="headerlink" title="FXXK the code"></a>FXXK the code</h2><h3 id="ACM"><a href="#ACM" class="headerlink" title="ACM"></a>ACM</h3><ul>
-<li>检查全局变量和局部变量</li>
-<li>改用int就不要用char，该用long long的时候就不要用int</li>
-<li>switch一定要用break(不熟悉就别用)</li>
-<li>跑线性逆元和阶乘的时候，从2开始跑。</li>
-<li>BFS要注意入队情况</li>
-</ul>
-<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><ul>
-<li>在有数学表达式的markdown文件里面不要用星号，会被解析为斜体，\cdot(点乘)，\times(叉乘)，\div(除以)。<br>$$<br>\cdot(点乘)，\times(叉乘)，\div(除以)<br>$$</li>
-</ul>
-
+          常见错误
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/09/FTC Warning/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -879,7 +834,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 15:08:26" itemprop="dateModified" datetime="2019-08-26T15:08:26+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:32:20" itemprop="dateModified" datetime="2019-09-02T02:32:20+08:00">2019-09-02</time>
               </span>
             
           
@@ -929,89 +884,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="整除分块"><a href="#整除分块" class="headerlink" title="整除分块"></a>整除分块</h2><p>$$<br>\sum_{i=1}^{n} \lfloor \frac {n}{i}\rfloor<br>$$</p>
-<table>
-<thead>
-<tr>
-<th align="center">i</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-<th align="center">6</th>
-<th align="center">7</th>
-<th align="center">8</th>
-<th align="center">9</th>
-<th align="center">10</th>
-<th align="center">11</th>
-<th align="center">12</th>
-<th align="center">13</th>
-<th align="center">14</th>
-<th align="center">15</th>
-<th align="center">16</th>
-<th align="center">17</th>
-<th align="center">18</th>
-<th align="center">19</th>
-<th align="center">20</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">$\lfloor \frac {n}{i}\rfloor$</td>
-<td align="center">20</td>
-<td align="center">10</td>
-<td align="center">6</td>
-<td align="center">5</td>
-<td align="center">4</td>
-<td align="center">3</td>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">2</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-</tr>
-</tbody></table>
-<p>$n/(n/i)$</p>
-<p>$n/i$就是要求的答案，$n(n/i)$就是满足大于等于答案的最大值$i_{max}$，每次根据这个范围去求就好了。$n/(n/i)=i_{max}$，就可以看成$k*(n/i)\le n$这个式子就k的最大值。</p>
-<p>$O(2\sqrt{n})$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">1</span>,r;l&lt;=n;l=r+<span class="number">1</span>)&#123;</span><br><span class="line">	r=n/(n/l);</span><br><span class="line">   ans+=(r-l+<span class="number">1</span>)*(n/l);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><h3 id="积性函数"><a href="#积性函数" class="headerlink" title="积性函数"></a>积性函数</h3><p>$\gcd(x,y)=1$ $f(xy)=f(x)*f(y)$  欧拉函数 莫比乌斯函数</p>
-<h3 id="完全积性函数"><a href="#完全积性函数" class="headerlink" title="完全积性函数"></a>完全积性函数</h3><p>$f(x\cdot y)=f(x)\cdot f(y)$  </p>
-<p>Example:  $f(x)=x$</p>
-<h3 id="狄利克雷卷积"><a href="#狄利克雷卷积" class="headerlink" title="狄利克雷卷积"></a>狄利克雷卷积</h3><p>两个数论函数<br>$$<br>(f*g)(n)=\sum_{d|n}f(d)g(\frac{n}{d})<br>$$</p>
-<h4 id="单位元"><a href="#单位元" class="headerlink" title="单位元"></a>单位元</h4><p>$$<br>\varepsilon(n)=\mu \cdot 1=\sum_{d|n}\mu(d)=[n=1]<br>$$</p>
-<p>$$<br>\varepsilon(n)= \begin{cases} 1&amp;n=1\ 0&amp;else \end{cases}<br>$$</p>
-<p>$$<br>(\varepsilon*g)(n)=\sum_{d|n}\varepsilon(d)g(\frac{n}{d})=\varepsilon(1)g(\frac{n}{1})=g(n)<br>$$</p>
-<p>恒等函数 1 ：   f(x)=1</p>
-<h3 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h3><p>$$<br>\mu(n)= \begin{cases} 1&amp;n=1\ 0&amp;n\text{ 含有平方因子}\ (-1)^k&amp;k\text{ 为 }n\text{ 的本质不同质因子个数}\ \end{cases}<br>$$</p>
-<p>$$<br>n=p_1^{k_1}p_2^{k_2}….p_t^{k_t}<br>$$</p>
-<p>$$<br>\sum_{d|n}\mu(d)=[n=1]<br>$$<br> 假设一个n有k个质因子<br>$$<br>\sum_{d|n}\mu(d)=\sum_{i=0}^{k}C^i_k\times (-1)^i=\sum_{i=0}^{k}C^i_k\times (-1)^i\times 1^{k-i}=(1-1)^k=[k=0]<br>$$</p>
-<h3 id="演"><a href="#演" class="headerlink" title="演"></a>演</h3><p>设两个函数f(x) g(x)<br>$$<br>f=f(n)=\sum_{d|n}g(d)=g\times 1<br>$$</p>
-<p>$$<br>f*\mu=g\times 1\times \mu=g<br>$$</p>
-<p>$$<br>g=f*\mu<br>$$</p>
-<h4 id="两个演"><a href="#两个演" class="headerlink" title="两个演"></a>两个演</h4><p>$$<br>f(n)=\sum_{d|n}g(d)\to g(n)=\sum_{d|n}\mu(d)\times f(\frac{n}{d})<br>$$</p>
-<p>$$<br>f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac{d}{n})\times f(d)<br>$$</p>
-<p>下推第二个演</p>
-<p>设$k=\frac{d}{n}$<br>$$<br>\sum_{n|d}\mu(\frac{d}{n})\cdot f(d)=\sum_{k}\mu(k)f(nk)=\sum_{k}\mu(k)\sum_{(nk)|t}g(t)=\sum_{k}\sum_{(nk)|t}\mu(k)g(t)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)<br>$$</p>
-<p>$$<br>\sum_{n|d}\mu(\frac{d}{n})\cdot f(d)=\sum_{t}g(t)\sum_{(nk)|t}\mu(k)=\sum_{t}g(t)\varepsilon(\frac{t}{n})=g(n)<br>$$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">primejudge</span><span class="params">(<span class="keyword">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(v, <span class="number">0</span>, <span class="keyword">sizeof</span> v);</span><br><span class="line">    pr = <span class="number">0</span>;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= lim; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!v[i]) &#123;</span><br><span class="line">            prime[pr++] = i;</span><br><span class="line">            v[i] = i;</span><br><span class="line">            mu[i] = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; pr &amp;&amp; lim / i &gt;= prime[j]; j++) &#123;</span><br><span class="line">            v[i * prime[j]] = prime[j];</span><br><span class="line">            <span class="keyword">if</span> (v[i] &lt;= prime[j])<span class="keyword">break</span>;</span><br><span class="line">            mu[i * prime[j]] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><p>求这个值$1\le x \le$ a    $1 \le y \le b $求$gcd(x,y)=k$的种数<br>$$<br>\sum_{i=1}^a\sum_{j=1}^b=[gcd(i,j)=k]<br>$$</p>
-<p>$$<br>\sum_{i=1}^{\lfloor \frac{a}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{b}{k} \rfloor}=[gcd(i,j)=1]<br>$$</p>
-<p>$$<br>f(n)=\sum_{n|d}g(d)\to g(n)=\sum_{n|d}\mu(\frac d n)\cdot f({d})<br>$$</p>
-<p>​                                            $\to$ 函数解释 ：  f(x)为x|gcd(i,j)的个数           g(x)    gcd(i,j)=x的个数<br>$$<br>f(m)=\lfloor \frac{a}{m}\rfloor \times \lfloor \frac{b}{m}\rfloor<br>$$</p>
-<p>$$<br>g(1)=\sum_{1|d}\mu(\frac d 1)\cdot f({d})=\sum_{1|d}\mu(d)\cdot f({d})<br>$$</p>
-
+          莫比乌斯反演学习笔记
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/24/Mobius-inversion-formula/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1075,7 +957,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:34:01" itemprop="dateModified" datetime="2019-08-26T14:34:01+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:38:29" itemprop="dateModified" datetime="2019-09-02T02:38:29+08:00">2019-09-02</time>
               </span>
             
           
@@ -1125,70 +1007,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>推荐一个博客:<a href="https://blog.csdn.net/tingyun_say/article/details/52343897" target="_blank" rel="noopener">约瑟夫环问题详解</a></p>
-<h3 id="约瑟夫问题"><a href="#约瑟夫问题" class="headerlink" title="约瑟夫问题"></a>约瑟夫问题</h3><p><strong>约瑟夫问题</strong>（有时也称为<strong>约瑟夫斯置换</strong>），是一个出现在计算机科学和数学中的问题。在计算机编程)的算法中，类似问题又称为<strong>约瑟夫环</strong>。</p>
-<p>人们站在一个等待被处决的圈子里。 计数从圆圈中的指定点开始，并沿指定方向围绕圆圈进行。 在跳过指定数量的人之后，执行下一个人。 对剩下的人重复该过程，从下一个人开始，朝同一方向跳过相同数量的人，直到只剩下一个人，并被释放。</p>
-<p>问题即，给定人数、起点、方向和要跳过的数字，选择初始圆圈中的位置以避免被处决。</p>
-<h4 id="简单约瑟夫环问题"><a href="#简单约瑟夫环问题" class="headerlink" title="简单约瑟夫环问题"></a>简单约瑟夫环问题</h4><p>给出n个人,间隔k个人,请这个人出列,一直这样下去,最后出列的人是谁?</p>
-<h5 id="递归解法"><a href="#递归解法" class="headerlink" title="递归解法"></a>递归解法</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> (fun(n<span class="number">-1</span>,k)+k)%n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>下面来解释一下,假设$k=3$</p>
-<table>
-<thead>
-<tr>
-<th>在环n的情况下</th>
-<th>在环n-1的情况下</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>n-3</td>
-</tr>
-<tr>
-<td>1</td>
-<td>n-2</td>
-</tr>
-<tr>
-<td>2</td>
-<td>被请出列了</td>
-</tr>
-<tr>
-<td>3</td>
-<td>0</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1</td>
-</tr>
-<tr>
-<td>…</td>
-<td>2</td>
-</tr>
-<tr>
-<td>n-3</td>
-<td>3</td>
-</tr>
-<tr>
-<td>n-2</td>
-<td>4</td>
-</tr>
-<tr>
-<td>n-1</td>
-<td>5</td>
-</tr>
-</tbody></table>
-<p>这里的fun都是对一个子问题的求解,强行解释为$f(n)=(f(n-1)+k)\mod n$.可以去上面推荐的博客看看,有图会看得更清楚.</p>
-<h4 id="进阶约瑟夫环问题"><a href="#进阶约瑟夫环问题" class="headerlink" title="进阶约瑟夫环问题"></a>进阶约瑟夫环问题</h4><p>题目传送门:<a href="https://codeforces.com/gym/101955/problem/K" target="_blank" rel="noopener">Gym - 101955K</a></p>
-<p>找出第M个出列的人</p>
-<p>所以这是题解?(雾</p>
-<p>第$m$个出列的人最后所在的环是$n-m+1$环,想知道算怎么来的?把$1$代进去验证一下就好了啊(逃.其实是因为把第$m$个人请出列之后就是一个$n-m$的环了.所以前一个就是第$m$个出列的人最后所在的环.</p>
-<p>知道n-m+1的状态了,第$m$个出列的人在$n-m+1$环上是在(k-1)的位置上(像上面一样用子问题,倒推出主问题).所以用上面的直接跑?$10^{18}$你想用O(n)跑?做你的大头梦去.</p>
-<p>如果要跨环的时候还是要用上面的跑的,其他的可以来神仙优化一下,在一个环下,一次跑完它,而不要一步一步跑.$((当前环长度-1)-(你所在的位置+1))$这个是你在当前环最多能跑的长度.怎么算的?(留坑).然后把这个数除以$k-1$就是你在这个环上一次能跑多少次.</p>
-<p>为什么除以$k-1$?因为你往回推的时候,别人已经把位置为$k-1$的人给请出列了,所以你只能剩下$[0,k-2]$的人在这个环里面,所以你除以这个才能知道你在这个环上能跑多少次.倒推到n环就要退出了,所以你在跑一整个环的时候,要取个min值,当前还能跑得环数和当前环能跑的次数.</p>
-<p>用上面的算法的时候,要特判一下$k$,$k=1$的时候直接输出就好了,不然会RE.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span> ( <span class="string">"%d"</span>, &amp;T );</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> kase = <span class="number">1</span>; kase &lt;= T; kase++ ) &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> n, m, k;</span><br><span class="line">        <span class="built_in">scanf</span> ( <span class="string">"%lld %lld %lld"</span>, &amp;n, &amp;m, &amp;k );</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> ( k == <span class="number">1</span> ) &#123;</span><br><span class="line">            <span class="built_in">printf</span> ( <span class="string">"Case #%d: %lld\n"</span>, kase, m );</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ans = ( k - <span class="number">1</span> ) % ( n - m + <span class="number">1</span> );</span><br><span class="line">            <span class="keyword">for</span> ( <span class="keyword">long</span> <span class="keyword">long</span> i = n - m + <span class="number">2</span>; i &lt;= n; ) &#123;</span><br><span class="line">                <span class="keyword">if</span> ( ans + k &gt;= i ) &#123;</span><br><span class="line">                    ans = ( ans + k ) % i;</span><br><span class="line">                    i++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">long</span> <span class="keyword">long</span> t = min ( n - i + <span class="number">1</span>, ( i - ans <span class="number">-2</span> ) / (k<span class="number">-1</span>) );</span><br><span class="line">                    ans += t * k;</span><br><span class="line">                    i += t;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span> ( <span class="string">"Case #%d: %lld\n"</span>, kase, ans + <span class="number">1</span> );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+          约瑟夫环，很有趣，也很秃
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/12/08/alg4/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1252,7 +1080,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:30:11" itemprop="dateModified" datetime="2019-08-26T14:30:11+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:29:11" itemprop="dateModified" datetime="2019-09-02T02:29:11+08:00">2019-09-02</time>
               </span>
             
           
@@ -1279,7 +1107,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>517</span>
+              <span>541</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -1302,23 +1130,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>题目传送门<a href="https://codeforces.com/gym/101955/problem/C" target="_blank" rel="noopener">C - Insertion Sort</a></p>
-<p>不重复题意了，直接写解的过程，场上推不出来，赛后看题解才推出来的</p>
-<p>网上题解说存在$k\ge n$的情况，然而我们特判$k+1\ge n$的时候就直接输出$n!$。</p>
-<p>特判之后，必定是$k\lt n-1$。</p>
-<p>现在来推一下,先不考虑前k项的$k!$,后面再乘一下就算完了.</p>
-<p>1.整一个序列完全有序的情况只有1种</p>
-<p>2.当前k个数都是$\left[1,k\right]$的情况,在后面$n-k$个数里面选一个数,不放在自己的位置上,根据乘法原理,算出来就是$(n-k)*(n-k-1)$</p>
-<p>3.当前k个数不是$\left[1,k\right]$的情况下,而你又要保证最长上升子序列的长度是$n-1$,只能是一个完全有序的序列中,你在前k个数中拿一个数插入到$\left[k+1,n\right]$的其中一个位置中,有$n-k$种情况,根据乘法原理,算出来就是$(n-k)*k$.</p>
-<p>最后就是</p>
-<script type="math/tex; mode=display">
-  ans =
-\begin{cases}
-n! , & \text{ $k+1\ge n $}\\
-k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
-\end{cases}
-</script>
-
+          Gym-101955C题解
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/12/07/Gym-101955C/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1382,7 +1203,7 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-27 01:18:23" itemprop="dateModified" datetime="2019-08-27T01:18:23+08:00">2019-08-27</time>
+                <time title="修改时间：2019-09-02 02:37:45" itemprop="dateModified" datetime="2019-09-02T02:37:45+08:00">2019-09-02</time>
               </span>
             
           
@@ -1432,22 +1253,16 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="活动最好能在9点之前搞完"><a href="#活动最好能在9点之前搞完" class="headerlink" title="活动最好能在9点之前搞完"></a>活动最好能在9点之前搞完</h3><ul>
-<li>因为9点之后有人过来确认电脑是否关了的。</li>
-</ul>
-<h3 id="教室电脑无法使用U盘怎么办"><a href="#教室电脑无法使用U盘怎么办" class="headerlink" title="教室电脑无法使用U盘怎么办"></a>教室电脑无法使用U盘怎么办</h3><ul>
-<li>不用U盘<ul>
-<li>在网盘或者云服务器上，把ppt给下载到学校的电脑上<br>用自己的电脑<br>  教室提供VGA接口</li>
-</ul>
-</li>
-</ul>
-<h3 id="电影画质要好"><a href="#电影画质要好" class="headerlink" title="电影画质要好"></a>电影画质要好</h3><ul>
-<li>不要忽然绿一片的，忽然紫一片的，很影响观感</li>
-</ul>
-<h3 id="开机"><a href="#开机" class="headerlink" title="开机"></a>开机</h3><ul>
-<li>先用指导老师的卡刷一下卡，自己摸索刷卡的地方。（应该在膝盖的位置）<br>   暴力一点把封印多媒体平台的盖子打开<br>   找开机键（红色绿色：一个开机，一个重启）忘记哪个对应哪个了，留坑，下次更新。</li>
-</ul>
-<h4 id="所以活动要的文件不要只给一个人负责，要学着给自己一条后路"><a href="#所以活动要的文件不要只给一个人负责，要学着给自己一条后路" class="headerlink" title="所以活动要的文件不要只给一个人负责，要学着给自己一条后路"></a>所以活动要的文件不要只给一个人负责，要学着给自己一条后路</h4>
+          工作注意事项
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/17/ggxx2/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1511,7 +1326,7 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:30:18" itemprop="dateModified" datetime="2019-08-26T14:30:18+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:38:48" itemprop="dateModified" datetime="2019-09-02T02:38:48+08:00">2019-09-02</time>
               </span>
             
           
@@ -1561,23 +1376,16 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="逆元定义"><a href="#逆元定义" class="headerlink" title="逆元定义"></a>逆元定义</h3><p>$a=\frac{1}{b}(mod\ p)$，也就是$a*b=1(mod\ p)$。表示$a$为$b$在$mod\ p$意义下的逆元</p>
-<h4 id="快速幂求逆元"><a href="#快速幂求逆元" class="headerlink" title="快速幂求逆元"></a>快速幂求逆元</h4><p>$$a^p=a(mod\ p)$$</p>
-<p>用二项式定理证明</p>
-<p>$$a^p=((a-1)+1)^p=\sum_{i=0}^p{C_p^i*(a-1)^i}$$</p>
-<p>来康康这里面的组合数鸭</p>
-<p>$$C_n^m=\frac{n!}{m!*(n-m)!}$$</p>
-<p>可以发现当n是素数的时候，在$1\le m\le n-1$的项里面都有$n$这个因子，所以所以模运算剩下的只有</p>
-<p>$$C_p^0*(a-1)^0$$</p>
-<p>$$C_p^p*(a-1)^p$$</p>
-<p>也就是</p>
-<p>$$a^p=(a-1)^p+1(mod\ p)$$</p>
-<p>用数学归纳法就可得</p>
-<p>$$a^p=a(mod\ p)$$</p>
-<p>$$a^{p-1}=1(mod\ p)$$</p>
-<p>$$a^{p-2}=\frac{1}{a}(mod\ p)$$</p>
-<p>这样就得到$a$在$mod\ p$意义下的逆元了。</p>
-
+          逆元学习笔记
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/10/inverse-element/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1641,7 +1449,7 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-26 14:29:43" itemprop="dateModified" datetime="2019-08-26T14:29:43+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-02 02:16:36" itemprop="dateModified" datetime="2019-09-02T02:16:36+08:00">2019-09-02</time>
               </span>
             
           
@@ -1691,23 +1499,16 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>注意!!!:这不是树状数组的详解,而是利用树状数组做区间修改的方法,当然能区间修改了也能单点修改</p>
-<p>先来个简单的树状数组啊<br>功能:</p>
-<ul>
-<li>单点更新</li>
-<li>区间查询(单点查询也就是特殊的区间查询啦)</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> id)</span></span>&#123;<span class="comment">//id的位置上的数加上x</span></span><br><span class="line">    <span class="keyword">while</span>(id&lt;=n)&#123;</span><br><span class="line">        a[id]+=x;</span><br><span class="line">        id+=id&amp;(-id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;<span class="comment">//id位置的前缀和</span></span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(id)&#123;</span><br><span class="line">        ans+=a[id];</span><br><span class="line">        id-=id&amp;(-id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="区间和区间更新"><a href="#区间和区间更新" class="headerlink" title="区间和区间更新"></a>区间和区间更新</h3><p>以前想区间更新的时候就要跑去写线段树了</p>
-<p>但现在有了差分这种思想,就可以用树状数组去区间更新啦[滑稽]</p>
-<p>我们对原数列$[1,n]$进行一些操作啊<br>$$d_i=a_i -a_{i-1}(a_0=0)$$<br>那么<br>$$a_x=\sum_{i=1}^x d_i$$<br>又可得<br>$$\sum_{i=1}^x a_i=\sum_{i=1}^x\sum_{j=1}^i d_j=\sum_{i=1}^x (x-i+1)d_i$$<br>显然(滑稽)<br>$$ \sum_{i=1}^x a_i=(x+1)\sum_{i=1}^x d_i - \sum_{i=1}^x d_i*i $$</p>
-<p>所以这种要维护两个数组,一个维护$d_i$和一个$d <em>i$ $*$ $i$<br><del>快点进正题啊,怎么区间修改啊,我等不及了</del><br>进正题,区间修改就用到差分的性质了,先来康康这个式子<br>$$ a_x=\sum</em>{i=1}^x d_i $$<br>假设在区间$[L,R]$加$num$我们是不是只要在$d_L$加上$num$,在$R+1$上减去num.(没看懂的,自己想一下,很简单的啦)<del>笔者出来挨锤</del><br>抛个板子,<del>逃了逃了,怕挨锤</del></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BIT</span>&#123;</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> a1[N],a2[N];</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x&amp;-x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> _n)</span></span>&#123;</span><br><span class="line">        n=_n+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            a1[i]=<span class="number">0</span>;</span><br><span class="line">            a2[i]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=n;i+=lowbit(i))&#123;</span><br><span class="line">            a1[i]+=y;</span><br><span class="line">            a2[i]+=<span class="number">1l</span>l*x*y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">lradd</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        add(l,x);</span><br><span class="line">        add(r+<span class="number">1</span>,-x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i;i-=lowbit(i))&#123;</span><br><span class="line">            ans+=<span class="number">1l</span>l*(x+<span class="number">1</span>)*a1[i]-a2[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">lrsum</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sum(r)-sum(l<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;bits;</span><br></pre></td></tr></table></figure>
-
-<h3 id="区间最值，单点更新，区间查询"><a href="#区间最值，单点更新，区间查询" class="headerlink" title="区间最值，单点更新，区间查询"></a>区间最值，单点更新，区间查询</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> x &amp; (-x);&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">updata</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> lx, i;</span><br><span class="line">	<span class="keyword">while</span> (x &lt;= n)</span><br><span class="line">	&#123;</span><br><span class="line">		h[x] = a[x];</span><br><span class="line">		lx = lowbit(x);</span><br><span class="line">		<span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;lx; i&lt;&lt;=<span class="number">1</span>)</span><br><span class="line">			h[x] = max(h[x], h[x-i]);</span><br><span class="line">		x += lowbit(x);</span><br><span class="line">	&#125;		</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (y &gt;= x)</span><br><span class="line">	&#123;</span><br><span class="line">		ans = max(a[y], ans);</span><br><span class="line">		y --;</span><br><span class="line">		<span class="keyword">for</span> (; y-lowbit(y) &gt;= x; y -= lowbit(y))</span><br><span class="line">			ans = max(h[y], ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+          树状数组学习笔记
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/06/binary-index-tree/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1931,6 +1732,10 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
           <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
         </li>
       
+        <li class="links-of-blogroll-item">
+          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+        </li>
+      
     </ul>
   </div>
 
@@ -1951,7 +1756,7 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heartbeat"></i>
   </span>
@@ -2020,6 +1825,7 @@ k!*(1+(n-k)*(n-k-1)+(n-k)*k), & \text{$1\le k\lt n-1$}
     
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
