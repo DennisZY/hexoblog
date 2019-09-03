@@ -9,13 +9,14 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/favicon.png?v=7.3.0" color="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/favicon.png?v=7.4.0" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
 
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
 
 <link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Fira Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
@@ -28,7 +29,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '7.3.0',
+    version: '7.4.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"mac"},
@@ -52,7 +53,8 @@
       copy_button: '复制',
       copy_success: '复制成功',
       copy_failure: '复制失败'
-    }
+    },
+    sidebarPadding: 40
   };
 </script>
 
@@ -67,7 +69,6 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dennis&#39;s Blog">
 <meta name="twitter:description" content="I am writing a blog to record some implementations and errors about the algorithm.">
-  <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
   <link rel="canonical" href="https://denniszy.github.io/tags/algorithm/page/2/">
 
 
@@ -83,7 +84,6 @@
 </script>
 
   <title>标签: algorithm | Dennis's Blog</title>
-  <meta name="generator" content="Hexo 3.9.0">
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116145543-4"></script>
   <script>
@@ -580,10 +580,10 @@
     <div class="sidebar-inner">
 
       <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+        <li class="sidebar-nav-toc">
           文章目录
         </li>
-        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+        <li class="sidebar-nav-overview">
           站点概览
         </li>
       </ul>
@@ -619,25 +619,7 @@
             <a href="/categories/">
           
         
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -648,68 +630,6 @@
         
           
             <a href="/tags/">
-          
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
           
         
         <span class="site-state-item-count">30</span>
@@ -794,16 +714,20 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
     <span title="站点总字数">25k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
     <span title="站点阅读时长">23 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.3.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.0</div>
 
         
 <div class="busuanzi-count">
@@ -851,29 +775,22 @@
   </div>
 
   
+
+
     
   
   <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
   <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
-<script src="/js/schemes/pisces.js?v=7.3.0"></script>
-<script src="/js/next-boot.js?v=7.3.0"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
 
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
 
 
 
@@ -882,7 +799,7 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  <script src="/js/local-search.js?v=7.4.0"></script>
 
 
 
