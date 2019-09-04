@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hzycjy.top/2019/09/04/dogcom/</loc>
+    
+    <lastmod>2019-09-04T16:27:01.772Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/2019/07/29/acmtemplate/</loc>
+    
+    <lastmod>2019-09-04T05:45:09.690Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.hzycjy.top/2019/09/04/netlify-blog/</loc>
     
     <lastmod>2019-09-03T18:22:47.863Z</lastmod>
@@ -257,13 +271,6 @@
     <loc>https://blog.hzycjy.top/2019/03/10/bayes/</loc>
     
     <lastmod>2019-09-01T18:16:12.047Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/07/29/acmtemplate/</loc>
-    
-    <lastmod>2019-09-01T18:15:43.328Z</lastmod>
     
   </url>
   

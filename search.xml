@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>dogcom</title>
+      <link href="/2019/09/04/dogcom/"/>
+      <url>/2019/09/04/dogcom/</url>
+      
+        <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>linux版的drcom无法使用，为了使用校园网，我也是莫的办法，<del>逼良为娼</del>，</p><p>在linux上通过pppoe连接校园网，由于学校需要特定的心跳包，所以需要自己给服务器发心跳包来维持pppoe连接。</p><p>之前是通过python版本的程序来发送心跳包的，<a href="https://github.com/drcoms/drcom-generic/blob/master/latest-pppoe.py" target="_blank" rel="noopener">源程序</a>来源于<a href="https://github.com/drcoms/drcom-generic" target="_blank" rel="noopener">drcoms/drcom-generic</a></p><h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><p>python版本占的内存有点多，<del>才几十M，你真的是关心那几十M内存吗？况且换C程序，内存占用也没得到怎么样的优化</del></p><p>python版本的程序，在校园网连接掉了的时候，就会疯狂发送，直到连接正常，所以有时候一脚把网线踢掉的时候，电脑会起飞，发烫，疯狂log，有次它给我log到了11G，<del>我不会改啊，不是很熟悉python</del></p><h3 id="dogcom使用"><a href="#dogcom使用" class="headerlink" title="dogcom使用"></a>dogcom使用</h3><ol><li>windows打开drcom，打开wireshark，使用wireshark抓取drcom登录时的包，保存下来</li><li>打开<a href="https://drcoms.github.io/drcom-generic/" target="_blank" rel="noopener">Auto Configure</a>，选择自己的drcom版本，点击open，选择你的抓包文件，得到配置文本，保存为<code>dogcom.conf</code></li><li>找个地方把仓库给克隆下来，运行<code>git clone https://github.com/mchome/dogcom.git</code></li><li>进入项目文件夹，编译，运行命令<code>make force_encrypt=y</code>，过亿亿亿亿亿亿亿亿亿会你就拥有了dogcom文件了，这是linux的操作，windows的操作请看项目主页</li><li>把<code>dogcom</code>文件和<code>dogcom.conf</code>文件放到你一个你想运行的文件夹中</li><li>运行，比如我是通过pppoe上网的，就运行<code>dogcom -m pppoe -c dogcom.conf</code></li></ol><p>更多的参数配置，请到项目官网查看，<del>其实我不会</del></p><h3 id="python版本心跳包使用"><a href="#python版本心跳包使用" class="headerlink" title="python版本心跳包使用"></a>python版本心跳包使用</h3><p>也差不多，通过抓包文件得到配置文本之后，修改<a href="https://github.com/drcoms/drcom-generic/blob/master/latest-pppoe.py" target="_blank" rel="noopener">python源程序</a>的<code>server</code> <code>pppoe_flag</code>  <code>keep_alive2_flag</code>的指即可，我以前运行的是python2版本的，运行命令<code>python2 latest-pppoe.py</code>即可，它会在你的运行目录生成一个log文件</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 折腾笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> drcom </tag>
+            
+            <tag> dogcom </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Netlify</title>
       <link href="/2019/09/04/netlify-blog/"/>
       <url>/2019/09/04/netlify-blog/</url>
@@ -20,9 +49,9 @@
       
         <tags>
             
-            <tag> hexo </tag>
-            
             <tag> github </tag>
+            
+            <tag> hexo </tag>
             
             <tag> netlify </tag>
             
@@ -355,7 +384,7 @@
       <link href="/2019/07/29/acmtemplate/"/>
       <url>/2019/07/29/acmtemplate/</url>
       
-        <content type="html"><![CDATA[<h3 id="Introducing"><a href="#Introducing" class="headerlink" title="Introducing"></a>Introducing</h3><p>We are working on a new ACMtemplate for preparing the coming contest. But it is a long job. We need to take some time to collect template and refactor it in order to make it useful. It has two versions. One is made from markdown by using typora, another one is made from $\LaTeX$ by using $\TeX{studio}$.</p><p>This is the <a href="https://github.com/DennisZY/ACMtemplate" target="_blank" rel="noopener">github repo</a>. I would be happy to have your template contributed.</p><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><h4 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h4><ul><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-markdown-version.md" target="_blank" rel="noopener">markdown</a></li><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-latex-version.tex" target="_blank" rel="noopener">latex</a></li></ul><h4 id="pdf"><a href="#pdf" class="headerlink" title="pdf"></a>pdf</h4><ul><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-markdown-version.pdf" target="_blank" rel="noopener">markdown</a></li><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-latex-version.pdf" target="_blank" rel="noopener">latex</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="Introducing"><a href="#Introducing" class="headerlink" title="Introducing"></a>Introducing</h3><p>We are working on a new ACMtemplate for preparing the coming contest. But it is a long job. We need to take some time to collect template and refactor it in order to make it useful. It has two versions. One is made from markdown by using typora, another one is made from $\LaTeX$ by using $\TeX{studio}$.</p><p>This is the <a href="https://github.com/DennisZY/ACMtemplate" target="_blank" rel="noopener">github repo</a>. I would be happy to have your template contributed.</p><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><h4 id="source-code"><a href="#source-code" class="headerlink" title="source code"></a>source code</h4><ul><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-markdown-version.md" target="_blank" rel="noopener">markdown</a></li><li><a href="https://raw.githubusercontent.com/DennisZY/ACMtemplate/master/ACM-template-latex-version.tex" target="_blank" rel="noopener">latex</a></li></ul>]]></content>
       
       
       <categories>
