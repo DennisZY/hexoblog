@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hzycjy.top/2019/04/15/math3/</loc>
+    
+    <lastmod>2019-09-06T21:41:04.101Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.hzycjy.top/2019/09/06/update-hexo-theme-smoothly/</loc>
     
     <lastmod>2019-09-05T19:53:15.957Z</lastmod>
@@ -250,13 +257,6 @@
     <loc>https://blog.hzycjy.top/2018/08/28/alg2/</loc>
     
     <lastmod>2019-09-01T18:17:31.057Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/04/15/math3/</loc>
-    
-    <lastmod>2019-09-01T18:17:15.943Z</lastmod>
     
   </url>
   

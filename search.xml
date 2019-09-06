@@ -581,9 +581,9 @@
       
         <tags>
             
-            <tag> ACM </tag>
-            
             <tag> algorithm </tag>
+            
+            <tag> ACM </tag>
             
             <tag> A_star </tag>
             
@@ -677,7 +677,7 @@
       <link href="/2019/04/15/math3/"/>
       <url>/2019/04/15/math3/</url>
       
-        <content type="html"><![CDATA[<h2 id="CRT-中国剩余定理"><a href="#CRT-中国剩余定理" class="headerlink" title="CRT(中国剩余定理)"></a>CRT(中国剩余定理)</h2><p>给你一个方程组<br>$$<br>x=a_1 \mod {m_1}<br>$$</p><p>$$<br>x=a_2 \mod{m_2}<br>$$</p><p>$$<br>x=a_3 \mod{m_3}<br>$$</p><p>保证每个$m_i$两两互质，求$x$。</p><p>我们先臆想一个神奇的解出来，</p><p>设$m=\prod_{1}^{n}{m_i}$，$M_i=m / m_i$，$t_i\times M_i=1(\mod m_i)$。</p><p>得 $x=\sum_{i=1}^{n}a_i\times M_i\times t_i$</p><p>得出的$x$是在M范围内的唯一解。</p><h3 id="假装证明"><a href="#假装证明" class="headerlink" title="假装证明"></a>假装证明</h3><p>当求$x\mod m_i$的时候，其他的$a_j\times M_j\times t_j(j\neq i)$都会有$m_i$的这个因子，所以只需考虑$a_i\times M_i\times t_i$这个式子。因为$M_i\times t_i= 1(\mod m_i)$，所以 $ x=a_i(\mod m_i) $ 。证毕。</p><p>当然这只是其中一个解啦。</p><h2 id="exCRT-留坑"><a href="#exCRT-留坑" class="headerlink" title="exCRT(留坑)"></a>exCRT(留坑)</h2><p>不保证每个$m_i$两两互质，求$x$。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="CRT-中国剩余定理"><a href="#CRT-中国剩余定理" class="headerlink" title="CRT(中国剩余定理)"></a>CRT(中国剩余定理)</h2><p>给你一个方程组<br>$$<br>x=a_1 \pmod {m_1}<br>$$</p><p>$$<br>x=a_2 \pmod{m_2}<br>$$</p><p>$$<br>x=a_3 \pmod{m_3}<br>$$</p><p>保证每个$m_i$两两互质，求$x$。</p><p>我们先臆想一个神奇的解出来，</p><p>设$m=\prod_{1}^{n}{m_i}$，$M_i=\frac{m}{m_i}$，$t_i\times M_i=1\pmod {m_i}$。</p><p>得 $x=\sum_{i=1}^{n}a_i\times M_i\times t_i$</p><p>得出的$x$是在M范围内的唯一解。</p><h3 id="假装证明"><a href="#假装证明" class="headerlink" title="假装证明"></a>假装证明</h3><p>当求$x\bmod m_i$的时候，其他的$a_j\times M_j\times t_j(j\neq i)$都会有$m_i$的这个因子，所以只需考虑$a_i\times M_i\times t_i$这个式子。因为$M_i\times t_i= 1\pmod {m_i}$，所以 $ x=a_i\pmod {m_i} $ 。证毕。</p><p>当然这只是其中一个解啦。</p><h2 id="exCRT"><a href="#exCRT" class="headerlink" title="exCRT"></a>exCRT</h2><p>不保证每个$m_i$两两互质，求$x$。</p><p>考虑两个方程的时候<br>$$<br>\begin{cases}<br>x=a_i \pmod{m_i}\\<br>x=a_j \pmod{m_j}<br>\end{cases}<br>$$<br>我们可以将它改成<br>$$<br>\begin{cases}<br>x=a_i + m_i\times b_i \\<br>x=a_j + m_j\times b_j<br>\end{cases}<br>$$</p><p>可得<br>$$<br>a_i + m_i\times b_i=a_j + m_j\times b_j \Rightarrow m_i\times b_i-m_j\times b_j=a_j-a_i<br>$$<br>当$(a_j-a_i)\bmod \gcd(m_i,m_j) \neq 0$时，方程无解，</p><p>否则可以通过扩展欧几里得算法得出最小正解$b_i,b_j$，即可得到一条新的式子<br>$$<br>x=a_i+m_i\times b_i \pmod{lcm(m_i,m_j)}<br>$$<br>当方程数量大于二的时候，可以通过两两合并，</p>]]></content>
       
       
       <categories>
