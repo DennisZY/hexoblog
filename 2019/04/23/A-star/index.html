@@ -30,7 +30,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.4.0',
-    exturl: false,
+    exturl: true,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
@@ -224,7 +224,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">49</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">46</span></a>
 
   </li>
       
@@ -396,7 +396,7 @@
 </ul>
 <h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>当我们选择一条最短的路的时候，我们总是走估计路的距离最短的路，我们中途发现道路堵塞的时候，觉得走其他路可能会更快，而不是走直线。这其实跟A_star算法很像啦(不敢说一样啊)。</p>
 <h3 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h3><p>A_star需要一个估价函数，估计当前状态到目标的花费，然后每次根据当前花费+估计的花费进行优先队列bfs，保证每次取出的是当前花费+估计的花费最小的，然后去扩展下一个状态，就是每次保证当前花费+估计的花费最小的，而且我们要保证估价出来的花费要小于等于实际花费，不然就会跑错，如果到达终点了，那个花费必然是最小的。</p>
-<h3 id="来道题目吧"><a href="#来道题目吧" class="headerlink" title="来道题目吧"></a>来道题目吧</h3><p><a href="http://poj.org/problem?id=2449" target="_blank" rel="noopener">POJ2449-Remmarguts’ Date</a>求k短路。</p>
+<h3 id="来道题目吧"><a href="#来道题目吧" class="headerlink" title="来道题目吧"></a>来道题目吧</h3><p><span class="exturl" data-url="aHR0cDovL3Bvai5vcmcvcHJvYmxlbT9pZD0yNDQ5" title="http://poj.org/problem?id=2449">POJ2449-Remmarguts’ Date<i class="fa fa-external-link"></i></span>求k短路。</p>
 <p>按照A_star算法，第k次访问终点的时候就是K短路的花费啦。估价函数也很容易设计，一个点到终点的估价跑个单源最短路就OK了。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> tot,n,m;</span><br><span class="line"><span class="keyword">int</span> Head[<span class="number">1010</span>],nxt[N&lt;&lt;<span class="number">1</span>],ver[N&lt;&lt;<span class="number">1</span>],w[N&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">    ver[tot]=v;</span><br><span class="line">    w[tot]=d;</span><br><span class="line">    nxt[tot]=Head[u];</span><br><span class="line">    Head[u]=tot++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">bool</span> v[<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijk</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">    priority_queue&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;,<span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt;,greater&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; &gt;q;</span><br><span class="line">    <span class="built_in">memset</span>(d,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> d);</span><br><span class="line">    <span class="built_in">memset</span>(v,<span class="number">0</span>,<span class="keyword">sizeof</span> v);</span><br><span class="line">    q.push(make_pair(<span class="number">0</span>,s));</span><br><span class="line">    d[s]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(q.size()) &#123;</span><br><span class="line">        pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; tmp = q.top();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">int</span> u = tmp.second;</span><br><span class="line">        <span class="keyword">if</span>(v[u])<span class="keyword">continue</span>;</span><br><span class="line">        v[u]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=Head[u],v; i; i=nxt[i]) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i&amp;<span class="number">1</span>)<span class="keyword">continue</span>;</span><br><span class="line">            v=ver[i];</span><br><span class="line">            <span class="keyword">if</span>(d[v]&gt;d[u]+w[i])&#123;</span><br><span class="line">                d[v]=d[u]+w[i];</span><br><span class="line">                q.push(make_pair(d[v],v));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> cnt[<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">kth</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s,t,k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;s,&amp;t,&amp;k);</span><br><span class="line">    <span class="keyword">if</span>(s==t)k++;</span><br><span class="line">    dijk(t);</span><br><span class="line">    <span class="built_in">memset</span>(cnt,<span class="number">0</span>,<span class="keyword">sizeof</span> cnt);</span><br><span class="line">    priority_queue&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;,<span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt;,greater&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; &gt; &gt;q;</span><br><span class="line">    q.push(make_pair(d[s],s));</span><br><span class="line">    <span class="keyword">while</span>(q.size()) &#123;</span><br><span class="line">        pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; tmp = q.top();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">int</span> u = tmp.second;</span><br><span class="line">        ++cnt[u];</span><br><span class="line">        <span class="keyword">if</span>(cnt[t]==k) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,tmp.first);</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=Head[u],v; i; i=nxt[i]) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i&amp;<span class="number">1</span>)&#123;</span><br><span class="line">                v=ver[i];</span><br><span class="line">                <span class="keyword">if</span>(cnt[v]!=k)q.push(make_pair(tmp.first-d[u]+w[i]+d[v],v));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("out.txt","w",stdout);</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="built_in">memset</span>(Head,<span class="number">0</span>,<span class="keyword">sizeof</span> Head);</span><br><span class="line">    tot=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,x,y,z; i&lt;=m; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;x,&amp;y,&amp;z);</span><br><span class="line">        add(x,y,z);</span><br><span class="line">        add(y,x,z);</span><br><span class="line">    &#125;</span><br><span class="line">    kth();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -406,6 +406,66 @@
     
     
     
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-04-23</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/04/23/POJ3085/" rel="bookmark">[POJ3085]Nightmare Ⅱ 题解报告</a></div>
+      
+        <div class="popular-posts-excerpt"><p>POJ3085题解报告</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-04-22</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/04/22/POJ3635/" rel="bookmark">[POJ3635]Full Tank题解报告</a></div>
+      
+        <div class="popular-posts-excerpt"><p>POJ3635题解报告</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-07-29</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/07/29/2019nowcoder3/" rel="bookmark">2019-Nowcoder-Multi-University-Training-Camp-3</a></div>
+      
+        <div class="popular-posts-excerpt"><p>2019牛客多校第三场题解</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-07-29</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/07/29/acmtemplate/" rel="bookmark">Template</a></div>
+      
+        <div class="popular-posts-excerpt"><p>ACM常用算法模板</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-07-29</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/07/29/2019nowcoder2/" rel="bookmark">2019-Nowcoder-Multi-University-Training-Camp-2</a></div>
+      
+        <div class="popular-posts-excerpt"><p>2019牛客多校第二场题解</p></div>
+      
+    </li>
+  
+  </ul>
+
         
       
         
@@ -419,7 +479,7 @@
     <a href="https://blog.hzycjy.top/2019/04/23/A-star/" title="A_star不详解">https://blog.hzycjy.top/2019/04/23/A-star/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 
@@ -527,7 +587,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -571,14 +631,14 @@
       
         
       
-        <a href="https://github.com/denniszy" title="GitHub &rarr; https://github.com/denniszy" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Rlbm5pc3p5" title="GitHub &rarr; https://github.com/denniszy"><i class="fa fa-fw fa-github"></i></span>
       </span>
     
   </div>
   <div class="cc-license motion-element" itemprop="license">
     
   
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -589,19 +649,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://yycoderape.github.io" title="https://yycoderape.github.io" rel="noopener" target="_blank">YYcoder</a>
+          <span class="exturl" data-url="aHR0cHM6Ly95eWNvZGVyYXBlLmdpdGh1Yi5pbw==" title="https://yycoderape.github.io">YYcoder</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/weixin_42973524" title="https://blog.csdn.net/weixin_42973524" rel="noopener" target="_blank">wuzj</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjk3MzUyNA==" title="https://blog.csdn.net/weixin_42973524">wuzj</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NyaXN0aW5hYWE=" title="https://blog.csdn.net/Cristinaaa">Cristinaaa</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9odWFuZ3J1bmZlbmdhLmdpdGh1Yi5pbw==" title="https://huangrunfenga.github.io">Kelin</span>
         </li>
       
     </ul>
@@ -644,9 +704,9 @@
     
     <span title="站点阅读时长">24 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Pisces</span></div>
 
         
 <div class="busuanzi-count">

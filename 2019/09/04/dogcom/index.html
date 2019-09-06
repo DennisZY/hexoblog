@@ -30,7 +30,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.4.0',
-    exturl: false,
+    exturl: true,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
@@ -224,7 +224,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">49</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">46</span></a>
 
   </li>
       
@@ -392,25 +392,85 @@
       
         <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>linux版的drcom无法使用，为了使用校园网，我也是莫的办法，<del>逼良为娼</del>，</p>
 <p>在linux上通过pppoe连接校园网，由于学校需要特定的心跳包，所以需要自己给服务器发心跳包来维持pppoe连接。</p>
-<p>之前是通过python版本的程序来发送心跳包的，<a href="https://github.com/drcoms/drcom-generic/blob/master/latest-pppoe.py" target="_blank" rel="noopener">源程序</a>来源于<a href="https://github.com/drcoms/drcom-generic" target="_blank" rel="noopener">drcoms/drcom-generic</a></p>
+<p>之前是通过python版本的程序来发送心跳包的，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RyY29tcy9kcmNvbS1nZW5lcmljL2Jsb2IvbWFzdGVyL2xhdGVzdC1wcHBvZS5weQ==" title="https://github.com/drcoms/drcom-generic/blob/master/latest-pppoe.py">源程序<i class="fa fa-external-link"></i></span>来源于<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RyY29tcy9kcmNvbS1nZW5lcmlj" title="https://github.com/drcoms/drcom-generic">drcoms/drcom-generic<i class="fa fa-external-link"></i></span></p>
 <h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><p>python版本占的内存有点多，<del>才几十M，你真的是关心那几十M内存吗？况且换C程序，内存占用也没得到怎么样的优化</del></p>
 <p>python版本的程序，在校园网连接掉了的时候，就会疯狂发送，直到连接正常，所以有时候一脚把网线踢掉的时候，电脑会起飞，发烫，疯狂log，有次它给我log到了11G，<del>我不会改啊，不是很熟悉python</del></p>
 <h3 id="dogcom使用"><a href="#dogcom使用" class="headerlink" title="dogcom使用"></a>dogcom使用</h3><ol>
 <li>windows打开drcom，打开wireshark，使用wireshark抓取drcom登录时的包，保存下来</li>
-<li>打开<a href="https://drcoms.github.io/drcom-generic/" target="_blank" rel="noopener">Auto Configure</a>，选择自己的drcom版本，点击open，选择你的抓包文件，得到配置文本，保存为<code>dogcom.conf</code></li>
+<li>打开<span class="exturl" data-url="aHR0cHM6Ly9kcmNvbXMuZ2l0aHViLmlvL2RyY29tLWdlbmVyaWMv" title="https://drcoms.github.io/drcom-generic/">Auto Configure<i class="fa fa-external-link"></i></span>，选择自己的drcom版本，点击open，选择你的抓包文件，得到配置文本，保存为<code>dogcom.conf</code></li>
 <li>找个地方把仓库给克隆下来，运行<code>git clone https://github.com/mchome/dogcom.git</code></li>
 <li>进入项目文件夹，编译，运行命令<code>make force_encrypt=y</code>，过亿亿亿亿亿亿亿亿亿会你就拥有了dogcom文件了，这是linux的操作，windows的操作请看项目主页</li>
 <li>把<code>dogcom</code>文件和<code>dogcom.conf</code>文件放到你一个你想运行的文件夹中</li>
 <li>运行，比如我是通过pppoe上网的，就运行<code>dogcom -m pppoe -c dogcom.conf</code></li>
 </ol>
 <p>更多的参数配置，请到项目官网查看，<del>其实我不会</del></p>
-<h3 id="python版本心跳包使用"><a href="#python版本心跳包使用" class="headerlink" title="python版本心跳包使用"></a>python版本心跳包使用</h3><p>也差不多，通过抓包文件得到配置文本之后，修改<a href="https://github.com/drcoms/drcom-generic/blob/master/latest-pppoe.py" target="_blank" rel="noopener">python源程序</a>的<code>server</code> <code>pppoe_flag</code>  <code>keep_alive2_flag</code>的指即可，我以前运行的是python2版本的，运行命令<code>python2 latest-pppoe.py</code>即可，它会在你的运行目录生成一个log文件</p>
+<h3 id="python版本心跳包使用"><a href="#python版本心跳包使用" class="headerlink" title="python版本心跳包使用"></a>python版本心跳包使用</h3><p>也差不多，通过抓包文件得到配置文本之后，修改<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RyY29tcy9kcmNvbS1nZW5lcmljL2Jsb2IvbWFzdGVyL2xhdGVzdC1wcHBvZS5weQ==" title="https://github.com/drcoms/drcom-generic/blob/master/latest-pppoe.py">python源程序<i class="fa fa-external-link"></i></span>的<code>server</code> <code>pppoe_flag</code>  <code>keep_alive2_flag</code>的指即可，我以前运行的是python2版本的，运行命令<code>python2 latest-pppoe.py</code>即可，它会在你的运行目录生成一个log文件</p>
 
     </div>
 
     
     
     
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-09-02</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/09/02/using-accesser/" rel="bookmark">Using Accesser</a></div>
+      
+        <div class="popular-posts-excerpt"><p>利用反向代理避开SNI检测</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-08-18</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/08/18/webui-aria2/" rel="bookmark">WebUI-Aria2</a></div>
+      
+        <div class="popular-posts-excerpt"><p>在自己的服务器上折腾一个离线下载服务</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-07-13</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/07/13/manjaro2/" rel="bookmark">manjaro下使用tenda-U12</a></div>
+      
+        <div class="popular-posts-excerpt"><p>linux网卡使用</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-03-12</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/03/12/manjaro1/" rel="bookmark">manjaro折腾记</a></div>
+      
+        <div class="popular-posts-excerpt"><p>manjaro心路历程</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2018-03-22</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2018/03/22/nginx1/" rel="bookmark">查看nginx监听端口</a></div>
+      
+        <div class="popular-posts-excerpt"><p>nginx瞎折腾笔记</p></div>
+      
+    </li>
+  
+  </ul>
+
         
       
         
@@ -424,7 +484,7 @@
     <a href="https://blog.hzycjy.top/2019/09/04/dogcom/" title="dogcom">https://blog.hzycjy.top/2019/09/04/dogcom/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 
@@ -532,7 +592,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -576,14 +636,14 @@
       
         
       
-        <a href="https://github.com/denniszy" title="GitHub &rarr; https://github.com/denniszy" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Rlbm5pc3p5" title="GitHub &rarr; https://github.com/denniszy"><i class="fa fa-fw fa-github"></i></span>
       </span>
     
   </div>
   <div class="cc-license motion-element" itemprop="license">
     
   
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -594,19 +654,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://yycoderape.github.io" title="https://yycoderape.github.io" rel="noopener" target="_blank">YYcoder</a>
+          <span class="exturl" data-url="aHR0cHM6Ly95eWNvZGVyYXBlLmdpdGh1Yi5pbw==" title="https://yycoderape.github.io">YYcoder</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/weixin_42973524" title="https://blog.csdn.net/weixin_42973524" rel="noopener" target="_blank">wuzj</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjk3MzUyNA==" title="https://blog.csdn.net/weixin_42973524">wuzj</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NyaXN0aW5hYWE=" title="https://blog.csdn.net/Cristinaaa">Cristinaaa</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9odWFuZ3J1bmZlbmdhLmdpdGh1Yi5pbw==" title="https://huangrunfenga.github.io">Kelin</span>
         </li>
       
     </ul>
@@ -649,9 +709,9 @@
     
     <span title="站点阅读时长">24 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Pisces</span></div>
 
         
 <div class="busuanzi-count">

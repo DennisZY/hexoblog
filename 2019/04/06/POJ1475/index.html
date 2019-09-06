@@ -30,7 +30,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.4.0',
-    exturl: false,
+    exturl: true,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
@@ -224,7 +224,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">49</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">46</span></a>
 
   </li>
       
@@ -390,7 +390,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="http://poj.org/problem?id=1475" target="_blank" rel="noopener">传送门</a></p>
+        <p><span class="exturl" data-url="aHR0cDovL3Bvai5vcmcvcHJvYmxlbT9pZD0xNDc1" title="http://poj.org/problem?id=1475">传送门<i class="fa fa-external-link"></i></span></p>
 <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>推箱子，输出路径，先要求整个的路径最短，如果有多个最短路径，选推箱子的次数最少的。没有路径的输出Impossible。</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>很明显，箱子要跑bfs，但跑bfs的时候要判断移动是否合法，箱子移动后，人必在箱子移动前的位置，而人要能到达箱子移动的反方向的那个格子上。</p>
 <h3 id="例子1"><a href="#例子1" class="headerlink" title="例子1"></a>例子1</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">############</span><br><span class="line">#.......TB##</span><br><span class="line">#..........#</span><br><span class="line">#......S...#</span><br><span class="line">############</span><br></pre></td></tr></table></figure>
@@ -407,13 +407,40 @@
 <p>所以箱子的bfs的状态上就存箱子的座标、人的座标和答案，每次按题意更新答案。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> box[]=&#123;<span class="string">'N'</span>,<span class="string">'S'</span>,<span class="string">'W'</span>,<span class="string">'E'</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> peo[]=&#123;<span class="string">'n'</span>,<span class="string">'s'</span>,<span class="string">'w'</span>,<span class="string">'e'</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>   dx[]=&#123;<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span>   dy[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n,m,num;</span><br><span class="line"><span class="keyword">char</span> mmp[<span class="number">25</span>][<span class="number">25</span>];</span><br><span class="line"><span class="built_in">string</span> tmp;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">P</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,y,px,py;</span><br><span class="line">    <span class="built_in">string</span> ans;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">valid</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&gt;<span class="number">0</span>&amp;&amp;x&lt;=n&amp;&amp;y&gt;<span class="number">0</span>&amp;&amp;y&lt;=m&amp;&amp;mmp[x][y]!=<span class="string">'#'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs2</span><span class="params">(P p1,P p2)</span></span>&#123;</span><br><span class="line">    tmp=<span class="string">""</span>;</span><br><span class="line">    P st;</span><br><span class="line">    st.x=p1.px;</span><br><span class="line">    st.y=p1.py;</span><br><span class="line">    st.ans=<span class="string">""</span>;</span><br><span class="line">    <span class="built_in">queue</span>&lt;P&gt;q;</span><br><span class="line">    q.push(st);</span><br><span class="line">    <span class="keyword">bool</span> v[<span class="number">26</span>][<span class="number">26</span>];</span><br><span class="line">    <span class="built_in">memset</span>(v,<span class="number">0</span>,<span class="keyword">sizeof</span> v);</span><br><span class="line">    <span class="keyword">while</span>(q.size())&#123;</span><br><span class="line">        P now=q.front(),nxt;</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span>(now.x==p1.x&amp;&amp;now.y==p1.y)&#123;</span><br><span class="line">            tmp=now.ans;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            nxt = now;</span><br><span class="line">            nxt.x = now.x + dx[i];</span><br><span class="line">            nxt.y = now.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span> (!valid(nxt.x, nxt.y)) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (nxt.x == p2.x &amp;&amp; nxt.y == p2.y) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (v[nxt.x][nxt.y]) <span class="keyword">continue</span>;</span><br><span class="line">            v[nxt.x][nxt.y] = <span class="number">1</span>;</span><br><span class="line">            nxt.ans = now.ans + peo[i];</span><br><span class="line">            q.push(nxt);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">bfs1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    P st;</span><br><span class="line">    st.x=st.y=st.px=st.py=<span class="number">-1</span>;</span><br><span class="line">    st.ans=<span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n&amp;&amp;(st.x==<span class="number">-1</span>||st.px==<span class="number">-1</span>);i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m&amp;&amp;(st.x==<span class="number">-1</span>||st.px==<span class="number">-1</span>);j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(mmp[i][j]==<span class="string">'B'</span>)&#123;</span><br><span class="line">                st.x=i;</span><br><span class="line">                st.y=j;</span><br><span class="line">                mmp[i][j]=<span class="string">'.'</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(mmp[i][j]==<span class="string">'S'</span>)&#123;</span><br><span class="line">                st.px=i;</span><br><span class="line">                st.py=j;</span><br><span class="line">                mmp[i][j]=<span class="string">'.'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">queue</span>&lt;P&gt;q;</span><br><span class="line">    q.push(st);</span><br><span class="line">    <span class="keyword">bool</span> v[<span class="number">25</span>][<span class="number">25</span>][<span class="number">4</span>];</span><br><span class="line">    <span class="built_in">memset</span>(v,<span class="number">0</span>,<span class="keyword">sizeof</span> v);</span><br><span class="line">    <span class="built_in">string</span> ans = <span class="string">"Impossible."</span>;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> cntans=<span class="number">0x3f3f3f3f</span>,cnt=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">while</span>(q.size())&#123;</span><br><span class="line">        P prv,now=q.front(),nxt;</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span>(mmp[now.x][now.y]==<span class="string">'T'</span>)&#123;</span><br><span class="line">            <span class="keyword">unsigned</span> <span class="keyword">int</span> cntnow=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">unsigned</span> <span class="keyword">int</span> len = now.ans.length();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">unsigned</span> <span class="keyword">int</span> i =<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(now.ans[i]&gt;=<span class="string">'A'</span>&amp;&amp;now.ans[i]&lt;=<span class="string">'Z'</span>)cntnow++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cntnow&lt;cntans||(cntnow==cntans&amp;&amp;len&lt;cnt))&#123;</span><br><span class="line">                ans = now.ans;</span><br><span class="line">                cntans=cntnow;</span><br><span class="line">                cnt=len;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            nxt=now;</span><br><span class="line">            nxt.x = now.x + dx[i];</span><br><span class="line">            nxt.y = now.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(!valid(nxt.x,nxt.y))<span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(v[nxt.x][nxt.y][i])<span class="keyword">continue</span>;</span><br><span class="line">            prv = now;</span><br><span class="line">            <span class="keyword">if</span>(i==<span class="number">3</span>)prv.y=now.y<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="number">2</span>)prv.y=now.y+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="number">1</span>)prv.x=now.x<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">else</span> prv.x=now.x+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(!bfs2(prv,now))<span class="keyword">continue</span>;</span><br><span class="line">            v[nxt.x][nxt.y][i]=<span class="number">1</span>;</span><br><span class="line">            nxt.ans=now.ans+tmp+box[i];</span><br><span class="line">            nxt.px=now.x;</span><br><span class="line">            nxt.py=now.y;</span><br><span class="line">            q.push(nxt);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">cin</span>&gt;&gt;(mmp[i]+<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Maze #"</span>&lt;&lt;++num&lt;&lt;<span class="built_in">endl</span>&lt;&lt;bfs1()&lt;&lt;<span class="built_in">endl</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("in.txt","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("out.txt","w",stdout);</span></span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    num=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&amp;&amp;n&amp;&amp;m)&#123;</span><br><span class="line">        work();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>刷<a href="https://item.jd.com/20111313.html" target="_blank" rel="noopener">蓝书</a>真虐心，基础不熟练啊，加油加油。</p>
+<p>刷<span class="exturl" data-url="aHR0cHM6Ly9pdGVtLmpkLmNvbS8yMDExMTMxMy5odG1s" title="https://item.jd.com/20111313.html">蓝书<i class="fa fa-external-link"></i></span>真虐心，基础不熟练啊，加油加油。</p>
 
     </div>
 
     
     
     
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-04-23</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/04/23/POJ3085/" rel="bookmark">[POJ3085]Nightmare Ⅱ 题解报告</a></div>
+      
+        <div class="popular-posts-excerpt"><p>POJ3085题解报告</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-04-22</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/04/22/POJ3635/" rel="bookmark">[POJ3635]Full Tank题解报告</a></div>
+      
+        <div class="popular-posts-excerpt"><p>POJ3635题解报告</p></div>
+      
+    </li>
+  
+  </ul>
+
         
       
         
@@ -427,7 +454,7 @@
     <a href="https://blog.hzycjy.top/2019/04/06/POJ1475/" title="[POJ1475] Pushing Boxes 题解报告">https://blog.hzycjy.top/2019/04/06/POJ1475/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 
@@ -531,7 +558,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -575,14 +602,14 @@
       
         
       
-        <a href="https://github.com/denniszy" title="GitHub &rarr; https://github.com/denniszy" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Rlbm5pc3p5" title="GitHub &rarr; https://github.com/denniszy"><i class="fa fa-fw fa-github"></i></span>
       </span>
     
   </div>
   <div class="cc-license motion-element" itemprop="license">
     
   
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -593,19 +620,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://yycoderape.github.io" title="https://yycoderape.github.io" rel="noopener" target="_blank">YYcoder</a>
+          <span class="exturl" data-url="aHR0cHM6Ly95eWNvZGVyYXBlLmdpdGh1Yi5pbw==" title="https://yycoderape.github.io">YYcoder</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/weixin_42973524" title="https://blog.csdn.net/weixin_42973524" rel="noopener" target="_blank">wuzj</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjk3MzUyNA==" title="https://blog.csdn.net/weixin_42973524">wuzj</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NyaXN0aW5hYWE=" title="https://blog.csdn.net/Cristinaaa">Cristinaaa</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9odWFuZ3J1bmZlbmdhLmdpdGh1Yi5pbw==" title="https://huangrunfenga.github.io">Kelin</span>
         </li>
       
     </ul>
@@ -648,9 +675,9 @@
     
     <span title="站点阅读时长">24 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Pisces</span></div>
 
         
 <div class="busuanzi-count">

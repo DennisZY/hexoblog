@@ -30,7 +30,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.4.0',
-    exturl: false,
+    exturl: true,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
@@ -224,7 +224,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">49</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">46</span></a>
 
   </li>
       
@@ -392,7 +392,7 @@
       
         <h3 id="初步认识"><a href="#初步认识" class="headerlink" title="初步认识"></a>初步认识</h3><p>hexo是一个博客框架，通过node.js将你的markdown文件转换为一片博文，搭配风格各异的主题来构建你自己的静态博客。</p>
 <blockquote>
-<p><a href="https://hexo.io" target="_blank" rel="noopener">hexo官网</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv" title="https://hexo.io">hexo官网<i class="fa fa-external-link"></i></span></p>
 </blockquote>
 <h4 id="入门配置"><a href="#入门配置" class="headerlink" title="入门配置"></a>入门配置</h4><h4 id="安装hexo-cli"><a href="#安装hexo-cli" class="headerlink" title="安装hexo-cli"></a>安装hexo-cli</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
@@ -402,7 +402,7 @@
 <p>初始化后目录结构如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
 
-<p>scaffolds 文件夹保存着你的模板文件，你可以通过<code>hexo new [layout] &lt;title&gt;</code>来利用模板文件来生成你需要的markdown文件，详细请看<a href="https://hexo.io/zh-cn/docs/writing" target="_blank" rel="noopener">官网文档</a> </p>
+<p>scaffolds 文件夹保存着你的模板文件，你可以通过<code>hexo new [layout] &lt;title&gt;</code>来利用模板文件来生成你需要的markdown文件，详细请看<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mvd3JpdGluZw==" title="https://hexo.io/zh-cn/docs/writing">官网文档<i class="fa fa-external-link"></i></span> </p>
 <p>例如我用<code>hexo new &quot;title&quot;</code>来生成一个即将发表的文件。</p>
 <h4 id="安装部署器并部署到github"><a href="#安装部署器并部署到github" class="headerlink" title="安装部署器并部署到github"></a>安装部署器并部署到github</h4><h5 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
@@ -415,30 +415,30 @@
 
 <h5 id="在-config-yml设置-1"><a href="#在-config-yml设置-1" class="headerlink" title="在_config.yml设置"></a>在<code>_config.yml</code>设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br><span class="line">  hub:</span><br><span class="line">  content: true</span><br><span class="line">  content_limit: 20</span><br><span class="line">  content_limit_delim: &apos; &apos;</span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">feed详细设置</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWdlbmVyYXRvci1mZWVk" title="https://github.com/hexojs/hexo-generator-feed">feed详细设置<i class="fa fa-external-link"></i></span></p>
 <h4 id="获得置顶功能"><a href="#获得置顶功能" class="headerlink" title="获得置顶功能"></a>获得置顶功能</h4><h5 id="安装命令-2"><a href="#安装命令-2" class="headerlink" title="安装命令"></a>安装命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
 
 <h5 id="在-config-yml设置-2"><a href="#在-config-yml设置-2" class="headerlink" title="在_config.yml设置"></a>在<code>_config.yml</code>设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">index_generator:</span><br><span class="line">  path: &apos;&apos;</span><br><span class="line">  per_page: 10</span><br><span class="line">  order_by: -date</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://github.com/netcan/hexo-generator-index-pin-top" target="_blank" rel="noopener">置顶插件详细设置</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25ldGNhbi9oZXhvLWdlbmVyYXRvci1pbmRleC1waW4tdG9w" title="https://github.com/netcan/hexo-generator-index-pin-top">置顶插件详细设置<i class="fa fa-external-link"></i></span></p>
 <p>如果某篇文章需要置顶，需要在文章的<code>Front-matter</code>中添加<code>top: true</code>，否则<code>top: false</code></p>
 <h4 id="获得搜索功能"><a href="#获得搜索功能" class="headerlink" title="获得搜索功能"></a>获得搜索功能</h4><h5 id="安装命令-3"><a href="#安装命令-3" class="headerlink" title="安装命令"></a>安装命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
 
 <h5 id="在-config-yml设置-3"><a href="#在-config-yml设置-3" class="headerlink" title="在_config.yml设置"></a>在<code>_config.yml</code>设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  content: true</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener">搜索功能详细设置</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3d6cGFuL2hleG8tZ2VuZXJhdG9yLXNlYXJjaA==" title="https://github.com/wzpan/hexo-generator-search">搜索功能详细设置<i class="fa fa-external-link"></i></span></p>
 <h4 id="生成站点地图"><a href="#生成站点地图" class="headerlink" title="生成站点地图"></a>生成站点地图</h4><p>可以提交给搜索引擎，加快搜索引擎收录</p>
 <h5 id="安装命令-4"><a href="#安装命令-4" class="headerlink" title="安装命令"></a>安装命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
 
 <h5 id="在-config-yml设置-4"><a href="#在-config-yml设置-4" class="headerlink" title="在_config.yml设置"></a>在<code>_config.yml</code>设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br><span class="line">    template:</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="noopener">站点地图插件详细设置</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWdlbmVyYXRvci1zaXRlbWFw" title="https://github.com/hexojs/hexo-generator-sitemap">站点地图插件详细设置<i class="fa fa-external-link"></i></span></p>
 <h4 id="计算文章长度和估算阅读时间"><a href="#计算文章长度和估算阅读时间" class="headerlink" title="计算文章长度和估算阅读时间"></a>计算文章长度和估算阅读时间</h4><h5 id="安装命令-5"><a href="#安装命令-5" class="headerlink" title="安装命令"></a>安装命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
 
 <h5 id="在-config-yml设置-5"><a href="#在-config-yml设置-5" class="headerlink" title="在_config.yml设置"></a>在<code>_config.yml</code>设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: true</span><br></pre></td></tr></table></figure>
 
-<p><a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">插件详细配置</a></p>
-<h3 id="主题NexT配置"><a href="#主题NexT配置" class="headerlink" title="主题NexT配置"></a>主题NexT配置</h3><p><a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">官方repo</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by1zeW1ib2xzLWNvdW50LXRpbWU=" title="https://github.com/theme-next/hexo-symbols-count-time">插件详细配置<i class="fa fa-external-link"></i></span></p>
+<h3 id="主题NexT配置"><a href="#主题NexT配置" class="headerlink" title="主题NexT配置"></a>主题NexT配置</h3><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0" title="https://github.com/theme-next/hexo-theme-next">官方repo<i class="fa fa-external-link"></i></span></p>
 <h4 id="加载条安装"><a href="#加载条安装" class="headerlink" title="加载条安装"></a>加载条安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pace source/lib/pace</span><br></pre></td></tr></table></figure>
 
 <h4 id="炫酷的canvas-nest"><a href="#炫酷的canvas-nest" class="headerlink" title="炫酷的canvas-nest"></a>炫酷的canvas-nest</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas-nest</span><br></pre></td></tr></table></figure>
@@ -452,6 +452,33 @@
     
     
     
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-09-06</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/09/06/update-hexo-theme-smoothly/" rel="bookmark">Update hexo-theme-NexT smoothly</a></div>
+      
+        <div class="popular-posts-excerpt"><p>快速更新hexo主题NexT</p></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-09-04</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/09/04/netlify-blog/" rel="bookmark">Netlify</a></div>
+      
+        <div class="popular-posts-excerpt"><p>使用netlify自动部署静态网站</p></div>
+      
+    </li>
+  
+  </ul>
+
         
       
         
@@ -465,7 +492,7 @@
     <a href="https://blog.hzycjy.top/2019/08/26/hexo-blog/" title="Using hexo">https://blog.hzycjy.top/2019/08/26/hexo-blog/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 
@@ -571,7 +598,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -615,14 +642,14 @@
       
         
       
-        <a href="https://github.com/denniszy" title="GitHub &rarr; https://github.com/denniszy" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Rlbm5pc3p5" title="GitHub &rarr; https://github.com/denniszy"><i class="fa fa-fw fa-github"></i></span>
       </span>
     
   </div>
   <div class="cc-license motion-element" itemprop="license">
     
   
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -633,19 +660,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://yycoderape.github.io" title="https://yycoderape.github.io" rel="noopener" target="_blank">YYcoder</a>
+          <span class="exturl" data-url="aHR0cHM6Ly95eWNvZGVyYXBlLmdpdGh1Yi5pbw==" title="https://yycoderape.github.io">YYcoder</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/weixin_42973524" title="https://blog.csdn.net/weixin_42973524" rel="noopener" target="_blank">wuzj</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjk3MzUyNA==" title="https://blog.csdn.net/weixin_42973524">wuzj</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NyaXN0aW5hYWE=" title="https://blog.csdn.net/Cristinaaa">Cristinaaa</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9odWFuZ3J1bmZlbmdhLmdpdGh1Yi5pbw==" title="https://huangrunfenga.github.io">Kelin</span>
         </li>
       
     </ul>
@@ -688,9 +715,9 @@
     
     <span title="站点阅读时长">24 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Pisces</span></div>
 
         
 <div class="busuanzi-count">

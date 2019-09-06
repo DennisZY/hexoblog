@@ -30,7 +30,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '7.4.0',
-    exturl: false,
+    exturl: true,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
@@ -224,7 +224,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">49</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">46</span></a>
 
   </li>
       
@@ -392,8 +392,8 @@
       
         <h1 id="Suffix-automaton"><a href="#Suffix-automaton" class="headerlink" title="Suffix automaton"></a>Suffix automaton</h1><p>后缀自动机，由一个parent树和一个DAG构成。DAG的边连接着状态转移的两点，点就是状态。</p>
 <p>每个节点就是一个endpos等价类，每条parent树的边代表的是endpos等价类包含的关系。DAG就是状态转移的过程。</p>
-<p>解析一下代码，个人感觉讲得不太好，可以移步看一下<a href="https://www.luogu.org/blog/Kesdiael3/hou-zhui-zi-dong-ji-yang-xie" target="_blank" rel="noopener">史上最通俗的后缀自动机详解</a>和<a href="https://oi-wiki.org/string/sam/" target="_blank" rel="noopener">oi-wiki上的SAM</a>，了解一下endpos类等等的定义。</p>
-<p><a href="https://www.luogu.org/problemnew/show/P3804" target="_blank" rel="noopener">luogu3804</a></p>
+<p>解析一下代码，个人感觉讲得不太好，可以移步看一下<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3Uub3JnL2Jsb2cvS2VzZGlhZWwzL2hvdS16aHVpLXppLWRvbmctamkteWFuZy14aWU=" title="https://www.luogu.org/blog/Kesdiael3/hou-zhui-zi-dong-ji-yang-xie">史上最通俗的后缀自动机详解<i class="fa fa-external-link"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLw==" title="https://oi-wiki.org/string/sam/">oi-wiki上的SAM<i class="fa fa-external-link"></i></span>，了解一下endpos类等等的定义。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3Uub3JnL3Byb2JsZW1uZXcvc2hvdy9QMzgwNA==" title="https://www.luogu.org/problemnew/show/P3804">luogu3804<i class="fa fa-external-link"></i></span></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">#include &lt;unordered_map&gt;</span></span><br><span class="line"><span class="comment">#include &lt;unordered_set&gt;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000010</span>;</span><br><span class="line"><span class="keyword">int</span> c[N],dfn[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">SAM</span>&#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000010</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> CHAR_SET_SIZE=<span class="number">26</span>;</span><br><span class="line">    <span class="comment">//这里的&lt;&lt;1，是因为后缀自动机的状态的个数是线性的，必定小于2*n，我就不证了(我不会证)。</span></span><br><span class="line">    <span class="comment">//ch是每个节点转移的下一个状态，fa是parent树的父节点，len是当前状态的串的长度。siz是每个节点的对应的串出现的次数</span></span><br><span class="line">    <span class="keyword">int</span> ch[N&lt;&lt;<span class="number">1</span>][CHAR_SET_SIZE],fa[N&lt;&lt;<span class="number">1</span>],len[N&lt;&lt;<span class="number">1</span>],siz[N&lt;&lt;<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> tot,last;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">newnode</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ++tot;</span><br><span class="line">        <span class="built_in">memset</span>(ch[tot],<span class="number">0</span>,<span class="keyword">sizeof</span> ch[tot]);</span><br><span class="line">        fa[tot]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> tot;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//初始化，把最开始的空状态给搞出来</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">        tot=<span class="number">1</span>;</span><br><span class="line">        last=<span class="number">1</span>;<span class="comment">//记录上次的节点，下次在这后面增量构造SAM</span></span><br><span class="line">        len[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(ch[<span class="number">1</span>],<span class="number">0</span>,<span class="keyword">sizeof</span> ch[<span class="number">1</span>]);</span><br><span class="line">        <span class="built_in">memset</span>(siz,<span class="number">0</span>,<span class="keyword">sizeof</span> siz);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> pos = last,newpos=newnode();</span><br><span class="line">        last = newpos;</span><br><span class="line">        siz[newpos]=<span class="number">1</span>;<span class="comment">//后面需要这个来计算每个节点的串出现的次数</span></span><br><span class="line">        len[newpos]=len[pos]+<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//更新父节点的等价类，让没有转移到当前字符的节点转移到当前字符，</span></span><br><span class="line">        <span class="keyword">while</span>(pos&amp;&amp;!ch[pos][x])&#123;ch[pos][x]=newpos;pos=fa[pos];&#125;</span><br><span class="line">     	<span class="comment">//如果！pos就是根本没出现过这个字符，那么这个等价类的就是新的，连到根节点。</span></span><br><span class="line">        <span class="keyword">if</span>(!pos)fa[newpos]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">//如果有父节点连接到x这个状态，我们对此进行判断</span></span><br><span class="line">            <span class="keyword">int</span> oldpos=ch[pos][x];</span><br><span class="line">            <span class="comment">//如果这个父节点的儿子的长度跟父节点的长度相差1，那么我们新的这个等价类的父节点就是这个父节点的儿子了，因为我们必定比父节点的儿子要更长，肯定是再被划分出来的。</span></span><br><span class="line">            <span class="keyword">if</span>(len[oldpos]==len[pos]+<span class="number">1</span>)fa[newpos]=oldpos;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//否则，我们就创建一个新的状态的长度是父节点的长度+1的。让祖先们的x转移为原父亲x转移的都改为对新状态的转移，让原父亲x转移的状态改为对新状态的转移。</span></span><br><span class="line">                <span class="keyword">int</span> anp=newnode();</span><br><span class="line">                <span class="built_in">memcpy</span>(ch[anp],ch[oldpos],<span class="keyword">sizeof</span> ch[anp]);</span><br><span class="line">                fa[anp]=fa[oldpos];</span><br><span class="line">                len[anp]=len[pos]+<span class="number">1</span>;</span><br><span class="line">                fa[oldpos]=fa[newpos]=anp;</span><br><span class="line">                <span class="keyword">while</span>(pos&amp;&amp;ch[pos][x]==oldpos)&#123;</span><br><span class="line">                    ch[pos][x]=anp;</span><br><span class="line">                    pos=fa[pos];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//暴力更新每个节点的字符串出现的次数，然后对出现次数&gt;1的更新答案。</span></span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(c,<span class="number">0</span>,<span class="keyword">sizeof</span> c);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tot;i++)c[len[i]]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tot;i++)c[i]+=c[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tot;i++)dfn[c[len[i]]--]=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=tot;i&gt;=<span class="number">1</span>;--i)&#123;</span><br><span class="line">            <span class="keyword">int</span> now = dfn[i];</span><br><span class="line">            siz[fa[now]]+=siz[now];</span><br><span class="line">            <span class="keyword">if</span>(siz[now]&gt;<span class="number">1</span>)ans=max(ans,<span class="number">1l</span>l*len[now]*siz[now]);</span><br><span class="line">        &#125;    </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;sam;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">1000010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(fopen(<span class="string">"in.txt"</span>,<span class="string">"r"</span>))&#123;</span><br><span class="line">        freopen(<span class="string">"in.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">        freopen(<span class="string">"out.txt"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    sam.init();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)sam.add(s[i]-<span class="string">'a'</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,sam.solve());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -402,6 +402,22 @@
     
     
     
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      
+        <div class="popular-posts-date">2019-04-23</div>
+      
+      
+      <div class="popular-posts-title"><a href="/2019/04/23/ds1/" rel="bookmark">splay</a></div>
+      
+        <div class="popular-posts-excerpt"><p>伸展树学习笔记</p></div>
+      
+    </li>
+  
+  </ul>
+
         
       
         
@@ -415,7 +431,7 @@
     <a href="https://blog.hzycjy.top/2019/05/07/SAM/" title="SAM">https://blog.hzycjy.top/2019/05/07/SAM/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
 
@@ -521,7 +537,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -565,14 +581,14 @@
       
         
       
-        <a href="https://github.com/denniszy" title="GitHub &rarr; https://github.com/denniszy" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Rlbm5pc3p5" title="GitHub &rarr; https://github.com/denniszy"><i class="fa fa-fw fa-github"></i></span>
       </span>
     
   </div>
   <div class="cc-license motion-element" itemprop="license">
     
   
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -583,19 +599,19 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://yycoderape.github.io" title="https://yycoderape.github.io" rel="noopener" target="_blank">YYcoder</a>
+          <span class="exturl" data-url="aHR0cHM6Ly95eWNvZGVyYXBlLmdpdGh1Yi5pbw==" title="https://yycoderape.github.io">YYcoder</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/weixin_42973524" title="https://blog.csdn.net/weixin_42973524" rel="noopener" target="_blank">wuzj</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjk3MzUyNA==" title="https://blog.csdn.net/weixin_42973524">wuzj</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://blog.csdn.net/Cristinaaa" title="https://blog.csdn.net/Cristinaaa" rel="noopener" target="_blank">Cristinaaa</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NyaXN0aW5hYWE=" title="https://blog.csdn.net/Cristinaaa">Cristinaaa</span>
         </li>
       
         <li class="links-of-blogroll-item">
-          <a href="https://huangrunfenga.github.io" title="https://huangrunfenga.github.io" rel="noopener" target="_blank">Kelin</a>
+          <span class="exturl" data-url="aHR0cHM6Ly9odWFuZ3J1bmZlbmdhLmdpdGh1Yi5pbw==" title="https://huangrunfenga.github.io">Kelin</span>
         </li>
       
     </ul>
@@ -638,9 +654,9 @@
     
     <span title="站点阅读时长">24 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a></div>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Pisces</span></div>
 
         
 <div class="busuanzi-count">
