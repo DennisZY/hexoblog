@@ -2,44 +2,296 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.hzycjy.top/2019/04/15/math3/</loc>
+    <loc>https://blog.hzycjy.top/posts/blog-index/</loc>
     
-    <lastmod>2019-09-06T21:41:04.101Z</lastmod>
+    <lastmod>2019-09-07T19:03:08.073Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.hzycjy.top/2019/09/06/update-hexo-theme-smoothly/</loc>
+    <loc>https://blog.hzycjy.top/posts/dlx/</loc>
+    
+    <lastmod>2019-09-07T18:55:15.927Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/cdq/</loc>
+    
+    <lastmod>2019-09-07T18:55:00.127Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/crt/</loc>
+    
+    <lastmod>2019-09-07T18:54:52.227Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/dns-over-https/</loc>
+    
+    <lastmod>2019-09-07T18:49:54.419Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/binary-index-tree/</loc>
+    
+    <lastmod>2019-09-07T18:49:42.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/Beatty/</loc>
+    
+    <lastmod>2019-09-07T18:49:38.396Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/bayes/</loc>
+    
+    <lastmod>2019-09-07T18:49:34.550Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/acmtemplate/</loc>
+    
+    <lastmod>2019-09-07T18:49:27.610Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/A-star/</loc>
+    
+    <lastmod>2019-09-07T18:49:22.410Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/2019huagong/</loc>
+    
+    <lastmod>2019-09-07T18:49:19.717Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/2019nowcoder3/</loc>
+    
+    <lastmod>2019-09-07T18:49:16.164Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/2019nowcoder2/</loc>
+    
+    <lastmod>2019-09-07T18:49:11.594Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/2019nowcoder1/</loc>
+    
+    <lastmod>2019-09-07T18:49:08.364Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/2019hdumutc1/</loc>
+    
+    <lastmod>2019-09-07T18:49:03.771Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/splay/</loc>
+    
+    <lastmod>2019-09-07T18:48:49.024Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/alg4/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.392Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/ggxx1/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.392Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/ggxx1/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.392Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/npm-install-error/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.389Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/ggxx3/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.389Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/mathmix/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.389Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/manjaro1/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.389Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/ggxx2/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.389Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/inverse-element/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/nginx1/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/manjaro2/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.382Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/cplusplus/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.382Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/SAM/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.382Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/POJ3635/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.382Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/golang1/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.382Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/POJ3085/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.379Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/MIOJ142/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.379Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/MIOJ140/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.379Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/POJ1475/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.379Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/FTC%20Warning/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.379Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/Mobius-inversion-formula/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.379Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/Gym-101955C/</loc>
+    
+    <lastmod>2019-09-07T18:33:41.376Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hzycjy.top/posts/update-hexo-theme-smoothly/</loc>
     
     <lastmod>2019-09-05T19:53:15.957Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.hzycjy.top/2019/09/04/netlify-blog/</loc>
+    <loc>https://blog.hzycjy.top/posts/netlify-blog/</loc>
     
     <lastmod>2019-09-05T19:16:48.637Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.hzycjy.top/2019/08/26/hexo-blog/</loc>
+    <loc>https://blog.hzycjy.top/posts/hexo-blog/</loc>
     
     <lastmod>2019-09-05T19:16:33.790Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.hzycjy.top/2019/09/04/dogcom/</loc>
+    <loc>https://blog.hzycjy.top/posts/dogcom/</loc>
     
     <lastmod>2019-09-04T16:27:01.772Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/07/29/acmtemplate/</loc>
-    
-    <lastmod>2019-09-04T05:45:09.690Z</lastmod>
     
   </url>
   
@@ -51,282 +303,37 @@
   </url>
   
   <url>
-    <loc>https://blog.hzycjy.top/2019/09/02/using-accesser/</loc>
+    <loc>https://blog.hzycjy.top/posts/using-accesser/</loc>
     
     <lastmod>2019-09-02T15:10:10.844Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.hzycjy.top/2018/11/10/inverse-element/</loc>
-    
-    <lastmod>2019-09-01T18:38:48.668Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2018/12/08/alg4/</loc>
-    
-    <lastmod>2019-09-01T18:38:29.364Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2018/11/05/ggxx1/</loc>
-    
-    <lastmod>2019-09-01T18:38:00.896Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2018/11/05/ggxx1/</loc>
-    
-    <lastmod>2019-09-01T18:37:51.590Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2018/11/17/ggxx2/</loc>
-    
-    <lastmod>2019-09-01T18:37:45.716Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/03/28/ggxx3/</loc>
-    
-    <lastmod>2019-09-01T18:37:38.536Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/08/18/webui-aria2/</loc>
+    <loc>https://blog.hzycjy.top/posts/webui-aria2/</loc>
     
     <lastmod>2019-09-01T18:37:23.586Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.hzycjy.top/2019/04/23/ds1/</loc>
-    
-    <lastmod>2019-09-01T18:36:57.495Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/05/07/SAM/</loc>
-    
-    <lastmod>2019-09-01T18:36:49.045Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/08/07/recommend-using-firefox/</loc>
+    <loc>https://blog.hzycjy.top/posts/recommend-using-firefox/</loc>
     
     <lastmod>2019-09-01T18:36:40.048Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.hzycjy.top/2019/08/07/privacy/</loc>
+    <loc>https://blog.hzycjy.top/posts/privacy/</loc>
     
     <lastmod>2019-09-01T18:35:57.004Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.hzycjy.top/2019/04/22/POJ3635/</loc>
-    
-    <lastmod>2019-09-01T18:34:56.202Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/04/23/POJ3085/</loc>
-    
-    <lastmod>2019-09-01T18:34:37.602Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/04/06/POJ1475/</loc>
-    
-    <lastmod>2019-09-01T18:34:24.465Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/08/03/npm-install-error/</loc>
-    
-    <lastmod>2019-09-01T18:33:45.444Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2018/03/22/nginx1/</loc>
-    
-    <lastmod>2019-09-01T18:33:09.553Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/08/16/Newton's-method/</loc>
+    <loc>https://blog.hzycjy.top/posts/Newton's-method/</loc>
     
     <lastmod>2019-09-01T18:32:47.250Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/01/24/Mobius-inversion-formula/</loc>
-    
-    <lastmod>2019-09-01T18:32:20.242Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/04/08/MIOJ142/</loc>
-    
-    <lastmod>2019-09-01T18:32:04.865Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/04/08/MIOJ140/</loc>
-    
-    <lastmod>2019-09-01T18:31:48.698Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/03/17/mathmix/</loc>
-    
-    <lastmod>2019-09-01T18:31:25.265Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/07/13/manjaro2/</loc>
-    
-    <lastmod>2019-09-01T18:30:56.604Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/03/12/manjaro1/</loc>
-    
-    <lastmod>2019-09-01T18:30:39.334Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/05/29/cplusplus/</loc>
-    
-    <lastmod>2019-09-01T18:29:57.760Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2018/12/07/Gym-101955C/</loc>
-    
-    <lastmod>2019-09-01T18:29:11.089Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/04/01/golang1/</loc>
-    
-    <lastmod>2019-09-01T18:19:26.183Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/03/09/FTC%20Warning/</loc>
-    
-    <lastmod>2019-09-01T18:19:07.706Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/08/07/dns-over-https/</loc>
-    
-    <lastmod>2019-09-01T18:19:00.333Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2018/08/28/alg2/</loc>
-    
-    <lastmod>2019-09-01T18:17:31.057Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2018/08/29/alg3/</loc>
-    
-    <lastmod>2019-09-01T18:16:52.693Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2018/11/06/binary-index-tree/</loc>
-    
-    <lastmod>2019-09-01T18:16:36.184Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/07/15/Beatty/</loc>
-    
-    <lastmod>2019-09-01T18:16:24.340Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/03/10/bayes/</loc>
-    
-    <lastmod>2019-09-01T18:16:12.047Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/04/23/A-star/</loc>
-    
-    <lastmod>2019-09-01T18:15:33.894Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/04/19/2019huagong/</loc>
-    
-    <lastmod>2019-09-01T18:15:17.565Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/07/29/2019nowcoder3/</loc>
-    
-    <lastmod>2019-09-01T18:14:41.062Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/07/29/2019nowcoder2/</loc>
-    
-    <lastmod>2019-09-01T18:14:36.325Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/07/28/2019nowcoder1/</loc>
-    
-    <lastmod>2019-09-01T18:14:28.302Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/2019/07/28/2019hdumutc1/</loc>
-    
-    <lastmod>2019-09-01T18:14:04.343Z</lastmod>
     
   </url>
   
