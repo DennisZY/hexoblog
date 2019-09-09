@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hzycjy.top/posts/netlify-blog/</loc>
+    
+    <lastmod>2019-09-09T16:39:57.938Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.hzycjy.top/posts/Palindrome-automata/</loc>
     
     <lastmod>2019-09-09T08:02:34.850Z</lastmod>
@@ -278,13 +285,6 @@
     <loc>https://blog.hzycjy.top/posts/update-hexo-theme-smoothly/</loc>
     
     <lastmod>2019-09-05T19:53:15.957Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hzycjy.top/posts/netlify-blog/</loc>
-    
-    <lastmod>2019-09-05T19:16:48.637Z</lastmod>
     
   </url>
   

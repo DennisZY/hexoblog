@@ -110,7 +110,7 @@
       <link href="/posts/netlify-blog/"/>
       <url>/posts/netlify-blog/</url>
       
-        <content type="html"><![CDATA[<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><ul><li>想折腾一下</li><li>githubpage还是留给项目页面用吧<del>(你哪有什么项目)</del></li></ul><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li>登录注册netlify</li><li>绑定你的github的仓库</li></ol><p>然后它自己会部署，部署好之后，你之后就会有一个<code>.netlify.com</code>的网址，你可以通过这个访问你hexo生成的网站，这个域名会很丑，难以记忆，最好自己绑个域名，会好看许多。</p><p>所以这个方法指建议有自己域名的人使用，有时候还感觉会反向加速，速度不如githubpage。</p><p>疯起来还真的啥都折腾。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><ul><li>想折腾一下</li><li>githubpage还是留给项目页面用吧<del>(你哪有什么项目)</del></li></ul><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li>登录注册netlify</li><li>绑定你的github的仓库</li></ol><p>然后它自己会部署，部署好之后，你之后就会有一个<code>.netlify.com</code>的网址，你可以通过这个访问你hexo生成的网站，<del>这个域名会很丑，难以记忆，最好自己绑个域名，会好看许多。</del>可以自己修改的，还是可以用的。</p><p>所以这个方法指建议有自己域名的人使用，有时候还感觉会反向加速，速度不如githubpage。</p><p>疯起来还真的啥都折腾。</p>]]></content>
       
       
       <categories>
