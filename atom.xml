@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.hzycjy.top/"/>
-  <updated>2019-09-11T19:07:04.827Z</updated>
+  <updated>2019-09-11T19:10:35.649Z</updated>
   <id>https://blog.hzycjy.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://blog.hzycjy.top/posts/qt1/"/>
     <id>https://blog.hzycjy.top/posts/qt1/</id>
     <published>2019-09-11T17:58:32.000Z</published>
-    <updated>2019-09-11T19:07:04.827Z</updated>
+    <updated>2019-09-11T19:10:35.649Z</updated>
     
-    <content type="html"><![CDATA[<p>先上类图</p><p><img src="/images/qwidget1.svg" alt="img"></p><p>项目分为Forms、Sources、Headers，这只是再Qt Creator里面被分为这个样子，项目文件夹里面是没有分开的。</p><p>Qt先将ui文件生成为ui_xxxx.h，内含一个类Ui_xxx，提供setui函数通，通过接收窗体指针来对UI进行修改，<del>有点抽象工厂的意思</del>，然后通过这个类派生出一个在命名空间Ui里的类，相当于一个配置类，谁需要这个配置就用这个类的setui来设置自己。</p>]]></content>
+    <content type="html"><![CDATA[<p>先上类图</p><p><img src="/images/qwidget1.svg" alt="img"></p><p>项目分为Forms、Sources、Headers，这只是再Qt Creator里面被分为这个样子，项目文件夹里面是没有分开的。</p><p>Qt先将ui文件生成为ui_xxxx.h，内含一个类Ui_xxx，提供setui函数，通过接收窗体指针来对UI进行修改，<del>有点抽象工厂的意思</del>，然后通过这个类派生出一个在命名空间Ui里的类，相当于一个配置类，谁需要这个配置就用这个类的setui来设置自己。</p>]]></content>
     
     <summary type="html">
     
