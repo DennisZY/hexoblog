@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.hzycjy.top/"/>
-  <updated>2019-09-09T08:02:34.850Z</updated>
+  <updated>2019-09-11T19:07:04.827Z</updated>
   <id>https://blog.hzycjy.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>入坑QT_1-最简单的项目理解</title>
+    <link href="https://blog.hzycjy.top/posts/qt1/"/>
+    <id>https://blog.hzycjy.top/posts/qt1/</id>
+    <published>2019-09-11T17:58:32.000Z</published>
+    <updated>2019-09-11T19:07:04.827Z</updated>
+    
+    <content type="html"><![CDATA[<p>先上类图</p><p><img src="/images/qwidget1.svg" alt="img"></p><p>项目分为Forms、Sources、Headers，这只是再Qt Creator里面被分为这个样子，项目文件夹里面是没有分开的。</p><p>Qt先将ui文件生成为ui_xxxx.h，内含一个类Ui_xxx，提供setui函数通，通过接收窗体指针来对UI进行修改，<del>有点抽象工厂的意思</del>，然后通过这个类派生出一个在命名空间Ui里的类，相当于一个配置类，谁需要这个配置就用这个类的setui来设置自己。</p>]]></content>
+    
+    <summary type="html">
+    
+      我好类啊
+    
+    </summary>
+    
+    
+      <category term="Qt开发" scheme="https://blog.hzycjy.top/categories/Qt%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="Qt" scheme="https://blog.hzycjy.top/tags/Qt/"/>
+    
+      <category term="c++" scheme="https://blog.hzycjy.top/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>Palindrome automata</title>
@@ -480,31 +505,6 @@
     
     
       <category term="math" scheme="https://blog.hzycjy.top/tags/math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>manjaro下使用tenda-U12</title>
-    <link href="https://blog.hzycjy.top/posts/manjaro2/"/>
-    <id>https://blog.hzycjy.top/posts/manjaro2/</id>
-    <published>2019-07-13T09:07:25.000Z</published>
-    <updated>2019-09-07T18:33:41.382Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="一句话"><a href="#一句话" class="headerlink" title="一句话"></a>一句话</h3><p>在manjaro上搜索<span class="exturl" data-url="aHR0cHM6Ly93d3cucmVhbHRlay5jb20vZW4vcHJvZHVjdHMvY29tbXVuaWNhdGlvbnMtbmV0d29yay1pY3MvaXRlbS9ydGw4ODEyYXU=" title="https://www.realtek.com/en/products/communications-network-ics/item/rtl8812au">rtl8812au<i class="fa fa-external-link"></i></span>的驱动装一下，我装的名字是rtl8812au-dkms-git(在archlinuxcn的仓库下，可以自己添加一下仓库)，然后把网卡插进去就能识别使用了。</p><h3 id="心路历程"><a href="#心路历程" class="headerlink" title="心路历程"></a>心路历程</h3><p>官网有这个网卡的windows/linux/macos的驱动包，然而这个包根本不能编译成功，我的内核也在他要求的范围之内，要求是2.6.18至4.4，我的是……4……….19打扰了，然后自己上网找找教程，上github找找对应的驱动clone下来编译安装？找了一个编译一下，编译失败，忽然想到去aur上看看有没有，用yay搜了一下，发现archlinuxcn库里面有，就装了，就完事了。</p>]]></content>
-    
-    <summary type="html">
-    
-      linux网卡使用
-    
-    </summary>
-    
-    
-      <category term="折腾笔记" scheme="https://blog.hzycjy.top/categories/%E6%8A%98%E8%85%BE%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="linux" scheme="https://blog.hzycjy.top/tags/linux/"/>
-    
-      <category term="manjaro" scheme="https://blog.hzycjy.top/tags/manjaro/"/>
     
   </entry>
   
