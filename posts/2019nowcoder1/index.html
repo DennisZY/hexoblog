@@ -21,8 +21,8 @@
 <link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Fira Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css?v=1.0.2">
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-flash.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
 
 <script id="hexo-configurations">
@@ -67,7 +67,7 @@
 <meta property="og:site_name" content="Dennis&#39;s Blog">
 <meta property="og:description" content="2019牛客多校第一场题解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-07T18:49:08.364Z">
+<meta property="og:updated_time" content="2019-09-21T06:33:38.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019-Nowcoder-Multi-University-Training-Camp-1">
 <meta name="twitter:description" content="2019牛客多校第一场题解">
@@ -359,7 +359,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-08 02:49:08" itemprop="dateModified" datetime="2019-09-08T02:49:08+08:00">2019-09-08</time>
+                <time title="修改时间：2019-09-21 14:33:38" itemprop="dateModified" datetime="2019-09-21T14:33:38+08:00">2019-09-21</time>
               </span>
             
           
@@ -421,7 +421,7 @@
       
         <h2 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h2><h3 id="A-Equivalent-Prefixes"><a href="#A-Equivalent-Prefixes" class="headerlink" title="A Equivalent Prefixes"></a>A Equivalent Prefixes</h3><p>题意：给你ab两个数组，让你找出[1,p]区间使得他们任一区间的最小值的位置是一样的，求最大的p。</p>
 <p>题解：二分答案，分别建立笛卡尔树，树形一样则正确。</p>
-<h3 id="B-Integration"><a href="#B-Integration" class="headerlink" title="B Integration"></a>B Integration</h3><p>题意：知道$$\int_{0}^{\infty} \frac{1}{1+x^2}dx=\frac{\pi}{2}$$，求$$\int_{0}^{\infty} \frac{1}{\prod_{i=1}^n{a_i^2+x^2}}dx$$，可以证明这个一定是分数，要我们用分子乘分母逆元的方式来表示它。</p>
+<h3 id="B-Integration"><a href="#B-Integration" class="headerlink" title="B Integration"></a>B Integration</h3><p>题意：知道$\int_{0}^{\infty} \frac{1}{1+x^2}dx=\frac{\pi}{2}$，求$\int_{0}^{\infty} \frac{1}{\prod_{i=1}^n{a_i^2+x^2}}dx$，可以证明这个一定是分数，要我们用分子乘分母逆元的方式来表示它。</p>
 <p>题解：将连乘转换为累加，我们知道</p>
 <p>$$<br>\frac{1}{xy}=\frac{1}{y-x}\times\frac{y-x}{xy}=\frac{1}{y-x}\times(\frac{1}{x}-\frac{1}{y})<br>$$</p>
 <p>对于上面的连乘可以转换为</p>
