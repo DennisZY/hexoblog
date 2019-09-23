@@ -69,7 +69,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/09/24/vgXhZFiEQuHdBjG.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/24/75Hl6jqyVfpEsJR.png">
-<meta property="og:updated_time" content="2019-09-23T18:01:31.910Z">
+<meta property="og:updated_time" content="2019-09-23T18:32:48.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库作业">
 <meta name="twitter:description" content="记录一下数据库系统概论的作业">
@@ -351,7 +351,7 @@
                 
               
 
-              <time title="创建时间：2019-09-24 00:30:43 / 修改时间：02:01:31" itemprop="dateCreated datePublished" datetime="2019-09-24T00:30:43+08:00">2019-09-24</time>
+              <time title="创建时间：2019-09-24 00:30:43 / 修改时间：02:32:48" itemprop="dateCreated datePublished" datetime="2019-09-24T00:30:43+08:00">2019-09-24</time>
             </span>
           
             
@@ -389,7 +389,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>644</span>
+              <span>686</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -415,17 +415,18 @@
 
       
         <h2 id="第一次作业-19-9-24"><a href="#第一次作业-19-9-24" class="headerlink" title="第一次作业(19.9.24)"></a>第一次作业(19.9.24)</h2><p>利用alpha语言完成以下操作</p>
-<h3 id="1-查询同时选修了1号课程和2号课程的学生的姓名。"><a href="#1-查询同时选修了1号课程和2号课程的学生的姓名。" class="headerlink" title="1.查询同时选修了1号课程和2号课程的学生的姓名。"></a>1.查询同时选修了1号课程和2号课程的学生的姓名。</h3><p><code>RANGE SC X</code></p>
+<h3 id="查询同时选修了1号课程和2号课程的学生的姓名。"><a href="#查询同时选修了1号课程和2号课程的学生的姓名。" class="headerlink" title="查询同时选修了1号课程和2号课程的学生的姓名。"></a>查询同时选修了1号课程和2号课程的学生的姓名。</h3><p><code>RANGE SC X</code></p>
 <p><code>GET W (Student.name):</code></p>
 <p>$\exists X(X.Sno=Student.Sno \land X.Cno=’1’)\land \exists X(X.Sno=Student.Sno \land X.Cno=’2’)$</p>
-<h3 id="2-查询所选课程都在90分以上的学生的学号。"><a href="#2-查询所选课程都在90分以上的学生的学号。" class="headerlink" title="2.查询所选课程都在90分以上的学生的学号。"></a>2.查询所选课程都在90分以上的学生的学号。</h3><p><code>RANGE SC SCX</code></p>
+<h3 id="查询所选课程都在90分以上的学生的学号。"><a href="#查询所选课程都在90分以上的学生的学号。" class="headerlink" title="查询所选课程都在90分以上的学生的学号。"></a>查询所选课程都在90分以上的学生的学号。</h3><p><code>RANGE SC SCX</code></p>
 <p>​             <code>Course CX</code></p>
 <p><code>GET W (Student.Sno):</code></p>
 <p>$\forall CX \exists SXC(SXC.Grade\geq 90 \land SXC.Sno=Student.Sno \land SCX.Cno=CX.Cno)$</p>
-<h3 id="3-查询选修了全部“先行课为6号课”-课程的学生名字。"><a href="#3-查询选修了全部“先行课为6号课”-课程的学生名字。" class="headerlink" title="3.查询选修了全部“先行课为6号课” 课程的学生名字。"></a>3.查询选修了全部“先行课为6号课” 课程的学生名字。</h3><p><code>RANGE Course CX</code></p>
+<h3 id="查询选修了全部“先行课为6号课”-课程的学生名字。"><a href="#查询选修了全部“先行课为6号课”-课程的学生名字。" class="headerlink" title="查询选修了全部“先行课为6号课” 课程的学生名字。"></a>查询选修了全部“先行课为6号课” 课程的学生名字。</h3><p><code>RANGE SC SCX</code></p>
+<p>​             <code>Course CX</code></p>
 <p><code>GET W (Student.Sname):</code></p>
-<p>$\forall CX(Student.Sno=SC.Sno\land CX.Cno=SC.Cno \land CX.Pcno=’6’)$</p>
-<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p><img src="https://i.loli.net/2019/09/24/vgXhZFiEQuHdBjG.png" alt="db1_1.png"></p>
+<p>$\forall SCX(Student.Sno=SCX.Sno\land SCX.Cno=CX.Cno \land CX.Pcno=’6’)$</p>
+<h3 id="四、计算题"><a href="#四、计算题" class="headerlink" title="四、计算题"></a>四、计算题</h3><p><img src="https://i.loli.net/2019/09/24/vgXhZFiEQuHdBjG.png" alt="db1_1.png"></p>
 <h4 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h4><table>
 <thead>
 <tr>
@@ -448,7 +449,8 @@
 <td align="center">3</td>
 </tr>
 </tbody></table>
-<h4 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h4><h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p><img src="https://i.loli.net/2019/09/24/75Hl6jqyVfpEsJR.png" alt="db1_2.png"></p>
+<h4 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h4><p>假装是空表，应该就是空表吧，关系都莫得</p>
+<h3 id="五、计算题"><a href="#五、计算题" class="headerlink" title="五、计算题"></a>五、计算题</h3><p><img src="https://i.loli.net/2019/09/24/75Hl6jqyVfpEsJR.png" alt="db1_2.png"></p>
 <h4 id="1-1"><a href="#1-1" class="headerlink" title="(1)"></a>(1)</h4><table>
 <thead>
 <tr>
@@ -509,7 +511,7 @@
 <td align="center">$e_3$</td>
 </tr>
 </tbody></table>
-<h4 id="4-1"><a href="#4-1" class="headerlink" title="(4)"></a>(4)</h4><table>
+<h4 id="4"><a href="#4" class="headerlink" title="(4)"></a>(4)</h4><table>
 <thead>
 <tr>
 <th align="center">C</th>
@@ -628,7 +630,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一次作业-19-9-24"><span class="nav-number">1.</span> <span class="nav-text">第一次作业(19.9.24)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查询同时选修了1号课程和2号课程的学生的姓名。"><span class="nav-number">1.1.</span> <span class="nav-text">1.查询同时选修了1号课程和2号课程的学生的姓名。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-查询所选课程都在90分以上的学生的学号。"><span class="nav-number">1.2.</span> <span class="nav-text">2.查询所选课程都在90分以上的学生的学号。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-查询选修了全部“先行课为6号课”-课程的学生名字。"><span class="nav-number">1.3.</span> <span class="nav-text">3.查询选修了全部“先行课为6号课” 课程的学生名字。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">1.4.</span> <span class="nav-text">4.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">1.4.1.</span> <span class="nav-text">(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">1.4.2.</span> <span class="nav-text">(2)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">1.5.</span> <span class="nav-text">5.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3"><span class="nav-number">1.5.3.</span> <span class="nav-text">(3)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1"><span class="nav-number">1.5.4.</span> <span class="nav-text">(4)</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一次作业-19-9-24"><span class="nav-number">1.</span> <span class="nav-text">第一次作业(19.9.24)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询同时选修了1号课程和2号课程的学生的姓名。"><span class="nav-number">1.1.</span> <span class="nav-text">查询同时选修了1号课程和2号课程的学生的姓名。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询所选课程都在90分以上的学生的学号。"><span class="nav-number">1.2.</span> <span class="nav-text">查询所选课程都在90分以上的学生的学号。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询选修了全部“先行课为6号课”-课程的学生名字。"><span class="nav-number">1.3.</span> <span class="nav-text">查询选修了全部“先行课为6号课” 课程的学生名字。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、计算题"><span class="nav-number">1.4.</span> <span class="nav-text">四、计算题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">1.4.1.</span> <span class="nav-text">(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">1.4.2.</span> <span class="nav-text">(2)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、计算题"><span class="nav-number">1.5.</span> <span class="nav-text">五、计算题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3"><span class="nav-number">1.5.3.</span> <span class="nav-text">(3)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4"><span class="nav-number">1.5.4.</span> <span class="nav-text">(4)</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
