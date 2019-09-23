@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://i.loli.net/2019/09/06/pDAzxgBunHP78FU.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.loli.net/2019/09/06/K3NQ1XWFt24r9Oa.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://i.loli.net/2019/09/06/xt5ZMGHh4CzmYXF.png?v=7.4.0">
+  <link rel="mask-icon" href="https://i.loli.net/2019/09/06/pDAzxgBunHP78FU.png?v=7.4.0" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Dennis's Blog" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Fira Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-flash.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.0',
+    exturl: true,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="记录一下数据库系统概论的作业">
+<meta name="keywords" content="database">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库作业">
+<meta property="og:url" content="https://blog.hzycjy.top/posts/gdut-database/index.html">
+<meta property="og:site_name" content="Dennis&#39;s Blog">
+<meta property="og:description" content="记录一下数据库系统概论的作业">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/09/24/vgXhZFiEQuHdBjG.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/24/75Hl6jqyVfpEsJR.png">
+<meta property="og:updated_time" content="2019-09-23T18:01:31.910Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库作业">
+<meta name="twitter:description" content="记录一下数据库系统概论的作业">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/24/vgXhZFiEQuHdBjG.png">
+  <link rel="canonical" href="https://blog.hzycjy.top/posts/gdut-database/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>数据库作业 | Dennis's Blog</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116145543-3"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-116145543-3');
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dennis's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">38</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">11</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">50</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://blog.hzycjy.top/posts/gdut-database/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dennis">
+      <meta itemprop="description" content="I am writing a blog to record some implementations and errors about the algorithm.">
+      <meta itemprop="image" content="https://i.loli.net/2019/09/06/C1jxl2LmYebB9nS.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dennis's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">数据库作业
+
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-24 00:30:43 / 修改时间：02:01:31" itemprop="dateCreated datePublished" datetime="2019-09-24T00:30:43+08:00">2019-09-24</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/课程作业/" itemprop="url" rel="index"><span itemprop="name">课程作业</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>644</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+            <div class="post-description">记录一下数据库系统概论的作业</div>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="第一次作业-19-9-24"><a href="#第一次作业-19-9-24" class="headerlink" title="第一次作业(19.9.24)"></a>第一次作业(19.9.24)</h2><p>利用alpha语言完成以下操作</p>
+<h3 id="1-查询同时选修了1号课程和2号课程的学生的姓名。"><a href="#1-查询同时选修了1号课程和2号课程的学生的姓名。" class="headerlink" title="1.查询同时选修了1号课程和2号课程的学生的姓名。"></a>1.查询同时选修了1号课程和2号课程的学生的姓名。</h3><p><code>RANGE SC X</code></p>
+<p><code>GET W (Student.name):</code></p>
+<p>$\exists X(X.Sno=Student.Sno \land X.Cno=’1’)\land \exists X(X.Sno=Student.Sno \land X.Cno=’2’)$</p>
+<h3 id="2-查询所选课程都在90分以上的学生的学号。"><a href="#2-查询所选课程都在90分以上的学生的学号。" class="headerlink" title="2.查询所选课程都在90分以上的学生的学号。"></a>2.查询所选课程都在90分以上的学生的学号。</h3><p><code>RANGE SC SCX</code></p>
+<p>​             <code>Course CX</code></p>
+<p><code>GET W (Student.Sno):</code></p>
+<p>$\forall CX \exists SXC(SXC.Grade\geq 90 \land SXC.Sno=Student.Sno \land SCX.Cno=CX.Cno)$</p>
+<h3 id="3-查询选修了全部“先行课为6号课”-课程的学生名字。"><a href="#3-查询选修了全部“先行课为6号课”-课程的学生名字。" class="headerlink" title="3.查询选修了全部“先行课为6号课” 课程的学生名字。"></a>3.查询选修了全部“先行课为6号课” 课程的学生名字。</h3><p><code>RANGE Course CX</code></p>
+<p><code>GET W (Student.Sname):</code></p>
+<p>$\forall CX(Student.Sno=SC.Sno\land CX.Cno=SC.Cno \land CX.Pcno=’6’)$</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p><img src="https://i.loli.net/2019/09/24/vgXhZFiEQuHdBjG.png" alt="db1_1.png"></p>
+<h4 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h4><table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">E</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">7</td>
+<td align="center">2</td>
+<td align="center">3</td>
+</tr>
+</tbody></table>
+<h4 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h4><h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p><img src="https://i.loli.net/2019/09/24/75Hl6jqyVfpEsJR.png" alt="db1_2.png"></p>
+<h4 id="1-1"><a href="#1-1" class="headerlink" title="(1)"></a>(1)</h4><table>
+<thead>
+<tr>
+<th align="center">R.B</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$b_1$</td>
+</tr>
+</tbody></table>
+<h4 id="2-1"><a href="#2-1" class="headerlink" title="(2)"></a>(2)</h4><table>
+<thead>
+<tr>
+<th align="center">C</th>
+<th align="center">E</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$c_1$</td>
+<td align="center">$e_1$</td>
+</tr>
+<tr>
+<td align="center">$c_3$</td>
+<td align="center">$e_3$</td>
+</tr>
+</tbody></table>
+<h4 id="3"><a href="#3" class="headerlink" title="(3)"></a>(3)</h4><table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">E</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$a_1$</td>
+<td align="center">$b_1$</td>
+<td align="center">$c_1$</td>
+<td align="center">$e_2$</td>
+</tr>
+<tr>
+<td align="center">$a_1$</td>
+<td align="center">$b_2$</td>
+<td align="center">$c_2$</td>
+<td align="center">$e_1$</td>
+</tr>
+<tr>
+<td align="center">$a_1$</td>
+<td align="center">$b_3$</td>
+<td align="center">$c_1$</td>
+<td align="center">$e_1$</td>
+</tr>
+<tr>
+<td align="center">$a_1$</td>
+<td align="center">$b_3$</td>
+<td align="center">$c_3$</td>
+<td align="center">$e_3$</td>
+</tr>
+</tbody></table>
+<h4 id="4-1"><a href="#4-1" class="headerlink" title="(4)"></a>(4)</h4><table>
+<thead>
+<tr>
+<th align="center">C</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$c_1$</td>
+</tr>
+<tr>
+<td align="center">$c_2$</td>
+</tr>
+<tr>
+<td align="center">$c_3$</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+      
+
+        
+      
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Dennis</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.hzycjy.top/posts/gdut-database/" title="数据库作业">https://blog.hzycjy.top/posts/gdut-database/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！</li>
+</ul>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/database/" rel="tag"><i class="fa fa-tag"></i> database</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/posts/qt1/" rel="next" title="入坑QT_1-最简单的项目理解">
+                  <i class="fa fa-chevron-left"></i> 入坑QT_1-最简单的项目理解
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一次作业-19-9-24"><span class="nav-number">1.</span> <span class="nav-text">第一次作业(19.9.24)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-查询同时选修了1号课程和2号课程的学生的姓名。"><span class="nav-number">1.1.</span> <span class="nav-text">1.查询同时选修了1号课程和2号课程的学生的姓名。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-查询所选课程都在90分以上的学生的学号。"><span class="nav-number">1.2.</span> <span class="nav-text">2.查询所选课程都在90分以上的学生的学号。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-查询选修了全部“先行课为6号课”-课程的学生名字。"><span class="nav-number">1.3.</span> <span class="nav-text">3.查询选修了全部“先行课为6号课” 课程的学生名字。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">1.4.</span> <span class="nav-text">4.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">1.4.1.</span> <span class="nav-text">(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">1.4.2.</span> <span class="nav-text">(2)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">1.5.</span> <span class="nav-text">5.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3"><span class="nav-number">1.5.3.</span> <span class="nav-text">(3)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1"><span class="nav-number">1.5.4.</span> <span class="nav-text">(4)</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="https://i.loli.net/2019/09/06/C1jxl2LmYebB9nS.jpg"
+      alt="Dennis">
+  <p class="site-author-name" itemprop="name">Dennis</p>
+  <div class="site-description" itemprop="description">I am writing a blog to record some implementations and errors about the algorithm.</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+      
+        
+      
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Rlbm5pc3p5" title="GitHub &rarr; https://github.com/denniszy"><i class="fa fa-fw fa-github"></i></span>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLmVu"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly95eWNvZGVyYXBlLmdpdGh1Yi5pbw==" title="https://yycoderape.github.io">YYcoder</span>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjk3MzUyNA==" title="https://blog.csdn.net/weixin_42973524">wuzj</span>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NyaXN0aW5hYWE=" title="https://blog.csdn.net/Cristinaaa">Cristinaaa</span>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9odWFuZ3J1bmZlbmdhLmdpdGh1Yi5pbw==" title="https://huangrunfenga.github.io">Kelin</span>
+        </li>
+      
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dennis</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">29k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">26 分钟</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> 强力驱动</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Pisces</span></div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <script>
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66468675";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest-nomobile.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '2dd8ece88adb7c9a022e',
+      clientSecret: '75448c8d73ebcab31e7580b19e38a3a8f83e13ea',
+      repo: 'hexo-comment',
+      owner: 'DennisZY',
+      admin: ['DennisZY'],
+      id: '183ab8fd841bd659ea7d142145806146',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
+
+</body>
+</html>
